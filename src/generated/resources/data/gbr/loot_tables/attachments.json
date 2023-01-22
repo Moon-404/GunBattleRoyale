@@ -1,0 +1,72 @@
+{
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gbr:short_scope",
+                    "weight": 24
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:medium_scope",
+                    "weight": 24
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:long_scope",
+                    "weight": 12
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:stabilizer",
+                    "weight": 45
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:advanced_stabilizer",
+                    "weight": 15,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Enchantments:[{}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:stock",
+                    "weight": 36
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:advanced_stock",
+                    "weight": 12,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Enchantments:[{}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:grip",
+                    "weight": 24
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:advanced_grip",
+                    "weight": 8,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Enchantments:[{}]}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

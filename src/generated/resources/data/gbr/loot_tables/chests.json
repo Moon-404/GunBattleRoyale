@@ -1,0 +1,45 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gbr:guns"
+                }
+            ]
+        },{
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gbr:ammo"
+                }
+            ]
+        },{
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gbr:attachments"
+                }
+            ]
+        },{
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gbr:food"
+                }
+            ]
+        },{
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "gbr:skills"
+                }
+            ]
+        }
+    ]
+}

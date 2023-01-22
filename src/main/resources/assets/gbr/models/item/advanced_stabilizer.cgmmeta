@@ -1,0 +1,10 @@
+{
+    "cgm:model": {
+        "origin": [8.0, 8.0, 8.0]
+    },
+    "cgm:barrel": {
+        "muzzleFlash": {
+            "translation": [8.0, 8.0, -0.1]
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "pools": [
+        {
+            "rolls": 3,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "cgm:basic_bullet",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 30,
+                                "max": 50
+                            }
+                        }
+                    ],
+                    "weight": 4
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:advanced_bullet",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 12
+                            }
+                        }
+                    ],
+                    "weight": 4
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:grenade",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:stun_grenade",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}
