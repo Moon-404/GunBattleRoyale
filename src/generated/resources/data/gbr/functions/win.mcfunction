@@ -1,5 +1,6 @@
 title @a title [{"selector": "@p[gamemode=adventure, scores={death=0}]"}, " 是胜利者！"]
 scoreboard players add @a[gamemode=adventure, scores={death=0}] wins 1
+scoreboard players add @a[gamemode=adventure, scores={death=0}] rank 2
 execute at @e[tag=supply] run setblock ~ ~ ~ air
 kill @e[type=item]
 clear @a[gamemode=adventure]
