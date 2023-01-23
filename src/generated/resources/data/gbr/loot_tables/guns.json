@@ -6,27 +6,46 @@
                 {
                     "type": "item",
                     "name": "cgm:pistol",
-                    "weight": 1
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:4}"
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "cgm:machine_pistol",
-                    "weight": 2
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:30}"
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "cgm:assault_rifle",
-                    "weight": 2
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:18}"
+                        }
+                    ]
                 },
                 {
                     "type": "item",
                     "name": "cgm:rifle",
-                    "weight": 1
-                },
-                {
-                    "type": "item",
-                    "name": "cgm:heavy_rifle",
-                    "weight": 1
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:6}"
+                        }
+                    ]
                 }
             ]
         }

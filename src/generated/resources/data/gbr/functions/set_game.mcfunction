@@ -7,4 +7,5 @@ execute at @e[tag=center] run function gbr:set_center
 worldborder set 301 0
 worldborder set 1 300
 item replace entity @a[gamemode=adventure] armor.chest with elytra 1
+scoreboard players set game_tick global 0
 scoreboard players set game_start global 1

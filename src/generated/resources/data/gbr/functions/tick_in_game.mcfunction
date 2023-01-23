@@ -1,6 +1,15 @@
 # 跳伞&苹果
 execute as @a[gamemode=adventure, scores={height=35..45}] run function gbr:jump
 execute as @a[gamemode=adventure, scores={absorption=1..16}] run function gbr:shield
+# 空投判定
+scoreboard players add game_tick global 1
+execute if score game_tick global matches 2000 run scoreboard players set game_airdrop_retry global 0
+execute if score game_tick global matches 2000 run function gbr:airdrop1
+execute if score game_tick global matches 4000 run scoreboard players set game_airdrop_retry global 0
+execute if score game_tick global matches 4000 run function gbr:airdrop2
+execute as @e[tag=dropping] at @s run particle campfire_signal_smoke ~ ~ ~ 0 0 0 0.5 0 force @a
+execute as @e[tag=dropping, nbt={OnGround:true}] at @s run setblock ~ ~ ~ chest{LootTable:"gbr:airdrop"}
+execute as @e[tag=dropping, nbt={OnGround:true}] run data modify entity @s Tags set value ["airdrop", "finish"]
 # 技能
 execute as @e[type=item, nbt={Item:{id:"minecraft:rabbit_foot"}}] at @s if data entity @s Thrower run function gbr:skill_run
 execute as @e[type=item, nbt={Item:{id:"minecraft:ghast_tear"}}] at @s if data entity @s Thrower run function gbr:skill_void
