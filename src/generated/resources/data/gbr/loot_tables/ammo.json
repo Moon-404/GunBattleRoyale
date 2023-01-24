@@ -24,12 +24,12 @@
                         {
                             "function": "set_count",
                             "count": {
-                                "min": 4,
+                                "min": 8,
                                 "max": 12
                             }
                         }
                     ],
-                    "weight": 2
+                    "weight": 4
                 },
                 {
                     "type": "item",
