@@ -1,0 +1,2 @@
+spawnpoint @s ~ ~ ~
+tp @s ~ ~ ~
