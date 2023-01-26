@@ -7,17 +7,22 @@ scoreboard objectives add death deathCount
 scoreboard objectives add ob dummy
 # 玩家高度
 scoreboard objectives add height dummy
-# 玩家胜场
-scoreboard objectives add wins dummy
 # 玩家伤害吸收
 scoreboard objectives add absorption dummy
 # 玩家最大生命值
 scoreboard objectives add maxhealth dummy
 # 玩家积分
 scoreboard objectives add rank dummy
-scoreboard objectives setdisplay sidebar rank
+scoreboard objectives setdisplay list rank
 # 玩家击杀数
 scoreboard objectives add kills playerKillCount
+# 生涯数据
+scoreboard objectives add stat_kill dummy
+scoreboard objectives add stat_death dummy
+scoreboard objectives add stat_win dummy
+scoreboard objectives add stat_total dummy
+# 占位
+scoreboard objectives add nothing dummy
 # 毒圈属性
 worldborder damage amount 1
 worldborder damage buffer 0

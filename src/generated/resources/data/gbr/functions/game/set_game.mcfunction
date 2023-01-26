@@ -10,3 +10,4 @@ item replace entity @a[gamemode=adventure] armor.chest with elytra 1
 scoreboard players set game_tick global 0
 scoreboard players set game_start global 1
 scoreboard players set game_airdrop_count global 0
+scoreboard players add @a[gamemode=adventure] stat_total 1

@@ -1,0 +1,5 @@
+tellraw @p ["排位分: ", {"score": {"name": "@p", "objective": "rank"}}]
+tellraw @p ["总场数: ", {"score": {"name": "@p", "objective": "stat_total"}}]
+tellraw @p ["胜利数: ", {"score": {"name": "@p", "objective": "stat_win"}}]
+tellraw @p ["击杀数: ", {"score": {"name": "@p", "objective": "stat_kill"}}]
+tellraw @p ["死亡数: ", {"score": {"name": "@p", "objective": "stat_death"}}]
