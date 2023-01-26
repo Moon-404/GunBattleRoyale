@@ -3,7 +3,6 @@ execute at @e[tag=supply] run setblock ~ ~ ~ air
 execute at @e[tag=airdrop] run setblock ~ ~ ~ air
 kill @e[tag=airdrop]
 kill @e[type=item]
-clear @a[gamemode=adventure]
 effect clear @a[gamemode=adventure]
 worldborder set 114514
 execute at @e[tag=center] run function gbr:game/reset_center
