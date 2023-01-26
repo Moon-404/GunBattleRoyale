@@ -1,0 +1,1 @@
+execute as @a[gamemode=adventure, scores={height=100..2147483647}] run function gbr:game/afk
