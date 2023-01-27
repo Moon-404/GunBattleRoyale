@@ -22,3 +22,5 @@ worldborder set 114514
 execute at @e[tag=center] run function gbr:game/reset_center
 execute as @e[tag=center] run data modify entity @s Tags set value ["ring"]
 scoreboard players set game_start global 0
+scoreboard players set game_waiting global 1
+schedule function gbr:game/wait_finish 30s

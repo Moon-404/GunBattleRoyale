@@ -13,6 +13,3 @@ execute as @e[tag=fly] at @s run function gbr:skill/fly_entity
 # scoreboard players set game_sum global 0
 # execute as @a[gamemode=adventure, scores={death=0}] run scoreboard players add game_sum global 1
 # execute if score game_sum global matches 0..1 run function gbr:game/win
-# 组队获胜判定
-function gbr:game/count_team_alive
-execute if score total team_alive matches 0..1 run function gbr:game/win

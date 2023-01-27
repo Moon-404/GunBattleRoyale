@@ -1,0 +1,1 @@
+scoreboard players set game_waiting global 0
