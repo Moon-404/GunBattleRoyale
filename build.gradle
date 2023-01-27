@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
-version = '1.3.3.13'
+version = '1.3.3.14'
 group = 'com.moon404'
 archivesBaseName = 'GunBattleRoyale-1.19.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)

@@ -30,3 +30,42 @@ worldborder warning distance 1
 worldborder warning time 1
 gamerule doImmediateRespawn true
 gamerule naturalRegeneration false
+# 队伍
+team add green
+team add yellow
+team add orange
+team add lime
+team add pink
+team add brown
+team add red
+team add blue
+team add black
+team add magenta
+team add purple
+team add cyan
+team modify green nametagVisibility hideForOtherTeams
+team modify yellow nametagVisibility hideForOtherTeams
+team modify orange nametagVisibility hideForOtherTeams
+team modify lime nametagVisibility hideForOtherTeams
+team modify pink nametagVisibility hideForOtherTeams
+team modify brown nametagVisibility hideForOtherTeams
+team modify red nametagVisibility hideForOtherTeams
+team modify blue nametagVisibility hideForOtherTeams
+team modify black nametagVisibility hideForOtherTeams
+team modify magenta nametagVisibility hideForOtherTeams
+team modify purple nametagVisibility hideForOtherTeams
+team modify cyan nametagVisibility hideForOtherTeams
+team modify green color dark_green
+team modify yellow color yellow
+team modify orange color gold
+team modify lime color green
+team modify pink color light_purple
+team modify brown color dark_gray
+team modify red color dark_red
+team modify blue color blue
+team modify black color black
+team modify magenta color red
+team modify purple color dark_purple
+team modify cyan color aqua
+scoreboard objectives add team_alive dummy
+scoreboard objectives setdisplay sidebar team_alive

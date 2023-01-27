@@ -1,4 +1,18 @@
-execute as @p[gamemode=adventure, scores={death=0}] run function gbr:game/winner
+# execute as @p[gamemode=adventure, scores={death=0}] run function gbr:game/winner
+
+execute if score green team_alive matches 1..2147483647 run function gbr:team/winner_green
+execute if score yellow team_alive matches 1..2147483647 run function gbr:team/winner_yellow
+execute if score orange team_alive matches 1..2147483647 run function gbr:team/winner_orange
+execute if score lime team_alive matches 1..2147483647 run function gbr:team/winner_lime
+execute if score pink team_alive matches 1..2147483647 run function gbr:team/winner_pink
+execute if score brown team_alive matches 1..2147483647 run function gbr:team/winner_brown
+execute if score red team_alive matches 1..2147483647 run function gbr:team/winner_red
+execute if score blue team_alive matches 1..2147483647 run function gbr:team/winner_blue
+execute if score black team_alive matches 1..2147483647 run function gbr:team/winner_black
+execute if score magenta team_alive matches 1..2147483647 run function gbr:team/winner_magenta
+execute if score purple team_alive matches 1..2147483647 run function gbr:team/winner_purple
+execute if score cyan team_alive matches 1..2147483647 run function gbr:team/winner_cyan
+
 execute at @e[tag=supply] run setblock ~ ~ ~ air
 execute at @e[tag=airdrop] run setblock ~ ~ ~ air
 kill @e[tag=airdrop]
