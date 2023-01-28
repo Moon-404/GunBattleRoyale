@@ -22,6 +22,8 @@ eclipse
 run
 .vscode
 *.xlsx
+*.zip
+gen.py
 
 # Files from Forge MDK
 forge*changelog.txt

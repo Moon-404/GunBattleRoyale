@@ -2,7 +2,7 @@
 
 ## 游戏简介
 
-本 MOD 是 MrCrayfish's Gun Mod 的拓展 MOD，为大逃杀专门适配的一个 MOD。
+本 MOD 是 MrCrayfish's Gun Mod 的拓展 MOD，加入了一些 Apex 元素，为大逃杀专门适配的一个 MOD。
 
 ## 使用方式
 
@@ -14,14 +14,13 @@
 
 ### 可选项
 
-- [关闭玩家名牌](https://github.com/pitbox46/HiddenNames)
 - [一键掠夺&快捷栏](https://github.com/blackd/Inventory-Profiles)
     - [一键掠夺&快捷栏前置1](https://github.com/thedarkcolour/KotlinForForge)
     - [一键掠夺&快捷栏前置2](https://github.com/blackd/libIPN)
 
-### server.properties
+### 关于服务器
 
-推荐修改以下项目
+server.properties 推荐修改以下项目
 
 ```conf
 allow-flight=true
@@ -33,15 +32,19 @@ simulation-distance=16
 view-distance=16
 ```
 
+在本教程的设置下，2核2G2M的服务器可以维持12人流畅运行，可以参照此标准配置。
+
 ### 地图设置
 
-首先，创建一个虚空档，然后在上面建筑战斗场景，战斗场景推荐大小为 20*20 区块。为了避免频繁加载区块，以下场景应该同一个中心，仅在y轴上有差异。给一个推荐设置：
+首先，创建一个虚空档，然后在上面建筑战斗场景，战斗场景推荐大小为 20*20 区块，30 格高。由于重力电梯的极限高度为 10 格，且 4 格起有摔落伤害，建议设计时将希望玩家通过技能抢占的点设置为 6 格高，将玩家不能上的高点设置为 12 格高。
+
+为了避免频繁加载区块，以下场景应该同一个中心，仅在y轴上有差异。给一个推荐设置：
 
 - 1-40：战斗地图
 - 121：跳伞平台
-- 161：游戏开始平台
+- 161：起始平台
 
-两个平台建议使用玻璃或屏障方块，视距以可以在平台上看到地图全貌为佳。
+跳伞平台最好不要使用玻璃，因为会被打碎。起始平台无所谓，因为本 MOD 中枪的射程没那么远。MOD 中提供了名为 gbr:start 的起始平台，可以作为参考。如果您需要调整y轴，可能需要将函数中的部分数值进行修改。
 
 ### 设置盔甲架
 
@@ -51,7 +54,7 @@ summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, Tags:["supply"]}
 
 上述指令用于在玩家所在位置生成一个盔甲架，Glowing 代表是否发光，建议在布置时选上，游玩时关掉。Tags 中是盔甲架的标签，共需要设置以下几种：
 
-- start: 游戏开始平台（地图仅一个）
+- start: 游戏开始平台（地图仅一个，在结构中保存了一个）
 - jump: 跳伞平台（地图仅一个）
 - ring: 可能的圈中心点（可多个，游戏会随机选择一个；建议在室外，盔甲架下方一圈为草方块）
 - supply: 物资点（可多个，会在每个物资点都刷新补给箱）
@@ -64,9 +67,9 @@ execute as @e[type=armor_stand] run data modify entity @s Glowing set value fals
 
 ### 关于指令
 
-只有几个指令是需要服主运行或准备命令方块的：
-
 - 第一次进入世界，请运行 `function gbr:init`
-- 开始游戏的命令方块 `function gbr:start`
-- 下一场比赛进入观战 `function gbr:enter_ob`
-- 退出下一场比赛观战 `function gbr:leave_ob`
+- 若要查看玩家生涯数据，请运行 `function gbr:stat`
+- 游戏开始，请运行 `function gbr:start`
+- 设置队伍最大人数，请修改 game_team_max 的 global 积分项
+
+其余函数一般不需要手动调用。
