@@ -27,12 +27,12 @@ team empty purple
 team empty cyan
 
 execute at @e[tag=supply] run setblock ~ ~ ~ air
-execute at @e[tag=airdrop] run setblock ~ ~ ~ air
+execute at @e[tag=airdrop] run setblock ~ ~0.5 ~ air
 kill @e[tag=airdrop]
 kill @e[type=item]
 effect clear @a[gamemode=adventure]
 worldborder set 114514
-execute at @e[tag=center] run function gbr:game/reset_center
+execute at @e[tag=ring] run function gbr:game/reset_center
 execute as @e[tag=center] run data modify entity @s Tags set value ["ring"]
 scoreboard players set game_start global 0
 title @a title "游戏结束"

@@ -72,3 +72,5 @@ scoreboard objectives add team_alive dummy
 scoreboard objectives setdisplay sidebar team_alive
 scoreboard objectives add team_exist dummy
 scoreboard players set game_two global 2
+scoreboard objectives add fee dummy
+scoreboard players set game_fee_interval global 50

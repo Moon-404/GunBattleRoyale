@@ -67,6 +67,7 @@ execute as @e[type=armor_stand] run data modify entity @s Glowing set value fals
 
 ### 关于指令
 
+- 请确认 mod:gbr 数据包在 mod:cgm 数据包之后被加载，以确保正确覆盖原版设置
 - 第一次进入世界，请运行 `function gbr:init`
 - 若要查看玩家生涯数据，请运行 `function gbr:stat`
 - 游戏开始，请运行 `function gbr:start`
