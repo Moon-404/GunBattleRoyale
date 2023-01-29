@@ -6,7 +6,29 @@ execute as @e[tag=ring, sort=random, limit=1] run data modify entity @s Tags app
 execute at @e[tag=center] run function gbr:game/set_center
 worldborder set 301 0
 worldborder set 1 300
-item replace entity @a[gamemode=adventure] armor.chest with elytra 1
+item replace entity @a[gamemode=adventure] armor.chest with elytra{Enchantments:[{id:"binding_curse", lvl:1}]} 1
+execute as @a[gamemode=adventure] run function gbr:game/fee
+
+# game_team_norank 为不可以获得排名分的队伍数量
+scoreboard players operation game_team_half global = total team_alive
+scoreboard players operation game_team_half global /= game_two global
+scoreboard players operation game_team_norank global = total team_alive
+scoreboard players operation game_team_norank global -= game_team_half global
+scoreboard players set game_rank global 0
+scoreboard players reset * team_exist
+execute if score green team_alive matches 1..2147483647 run scoreboard players set green team_exist 1
+execute if score yellow team_alive matches 1..2147483647 run scoreboard players set yellow team_exist 1
+execute if score orange team_alive matches 1..2147483647 run scoreboard players set orange team_exist 1
+execute if score lime team_alive matches 1..2147483647 run scoreboard players set lime team_exist 1
+execute if score pink team_alive matches 1..2147483647 run scoreboard players set pink team_exist 1
+execute if score brown team_alive matches 1..2147483647 run scoreboard players set brown team_exist 1
+execute if score red team_alive matches 1..2147483647 run scoreboard players set red team_exist 1
+execute if score blue team_alive matches 1..2147483647 run scoreboard players set blue team_exist 1
+execute if score black team_alive matches 1..2147483647 run scoreboard players set black team_exist 1
+execute if score magenta team_alive matches 1..2147483647 run scoreboard players set magenta team_exist 1
+execute if score purple team_alive matches 1..2147483647 run scoreboard players set purple team_exist 1
+execute if score cyan team_alive matches 1..2147483647 run scoreboard players set cyan team_exist 1
+
 scoreboard players set game_tick global 0
 scoreboard players set game_start global 1
 scoreboard players set game_airdrop_count global 0

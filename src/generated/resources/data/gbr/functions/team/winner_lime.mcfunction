@@ -1,3 +1,3 @@
-title @a title [{"selector": "@a[team=lime]"}, " 是胜利者！"]
+tellraw @a [{"selector": "@a[team=lime]"}, " 是胜利者！"]
 scoreboard players add @a[team=lime] stat_win 1
-scoreboard players add @a[team=lime] rank 2
+scoreboard players operation @a[team=lime] rank += game_rank global

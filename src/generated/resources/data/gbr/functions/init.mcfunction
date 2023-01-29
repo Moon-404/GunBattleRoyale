@@ -70,3 +70,5 @@ team modify purple color dark_purple
 team modify cyan color aqua
 scoreboard objectives add team_alive dummy
 scoreboard objectives setdisplay sidebar team_alive
+scoreboard objectives add team_exist dummy
+scoreboard players set game_two global 2
