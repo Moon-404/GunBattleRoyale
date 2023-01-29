@@ -38,3 +38,4 @@ scoreboard players set game_start global 0
 title @a title "游戏结束"
 scoreboard players set game_waiting global 1
 schedule function gbr:game/wait_finish 30s
+scoreboard objectives setdisplay sidebar rank
