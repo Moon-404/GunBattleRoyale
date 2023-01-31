@@ -1,5 +1,4 @@
-scoreboard objectives remove death
-scoreboard objectives add death deathCount
+scoreboard players reset * death
 execute as @a[gamemode=adventure] unless score @s ob matches 1 run scoreboard players set @s death 0
 
 # 单人模式存档

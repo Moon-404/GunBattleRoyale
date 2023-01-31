@@ -1,6 +1,5 @@
-# 生存模式玩家death!=0时触发
+tellraw @s "您已阵亡，可以使用数字键1和2传送至玩家处观战"
 scoreboard players set @s death -1
 scoreboard players add @s stat_death 1
 gamemode spectator @s
-execute at @p[gamemode=adventure, scores={death=0}] run function gbr:game/tp_killer
 execute as @a[scores={kills=1..2147483647}] run function gbr:game/kill
