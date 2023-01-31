@@ -49,10 +49,10 @@ view-distance=16
 ### 设置盔甲架
 
 ```mcfunction
-summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, Tags:["supply"]}
+summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["supply"]}
 ```
 
-上述指令用于在玩家所在位置生成一个盔甲架，Glowing 代表是否发光，建议在布置时选上，游玩时关掉。Tags 中是盔甲架的标签，共需要设置以下几种：
+上述指令用于在玩家所在位置生成一个盔甲架。Glowing 代表是否发光，建议在布置时选上，游玩时关掉。NoGravity 代表盔甲架不受重力影响，可以避免存档转移过程中盔甲架掉落下去。Tags 中是盔甲架的标签，共需要设置以下几种：
 
 - start: 游戏开始平台（地图仅一个，在结构中保存了一个）
 - jump: 跳伞平台（地图仅一个）

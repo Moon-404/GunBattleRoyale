@@ -1,6 +1,6 @@
 # 每tick都要进行的玩家判定
 execute as @a[gamemode=adventure] run function gbr:tick/player_in_game
-execute as @a[gamemode=spectator] unless score @s death matches -1 run function gbr:game/death
+execute as @a[gamemode=spectator] unless score @s death matches -1 run scoreboard players set @s death -1
 # 空投判定
 scoreboard players add game_tick global 1
 execute if score game_tick global matches 2000 run function gbr:airdrop/airdrop
