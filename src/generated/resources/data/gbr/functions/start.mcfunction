@@ -27,5 +27,5 @@ execute if score cyan team_alive > game_team_max global run scoreboard players s
 execute if score game_waiting global matches 1 run scoreboard players set game_startable global 3
 execute if score game_startable global matches 0 run function gbr:game/set_game
 execute if score game_startable global matches 1 run title @a title "队伍数不足"
-execute if score game_startable global matches 2 run title @a title "有队伍玩家太多"
+execute if score game_startable global matches 2 run title @a title "单排三排不能混排"
 execute if score game_startable global matches 3 run title @a title "两场游戏间隔太短"

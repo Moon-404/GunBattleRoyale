@@ -1,5 +1,6 @@
 scoreboard players reset * team_alive
 scoreboard players set total team_alive 0
+scoreboard players set game_team_max global 3
 
 execute as @a[gamemode=adventure, team=green] run scoreboard players add green team_alive 1
 execute if score green team_alive matches 1..2147483647 run scoreboard players add total team_alive 1
@@ -36,3 +37,16 @@ execute if score purple team_alive matches 1..2147483647 run scoreboard players 
 
 execute as @a[gamemode=adventure, team=cyan] run scoreboard players add cyan team_alive 1
 execute if score cyan team_alive matches 1..2147483647 run scoreboard players add total team_alive 1
+
+execute if score green team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score yellow team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score orange team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score lime team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score pink team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score brown team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score red team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score blue team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score black team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score magenta team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score purple team_alive matches 1 run scoreboard players set game_team_max global 2
+execute if score cyan team_alive matches 1 run scoreboard players set game_team_max global 2

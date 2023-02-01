@@ -29,6 +29,19 @@ execute if score magenta team_alive matches 1..2147483647 run scoreboard players
 execute if score purple team_alive matches 1..2147483647 run scoreboard players set purple team_exist 1
 execute if score cyan team_alive matches 1..2147483647 run scoreboard players set cyan team_exist 1
 
+scoreboard players set @a[gamemode=adventure, team=green] teamid 1
+scoreboard players set @a[gamemode=adventure, team=yellow] teamid 2
+scoreboard players set @a[gamemode=adventure, team=orange] teamid 3
+scoreboard players set @a[gamemode=adventure, team=lime] teamid 4
+scoreboard players set @a[gamemode=adventure, team=pink] teamid 5
+scoreboard players set @a[gamemode=adventure, team=brown] teamid 6
+scoreboard players set @a[gamemode=adventure, team=red] teamid 7
+scoreboard players set @a[gamemode=adventure, team=blue] teamid 8
+scoreboard players set @a[gamemode=adventure, team=black] teamid 9
+scoreboard players set @a[gamemode=adventure, team=magenta] teamid 10
+scoreboard players set @a[gamemode=adventure, team=purple] teamid 11
+scoreboard players set @a[gamemode=adventure, team=cyan] teamid 12
+
 scoreboard players set game_tick global 0
 scoreboard players set game_start global 1
 scoreboard players set game_airdrop_count global 0
