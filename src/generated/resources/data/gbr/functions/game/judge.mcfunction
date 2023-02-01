@@ -2,7 +2,7 @@
 function gbr:team/count_alive
 
 scoreboard players set game_eliminated_teamid global 0
-execute as @e[tag=team, tag=exist, scores={team_alive=0}] run scoreboard players operation game_eliminated_teamid global = @s teamid
+execute as @e[tag=exist, scores={team_alive=0}] run scoreboard players operation game_eliminated_teamid global = @s teamid
 
 scoreboard players reset * eliminated
 execute as @a if score @s teamid = game_eliminated_teamid global run scoreboard players set @s eliminated 1

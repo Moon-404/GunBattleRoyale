@@ -1,4 +1,4 @@
-execute if score @s rank matches 0..9 run scoreboard players set @s fee 0
+scoreboard players set @s fee 0
 execute if score @s rank matches 10..29 run scoreboard players set @s fee 1
 execute if score @s rank matches 30..59 run scoreboard players set @s fee 2
 execute if score @s rank matches 60..99 run scoreboard players set @s fee 3

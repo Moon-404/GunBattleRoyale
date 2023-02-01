@@ -1,11 +1,12 @@
 # execute as @p[gamemode=adventure, scores={death=0}] run function gbr:game/winner
 
 scoreboard players reset * winner
-execute as @a[gamemode=adventure] run scoreboard players operation game_winner_teamid global = @s teamid
+execute as @e[tag=exist] run scoreboard players operation game_winner_teamid global = @s teamid
 execute as @a if score @s teamid = game_winner_teamid global run scoreboard players set @s winner 1
 tellraw @a [{"selector": "@a[scores={winner=1}]"}, " 是胜利者！排名分：", {"score": {"name": "game_rank", "objective": "global"}}]
 scoreboard players add @a[scores={winner=1}] stat_win 1
 scoreboard players operation @a[scores={winner=1}] rank += game_rank global
+tag @e[tag=exist] remove exist
 
 team empty green
 team empty yellow

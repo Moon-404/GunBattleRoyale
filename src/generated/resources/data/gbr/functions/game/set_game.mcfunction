@@ -36,4 +36,4 @@ scoreboard players set game_airdrop_count global 0
 scoreboard players add @a[gamemode=adventure] stat_total 1
 schedule function gbr:game/remove_afk 30s
 schedule function gbr:game/judge 1s
-scoreboard objectives setdisplay sidebar team_alive
+scoreboard objectives setdisplay sidebar nothing
