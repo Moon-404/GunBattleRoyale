@@ -17,15 +17,4 @@ scoreboard players set total team_alive 0
 execute as @e[tag=team, scores={team_alive=1..3}] run scoreboard players add total team_alive 1
 
 scoreboard players set game_team_max global 3
-execute if score green team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score yellow team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score orange team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score lime team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score pink team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score brown team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score red team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score blue team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score black team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score magenta team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score purple team_alive matches 1 run scoreboard players set game_team_max global 2
-execute if score cyan team_alive matches 1 run scoreboard players set game_team_max global 2
+execute as @e[tag=team] if score @s team_alive matches 1 run scoreboard players set game_team_max global 2
