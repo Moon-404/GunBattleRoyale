@@ -1,5 +1,3 @@
-# execute as @p[gamemode=adventure, scores={death=0}] run function gbr:game/winner
-
 scoreboard players reset * winner
 execute as @e[tag=exist] run scoreboard players operation game_winner_teamid global = @s teamid
 execute as @a if score @s teamid = game_winner_teamid global run scoreboard players set @s winner 1

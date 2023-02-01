@@ -1,2 +1,0 @@
-spawnpoint @s ~ ~ ~
-tp @s ~ ~ ~
