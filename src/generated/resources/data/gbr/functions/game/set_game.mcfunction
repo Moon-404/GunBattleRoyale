@@ -15,19 +15,7 @@ scoreboard players operation game_team_half global /= game_two global
 scoreboard players operation game_team_norank global = total team_alive
 scoreboard players operation game_team_norank global -= game_team_half global
 scoreboard players set game_rank global 0
-scoreboard players reset * team_exist
-execute if score green team_alive matches 1..2147483647 run scoreboard players set green team_exist 1
-execute if score yellow team_alive matches 1..2147483647 run scoreboard players set yellow team_exist 1
-execute if score orange team_alive matches 1..2147483647 run scoreboard players set orange team_exist 1
-execute if score lime team_alive matches 1..2147483647 run scoreboard players set lime team_exist 1
-execute if score pink team_alive matches 1..2147483647 run scoreboard players set pink team_exist 1
-execute if score brown team_alive matches 1..2147483647 run scoreboard players set brown team_exist 1
-execute if score red team_alive matches 1..2147483647 run scoreboard players set red team_exist 1
-execute if score blue team_alive matches 1..2147483647 run scoreboard players set blue team_exist 1
-execute if score black team_alive matches 1..2147483647 run scoreboard players set black team_exist 1
-execute if score magenta team_alive matches 1..2147483647 run scoreboard players set magenta team_exist 1
-execute if score purple team_alive matches 1..2147483647 run scoreboard players set purple team_exist 1
-execute if score cyan team_alive matches 1..2147483647 run scoreboard players set cyan team_exist 1
+execute as @e[tag=team, scores={team_alive=1..3}] run tag @s add exist
 
 scoreboard players set @a[gamemode=adventure, team=green] teamid 1
 scoreboard players set @a[gamemode=adventure, team=yellow] teamid 2

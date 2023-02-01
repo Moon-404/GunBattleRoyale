@@ -44,6 +44,7 @@ team add black
 team add magenta
 team add purple
 team add cyan
+
 team modify green nametagVisibility hideForOtherTeams
 team modify yellow nametagVisibility hideForOtherTeams
 team modify orange nametagVisibility hideForOtherTeams
@@ -56,6 +57,7 @@ team modify black nametagVisibility hideForOtherTeams
 team modify magenta nametagVisibility hideForOtherTeams
 team modify purple nametagVisibility hideForOtherTeams
 team modify cyan nametagVisibility hideForOtherTeams
+
 team modify green color dark_green
 team modify yellow color yellow
 team modify orange color gold
@@ -68,11 +70,39 @@ team modify black color black
 team modify magenta color red
 team modify purple color dark_purple
 team modify cyan color aqua
+
 scoreboard objectives add team_alive dummy
-scoreboard objectives add team_exist dummy
 scoreboard players set game_two global 2
 scoreboard objectives add fee dummy
 scoreboard players set game_fee_interval global 50
 scoreboard objectives add teamid dummy
 scoreboard objectives add assist dummy
 scoreboard objectives add winner dummy
+scoreboard objectives add eliminated dummy
+
+kill @e[tag=team]
+summon marker ~ ~ ~ {Tags:["team", "green"]}
+summon marker ~ ~ ~ {Tags:["team", "yellow"]}
+summon marker ~ ~ ~ {Tags:["team", "orange"]}
+summon marker ~ ~ ~ {Tags:["team", "lime"]}
+summon marker ~ ~ ~ {Tags:["team", "pink"]}
+summon marker ~ ~ ~ {Tags:["team", "brown"]}
+summon marker ~ ~ ~ {Tags:["team", "red"]}
+summon marker ~ ~ ~ {Tags:["team", "blue"]}
+summon marker ~ ~ ~ {Tags:["team", "black"]}
+summon marker ~ ~ ~ {Tags:["team", "magenta"]}
+summon marker ~ ~ ~ {Tags:["team", "purple"]}
+summon marker ~ ~ ~ {Tags:["team", "cyan"]}
+
+scoreboard players set @e[tag=green] teamid 1
+scoreboard players set @e[tag=yellow] teamid 2
+scoreboard players set @e[tag=orange] teamid 3
+scoreboard players set @e[tag=lime] teamid 4
+scoreboard players set @e[tag=pink] teamid 5
+scoreboard players set @e[tag=brown] teamid 6
+scoreboard players set @e[tag=red] teamid 7
+scoreboard players set @e[tag=blue] teamid 8
+scoreboard players set @e[tag=black] teamid 9
+scoreboard players set @e[tag=magenta] teamid 10
+scoreboard players set @e[tag=purple] teamid 11
+scoreboard players set @e[tag=cyan] teamid 12

@@ -65,6 +65,13 @@ summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["s
 execute as @e[type=armor_stand] run data modify entity @s Glowing set value false
 ```
 
+为了避免盔甲架阻挡子弹，在布置完成后，可以使用这个指令把盔甲架替换为 marker。
+
+```mcfunction
+execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
+kill @e[type=armor_stand, tag=supply]
+```
+
 ### 关于指令
 
 - 请确认 mod:gbr 数据包在 mod:cgm 数据包之后被加载，以确保正确覆盖原版设置
