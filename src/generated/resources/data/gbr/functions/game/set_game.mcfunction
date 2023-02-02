@@ -9,7 +9,7 @@ execute as @e[tag=ring, sort=random, limit=1] run data modify entity @s Tags app
 execute at @e[tag=center] run function gbr:game/set_center
 worldborder set 601 0
 worldborder set 1 300
-item replace entity @a[gamemode=adventure] armor.chest with elytra{Enchantments:[{id:"binding_curse", lvl:1}]} 1
+item replace entity @a[gamemode=adventure] armor.chest with elytra{Enchantments:[{id:"binding_curse", lvl:1}, {id:"vanishing_curse", lvl:1}]} 1
 execute as @a[gamemode=adventure] run function gbr:game/fee
 
 # game_team_norank 为不可以获得排名分的队伍数量
