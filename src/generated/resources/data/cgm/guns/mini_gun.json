@@ -4,14 +4,14 @@
     "rate": 1,
     "gripType": "cgm:mini_gun",
     "maxAmmo": 100,
-    "reloadAmount": 20,
+    "reloadAmount": 0,
     "recoilAngle": 0.0,
     "alwaysSpread": true,
     "spread": 0.0
   },
   "projectile": {
-    "item": "cgm:basic_bullet",
-    "damage": 1.0,
+    "item": "",
+    "damage": 1.5,
     "size": 0.2,
     "speed": 5.0,
     "life": 10,

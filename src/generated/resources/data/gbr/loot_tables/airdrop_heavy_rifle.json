@@ -1,26 +1,17 @@
 {
     "pools": [
         {
-            "rolls": 2,
-            "entries": [
-                {
-                    "type": "loot_table",
-                    "name": "gbr:skills"
-                }
-            ]
-        },
-        {
             "rolls": 1,
             "entries": [
                 {
                     "type": "item",
-                    "name": "enchanted_golden_apple",
+                    "name": "gbr:special_bullet",
                     "functions": [
                         {
                             "function": "set_count",
                             "count": {
-                                "min": 2,
-                                "max": 2
+                                "min": 8,
+                                "max": 8
                             }
                         }
                     ]
@@ -31,16 +22,12 @@
             "rolls": 1,
             "entries": [
                 {
-                    "type": "loot_table",
-                    "name": "gbr:airdrop_heavy_rifle"
-                },
-                {
                     "type": "item",
-                    "name": "cgm:mini_gun",
+                    "name": "cgm:heavy_rifle",
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:100}"
+                            "tag": "{AmmoCount:4, Attachments:{Scope:{id:\"cgm:long_scope\", Count:1b}, Barrel:{id:\"gbr:advanced_stabilizer\", Count:1b, tag:{Enchantments:[{}]}}, Under_Barrel:{id:\"gbr:advanced_grip\", Count:1b, tag:{Enchantments:[{}]}}}}"
                         }
                     ]
                 }
