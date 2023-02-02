@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "gbr:game/wait_finish",
+        "gbr:game/reset_game"
+    ]
+}
