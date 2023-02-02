@@ -9,4 +9,4 @@ scoreboard players add @a[scores={assist=1}] rank 1
 tellraw @a [{"selector": "@a[scores={assist=1}]"}, " 获得击杀团队分：1"]
 
 scoreboard players remove @s kills 1
-execute if score @s kills matches 1..2147483647 run function gbr:game/kill_other
+execute if score @s kills matches 1..2147483647 run function gbr:team/kill_other

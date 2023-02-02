@@ -1,7 +1,10 @@
 execute as @e[tag=jump] run teleport @a[gamemode=adventure] @s
 gamemode spectator @a[gamemode=adventure, scores={ob=1}]
 scoreboard players set @a[gamemode=spectator] death -1
-execute at @e[tag=supply] run setblock ~ ~ ~ minecraft:chest{LootTable:"gbr:chests"}
+
+schedule clear gbr:game/set_supply
+execute as @e[tag=supply, tag=!chest] at @s run function gbr:game/set_chest
+
 execute as @e[tag=ring, sort=random, limit=1] run data modify entity @s Tags append value "center"
 execute at @e[tag=center] run function gbr:game/set_center
 worldborder set 601 0

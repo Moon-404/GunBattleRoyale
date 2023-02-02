@@ -3,5 +3,5 @@ scoreboard players set @s death -1
 scoreboard players add @s stat_death 1
 gamemode spectator @s
 scoreboard players operation game_death_teamid global = @s teamid
-execute as @a[scores={kills=1..2147483647}] if score @s teamid = game_death_teamid global run function gbr:game/kill_team
-execute as @a[scores={kills=1..2147483647}] unless score @s teamid = game_death_teamid global run function gbr:game/kill_other
+execute as @a[scores={kills=1..2147483647}] if score @s teamid = game_death_teamid global run function gbr:team/kill_team
+execute as @a[scores={kills=1..2147483647}] unless score @s teamid = game_death_teamid global run function gbr:team/kill_other
