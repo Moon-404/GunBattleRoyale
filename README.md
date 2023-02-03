@@ -69,13 +69,18 @@ execute as @e[type=armor_stand] run data modify entity @s Glowing set value fals
 
 ```mcfunction
 execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
+```
+
+然后用这个指令清除盔甲架。
+
+```mcfunction
 kill @e[type=armor_stand, tag=supply]
 ```
 
 最后，使用这个指令，给所有补给点位放上箱子。
 
 ```mcfunction
-execute unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
+execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
 ```
 
 ### 关于指令
