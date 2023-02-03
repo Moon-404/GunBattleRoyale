@@ -32,7 +32,7 @@ simulation-distance=16
 view-distance=16
 ```
 
-在本教程的设置下，2核2G2M的服务器可以维持12人流畅运行，可以参照此标准配置。
+在本教程的设置下，4核4G25M的服务器可以维持24人流畅运行，可以参照此标准配置。
 
 ### 地图设置
 
@@ -52,11 +52,11 @@ view-distance=16
 summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["supply"]}
 ```
 
-上述指令用于在玩家所在位置生成一个盔甲架。Glowing 代表是否发光，建议在布置时选上，游玩时关掉。NoGravity 代表盔甲架不受重力影响，可以避免存档转移过程中盔甲架掉落下去。Tags 中是盔甲架的标签，共需要设置以下几种：
+上述指令用于在玩家所在位置生成一个盔甲架。Glowing 代表是否发光，建议在布置时选上。NoGravity 代表盔甲架不受重力影响，可以避免存档转移过程中盔甲架掉落下去。Tags 中是盔甲架的标签，共需要设置以下几种：
 
 - start: 游戏开始平台（地图仅一个，在结构中保存了一个）
 - jump: 跳伞平台（地图仅一个）
-- ring: 可能的圈中心点（可多个，游戏会随机选择一个；建议在室外，盔甲架下方一圈为草方块）
+- ring: 可能的圈中心点（可多个，游戏会随机选择一个，建议在室外）
 - supply: 物资点（可多个，会在每个物资点都刷新补给箱）
 
 布置完毕后，可以使用这个指令让所有盔甲架不发光。
@@ -65,11 +65,17 @@ summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["s
 execute as @e[type=armor_stand] run data modify entity @s Glowing set value false
 ```
 
-为了避免盔甲架阻挡子弹，在布置完成后，可以使用这个指令把盔甲架替换为 marker。
+或者为了避免盔甲架阻挡子弹，在布置完成后，可以使用这个指令把盔甲架替换为 marker。
 
 ```mcfunction
 execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
 kill @e[type=armor_stand, tag=supply]
+```
+
+最后，使用这个指令，给所有补给点位放上箱子。
+
+```mcfunction
+execute unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
 ```
 
 ### 关于指令
@@ -78,6 +84,5 @@ kill @e[type=armor_stand, tag=supply]
 - 第一次进入世界，请运行 `function gbr:init`
 - 若要查看玩家生涯数据，请运行 `function gbr:stat`
 - 游戏开始，请运行 `function gbr:start`
-- 设置队伍最大人数，请修改 game_team_max 的 global 积分项
 
 其余函数一般不需要手动调用。

@@ -1,5 +1,4 @@
-execute at @e[tag=airdrop] run setblock ~ ~0.5 ~ air
-kill @e[tag=airdrop]
+execute as @e[tag=airdrop] at @s run function gbr:airdrop/reset
 
 schedule clear gbr:game/reset_supply
 execute at @e[tag=chest] run function gbr:game/reset_chest

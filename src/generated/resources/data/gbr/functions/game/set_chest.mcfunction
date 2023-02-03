@@ -1,2 +1,2 @@
-setblock ~ ~ ~ minecraft:chest{LootTable:"gbr:chests"}
+loot insert ~ ~ ~ loot gbr:chests
 tag @s add chest
