@@ -34,7 +34,7 @@ execute as @s[team=purple] run title @s actionbar "您的队伍是：紫队"
 execute if block ~ ~-1 ~ cyan_stained_glass run team join cyan @s
 execute as @s[team=cyan] run title @s actionbar "您的队伍是：浅蓝队"
 
-execute as @s[team=!] run scoreboard players set @s ob 0
 execute if block ~ ~-1 ~ white_stained_glass run team leave @s
-execute if block ~ ~-1 ~ white_stained_glass run scoreboard players set @s ob 1
+execute as @s[team=!] run scoreboard players set @s ob 0
+execute as @s[team=] run scoreboard players set @s ob 1
 execute as @s[scores={ob=1}] run title @s actionbar "您将在下一场观战"
