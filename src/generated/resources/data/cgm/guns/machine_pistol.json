@@ -10,13 +10,13 @@
     "alwaysSpread": false,
     "auto": true,
     "gripType": "cgm:one_handed",
-    "maxAmmo": 50,
+    "maxAmmo": 30,
     "rate": 2,
     "recoilAdsReduction": 0.5,
     "recoilAngle": 2.0,
     "recoilKick": 0.25,
-    "reloadAmount": 10,
-    "spread": 3.0
+    "reloadAmount": 6,
+    "spread": 2.0
   },
   "modules": {
     "attachments": {
@@ -41,7 +41,7 @@
     }
   },
   "projectile": {
-    "damage": 4.0,
+    "damage": 3.0,
     "item": "cgm:basic_bullet",
     "life": 5,
     "size": 0.2,

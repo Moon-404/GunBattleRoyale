@@ -10,10 +10,10 @@
     "gripType": "cgm:two_handed",
     "maxAmmo": 30,
     "rate": 3,
-    "recoilAngle": 2.0,
+    "recoilAngle": 1.0,
     "recoilKick": 0.25,
     "reloadAmount": 6,
-    "spread": 4.0
+    "spread": 1.0
   },
   "modules": {
     "attachments": {
@@ -42,7 +42,7 @@
     }
   },
   "projectile": {
-    "damage": 4.5,
+    "damage": 3.75,
     "item": "cgm:basic_bullet",
     "life": 10,
     "size": 0.2,

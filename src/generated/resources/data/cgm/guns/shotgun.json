@@ -1,9 +1,9 @@
 {
   "general": {
-    "rate": 10,
+    "rate": 12,
     "gripType": "cgm:two_handed",
-    "maxAmmo": 8,
-    "reloadAmount": 2,
+    "maxAmmo": 5,
+    "reloadAmount": 1,
     "recoilAngle": 4.0,
     "recoilKick": 0.5,
     "recoilAdsReduction": 0.4,
@@ -13,7 +13,7 @@
   },
   "projectile": {
     "item": "cgm:advanced_bullet",
-    "damage": 20.0,
+    "damage": 18.0,
     "size": 0.2,
     "speed": 5.0,
     "life": 5,

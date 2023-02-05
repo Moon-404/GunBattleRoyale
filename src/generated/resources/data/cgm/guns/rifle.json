@@ -8,13 +8,13 @@
   "general": {
     "alwaysSpread": true,
     "gripType": "cgm:two_handed",
-    "maxAmmo": 12,
-    "rate": 20,
+    "maxAmmo": 8,
+    "rate": 19,
     "recoilAdsReduction": 0.5,
     "recoilAngle": 7.0,
     "recoilKick": 0.5,
-    "reloadAmount": 3,
-    "spread": 1.0
+    "reloadAmount": 2,
+    "spread": 0.5
   },
   "modules": {
     "attachments": {
@@ -43,7 +43,7 @@
     }
   },
   "projectile": {
-    "damage": 20.0,
+    "damage": 19.0,
     "gravity": true,
     "item": "cgm:advanced_bullet",
     "life": 10,
