@@ -10,13 +10,13 @@
 
 - Minecraft 1.19.2 Forge 43.1.1
 - [枪械MOD](https://github.com/MrCrayfish/MrCrayfishGunMod)
-    - [枪械MOD前置](https://github.com/MrCrayfish/Framework)
+  - [枪械MOD前置](https://github.com/MrCrayfish/Framework)
 
 ### 可选项
 
 - [一键掠夺&快捷栏](https://github.com/blackd/Inventory-Profiles)
-    - [一键掠夺&快捷栏前置1](https://github.com/thedarkcolour/KotlinForForge)
-    - [一键掠夺&快捷栏前置2](https://github.com/blackd/libIPN)
+  - [一键掠夺&快捷栏前置1](https://github.com/thedarkcolour/KotlinForForge)
+  - [一键掠夺&快捷栏前置2](https://github.com/blackd/libIPN)
 
 ### 关于服务器
 
@@ -36,7 +36,7 @@ view-distance=16
 
 ### 地图设置
 
-首先，创建一个虚空档，然后在上面建筑战斗场景，战斗场景推荐大小为 20*20 区块，30 格高。由于重力电梯的极限高度为 10 格，且 4 格起有摔落伤害，建议设计时将希望玩家通过技能抢占的点设置为 6 格高，将玩家不能上的高点设置为 12 格高。
+首先，创建一个**虚空档**，然后在上面建筑战斗场景，战斗场景推荐大小为 20*20 区块，30 格高。由于重力电梯的极限高度为 10 格，且 4 格起有摔落伤害，建议设计时将希望玩家通过技能抢占的点设置为 6 格高，将玩家不能上的高点设置为 12 格高。
 
 为了避免频繁加载区块，以下场景应该同一个中心，仅在y轴上有差异。给一个推荐设置：
 
@@ -59,13 +59,33 @@ summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["s
 - ring: 可能的圈中心点（可多个，游戏会随机选择一个，建议在室外）
 - supply: 物资点（可多个，会在每个物资点都刷新补给箱）
 
-布置完毕后，可以使用这个指令让所有盔甲架不发光。
+如果对设置的盔甲架不理想，可以用这个指令清除最近的盔甲架。
 
 ```mcfunction
-execute as @e[type=armor_stand] run data modify entity @s Glowing set value false
+kill @e[type=armor_stand, sort=nearest, limit=1]
 ```
 
-或者为了避免盔甲架阻挡子弹，在布置完成后，可以使用这个指令把盔甲架替换为 marker。
+### 地图初始化
+
+在完成所有的场景设置后，建议备份存档，然后进行以下步骤。
+
+首先要确认本 MOD 的数据包在最后加载，具体指令如下。
+
+```mcfunction
+datapack disable "mod:gbr"
+```
+
+```mcfunction
+datapack enable "mod:gbr" last
+```
+
+之后使用这个指令运行初始化函数。
+
+```mcfunction
+function gbr:init
+```
+
+为了避免盔甲架阻挡子弹，使用这个指令把盔甲架替换为 marker。
 
 ```mcfunction
 execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
@@ -77,16 +97,28 @@ execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supp
 kill @e[type=armor_stand, tag=supply]
 ```
 
-最后，使用这个指令，给所有补给点位放上箱子。
+再使用这个指令，给所有补给点位放上箱子。
 
 ```mcfunction
 execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
 ```
 
-### 关于指令
+放置箱子后，移除所有 marker 的 chest 标签，开始填充地面战利品。
 
-- 请确认 mod:gbr 数据包在 mod:cgm 数据包之后被加载，以确保正确覆盖原版设置
-- 第一次进入世界，请运行 `function gbr:init`
+```mcfunction
+tag @e remove chest
+```
+
+最后，使用这个指令让所有盔甲架不发光。
+
+```mcfunction
+execute as @e[type=armor_stand] run data modify entity @s Glowing set value false
+```
+
+### 其它指令
+
+建议将以下函数使用命令方块供玩家使用。
+
 - 若要查看玩家生涯数据，请运行 `function gbr:stat`
 - 游戏开始，请运行 `function gbr:start`
 
