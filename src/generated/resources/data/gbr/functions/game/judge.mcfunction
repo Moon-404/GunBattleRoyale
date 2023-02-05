@@ -9,5 +9,5 @@ execute as @a if score @s teamid = game_eliminated_teamid global run scoreboard 
 
 execute if score game_eliminated_teamid global matches 1..12 run function gbr:team/eliminate
 
-execute if score total team_alive matches 2..2147483647 run schedule function gbr:game/judge 1s
+execute if score total team_alive matches 2..2147483647 run schedule function gbr:game/judge 5t
 execute if score total team_alive matches 0..1 run function gbr:game/win
