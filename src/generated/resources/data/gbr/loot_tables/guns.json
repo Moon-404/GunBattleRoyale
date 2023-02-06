@@ -21,7 +21,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:30}"
+                            "tag": "{AmmoCount:18}"
                         }
                     ]
                 },
@@ -43,7 +43,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:6}"
+                            "tag": "{AmmoCount:4}"
                         }
                     ]
                 }
