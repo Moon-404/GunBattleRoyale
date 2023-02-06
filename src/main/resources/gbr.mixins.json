@@ -1,0 +1,18 @@
+{
+    "required": true,
+    "package": "com.moon404.gbr.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "minVersion": "0.8",
+    "refmap": "gbr.refmap.json",
+    "plugin": "com.moon404.gbr.mixin.MixinPlugin",
+    "mixins": [
+        "AimSpreadMixin",
+        "RecoilMixin"
+    ],
+    "client": [
+
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}
