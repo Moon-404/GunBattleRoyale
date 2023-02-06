@@ -5,7 +5,7 @@
     "maxAmmo": 5,
     "reloadAmount": 1,
     "recoilAngle": 4.0,
-    "spread": 7.0,
+    "spread": 8.0,
     "recoilAdsReduction": 0.5,
     "recoilKick": 0.5,
     "projectileAmount": 10,
