@@ -8,12 +8,13 @@
   "general": {
     "auto": true,
     "gripType": "cgm:two_handed",
-    "maxAmmo": 30,
     "rate": 3,
-    "recoilAngle": 1.0,
-    "recoilKick": 0.25,
+    "maxAmmo": 30,
     "reloadAmount": 6,
-    "spread": 1.0
+    "recoilAngle": 1.5,
+    "spread": 1.0,
+    "recoilAdsReduction": 0.5,
+    "recoilKick": 0.25
   },
   "modules": {
     "attachments": {

@@ -1,12 +1,11 @@
 {
   "general": {
     "auto": true,
-    "rate": 1,
     "gripType": "cgm:mini_gun",
+    "rate": 1,
     "maxAmmo": 150,
     "reloadAmount": 0,
-    "recoilAngle": 1.0,
-    "alwaysSpread": true,
+    "recoilAngle": 0.5,
     "spread": 1.0
   },
   "projectile": {

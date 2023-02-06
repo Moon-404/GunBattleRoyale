@@ -7,16 +7,15 @@
     }
   },
   "general": {
-    "alwaysSpread": false,
     "auto": true,
     "gripType": "cgm:one_handed",
-    "maxAmmo": 30,
     "rate": 2,
-    "recoilAdsReduction": 0.5,
-    "recoilAngle": 2.0,
-    "recoilKick": 0.25,
+    "maxAmmo": 30,
     "reloadAmount": 6,
-    "spread": 2.0
+    "recoilAngle": 1.0,
+    "spread": 2.0,
+    "recoilAdsReduction": 0.5,
+    "recoilKick": 0.25
   },
   "modules": {
     "attachments": {
