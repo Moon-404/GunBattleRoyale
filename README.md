@@ -100,10 +100,10 @@ kill @e[type=armor_stand, tag=supply]
 再使用这个指令，给所有补给点位放上箱子。
 
 ```mcfunction
-execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
+execute as @e[tag=chest] at @s run function gbr:game/reset_chest
 ```
 
-放置箱子后，移除所有 marker 的 chest 标签，开始填充地面战利品。
+放置箱子后，重置所有箱子，开始填充地面战利品。
 
 ```mcfunction
 tag @e remove chest
