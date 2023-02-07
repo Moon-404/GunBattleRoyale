@@ -100,13 +100,13 @@ kill @e[type=armor_stand, tag=supply]
 再使用这个指令，给所有补给点位放上箱子。
 
 ```mcfunction
-execute as @e[tag=chest] at @s run function gbr:game/reset_chest
+execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
 ```
 
 放置箱子后，重置所有箱子，开始填充地面战利品。
 
 ```mcfunction
-tag @e remove chest
+execute as @e[tag=chest] at @s run function gbr:game/reset_chest
 ```
 
 最后，使用这个指令让所有盔甲架不发光。
