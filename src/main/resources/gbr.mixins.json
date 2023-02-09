@@ -6,8 +6,6 @@
     "refmap": "gbr.refmap.json",
     "plugin": "com.moon404.gbr.mixin.MixinPlugin",
     "mixins": [
-        "AimSpreadMixin",
-        "RecoilMixin",
         "GlowingMixin"
     ],
     "client": [
