@@ -7,7 +7,8 @@
     "plugin": "com.moon404.gbr.mixin.MixinPlugin",
     "mixins": [
         "AimSpreadMixin",
-        "RecoilMixin"
+        "RecoilMixin",
+        "GlowingMixin"
     ],
     "client": [
 
