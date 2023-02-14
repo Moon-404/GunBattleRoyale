@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
+import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Entity;
@@ -23,7 +24,9 @@ public class GlowingMixin
     public boolean isAdventure(LocalPlayer localPlayer)
     {
         if (localPlayer == null) return false;
-        PlayerInfo playerinfo = Minecraft.getInstance().getConnection().getPlayerInfo(localPlayer.getGameProfile().getId());
+        ClientPacketListener cpl = Minecraft.getInstance().getConnection();
+        if (cpl == null) return false;
+        PlayerInfo playerinfo = cpl.getPlayerInfo(localPlayer.getGameProfile().getId());
         return playerinfo != null && playerinfo.getGameMode() == GameType.ADVENTURE;
     }
 
