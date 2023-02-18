@@ -18,6 +18,8 @@ team empty black
 team empty magenta
 team empty purple
 team empty cyan
+kill @e[tag=testplayer]
+team empty test
 
 effect clear @a[gamemode=adventure]
 worldborder set 114514

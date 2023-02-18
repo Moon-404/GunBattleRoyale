@@ -28,11 +28,11 @@ difficulty=peaceful
 enable-command-block=true
 force-gamemode=true
 gamemode=spectator
-simulation-distance=16
-view-distance=16
+simulation-distance=12
+view-distance=12
 ```
 
-在本教程的设置下，4核4G25M的服务器可以维持24人流畅运行，可以参照此标准配置。
+在本教程的设置下，3核6G15M的服务器可以维持18人流畅运行，可以参照此标准配置。
 
 ### 地图设置
 
@@ -67,9 +67,7 @@ kill @e[type=armor_stand, sort=nearest, limit=1]
 
 ### 地图初始化
 
-在完成所有的场景设置后，建议备份存档，然后进行以下步骤。
-
-首先要确认本 MOD 的数据包在最后加载，具体指令如下。
+在完成所有的场景设置后，确认本 MOD 的数据包在最后加载，具体指令如下：
 
 ```mcfunction
 datapack disable "mod:gbr"
@@ -79,47 +77,21 @@ datapack disable "mod:gbr"
 datapack enable "mod:gbr" last
 ```
 
-之后使用这个指令运行初始化函数。
+之后使用这个指令运行地图初始化函数。注意：地图初始化过程不可逆，建议在执行此步骤前备份地图存档。地图初始化函数的具体内容可以在文件中查看。
 
 ```mcfunction
-function gbr:init
-```
-
-为了避免盔甲架阻挡子弹，使用这个指令把盔甲架替换为 marker。
-
-```mcfunction
-execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
-```
-
-然后用这个指令清除盔甲架。
-
-```mcfunction
-kill @e[type=armor_stand, tag=supply]
-```
-
-再使用这个指令，给所有补给点位放上箱子。
-
-```mcfunction
-execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
-```
-
-放置箱子后，重置所有箱子，开始填充地面战利品。
-
-```mcfunction
-execute as @e[tag=chest] at @s run function gbr:game/reset_chest
-```
-
-最后，使用这个指令让所有盔甲架不发光。
-
-```mcfunction
-execute as @e[type=armor_stand] run data modify entity @s Glowing set value false
+function gbr:map_init
 ```
 
 ### 其它指令
 
-建议将以下函数使用命令方块供玩家使用。
+建议将以下函数使用命令方块供玩家使用，其余函数一般不需要手动调用。
 
 - 若要查看玩家生涯数据，请运行 `function gbr:stat`
 - 游戏开始，请运行 `function gbr:start`
 
-其余函数一般不需要手动调用。
+如果您需要以单人模式开始游戏以测试功能，请创建一个 tag 为 testplayer 的实体，这个实体会加入一个名为 test 的队伍，以便测试。如果您需要结束测试，击杀这个实体或者自己就行。
+
+```mcfunction
+summon armor_stand ~ ~ ~ {Tags:["testplayer"]}
+```

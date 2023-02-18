@@ -44,6 +44,7 @@ team add black
 team add magenta
 team add purple
 team add cyan
+team add test
 
 team modify green nametagVisibility hideForOtherTeams
 team modify yellow nametagVisibility hideForOtherTeams
@@ -57,6 +58,7 @@ team modify black nametagVisibility hideForOtherTeams
 team modify magenta nametagVisibility hideForOtherTeams
 team modify purple nametagVisibility hideForOtherTeams
 team modify cyan nametagVisibility hideForOtherTeams
+team modify test nametagVisibility hideForOtherTeams
 
 team modify green color dark_green
 team modify yellow color yellow
@@ -70,6 +72,7 @@ team modify black color black
 team modify magenta color red
 team modify purple color dark_purple
 team modify cyan color aqua
+team modify test color white
 
 scoreboard objectives add team_alive dummy
 scoreboard players set game_two global 2
@@ -93,5 +96,6 @@ summon marker ~ ~ ~ {Tags:["team", "black"]}
 summon marker ~ ~ ~ {Tags:["team", "magenta"]}
 summon marker ~ ~ ~ {Tags:["team", "purple"]}
 summon marker ~ ~ ~ {Tags:["team", "cyan"]}
+summon marker ~ ~ ~ {Tags:["team", "test"]}
 
 function gbr:team/setid

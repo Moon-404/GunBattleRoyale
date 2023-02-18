@@ -12,6 +12,7 @@ execute as @a[gamemode=adventure, team=black] run scoreboard players add @e[tag=
 execute as @a[gamemode=adventure, team=magenta] run scoreboard players add @e[tag=magenta] team_alive 1
 execute as @a[gamemode=adventure, team=purple] run scoreboard players add @e[tag=purple] team_alive 1
 execute as @a[gamemode=adventure, team=cyan] run scoreboard players add @e[tag=cyan] team_alive 1
+execute as @e[tag=testplayer] run scoreboard players add @e[tag=test] team_alive 1
 
 scoreboard players set total team_alive 0
 execute as @e[tag=team, scores={team_alive=1..3}] run scoreboard players add total team_alive 1
