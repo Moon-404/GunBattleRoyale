@@ -22,12 +22,14 @@ import net.minecraft.world.phys.Vec3;
 public class SpreadMixin
 {
     private RandomSource random = RandomSource.create();
-    @Shadow
+
+    @Shadow(remap=false)
     private Vec3 getVectorFromRotation(float pitch, float yaw)
     {
         throw new NullPointerException("This code should not be running!");
     }
-    @Overwrite
+
+    @Overwrite(remap=false)
     private Vec3 getDirection(LivingEntity shooter, ItemStack weapon, GunItem item, Gun modifiedGun)
     {
         // 基础扩散
