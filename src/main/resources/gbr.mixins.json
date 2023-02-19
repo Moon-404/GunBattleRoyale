@@ -1,16 +1,17 @@
 {
     "required": true,
     "package": "com.moon404.gbr.mixin",
-    "compatibilityLevel": "JAVA_8",
+    "compatibilityLevel": "JAVA_17",
     "minVersion": "0.8",
     "refmap": "gbr.refmap.json",
     "plugin": "com.moon404.gbr.mixin.MixinPlugin",
     "mixins": [
-        "GlowingMixin",
         "SpreadMixin"
     ],
     "client": [
-
+        "GlowingMixin"
+    ],
+    "server": [
     ],
     "injectors": {
         "defaultRequire": 1
