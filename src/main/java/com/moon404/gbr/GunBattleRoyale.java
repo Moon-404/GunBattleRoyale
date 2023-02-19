@@ -15,6 +15,7 @@ public class GunBattleRoyale
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         GunBattleRoyaleItems.REGISTER.register(modEventBus);
+        MinecraftForge.EVENT_BUS.register(EventHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
     }
 }

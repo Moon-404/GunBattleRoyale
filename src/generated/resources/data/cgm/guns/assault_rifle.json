@@ -12,7 +12,7 @@
     "maxAmmo": 30,
     "reloadAmount": 6,
     "recoilAngle": 3.0,
-    "spread": 2.0,
+    "spread": 5.0,
     "recoilAdsReduction": 0.5,
     "recoilKick": 0.25
   },
