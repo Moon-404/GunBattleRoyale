@@ -9,7 +9,8 @@
         "SpreadMixin"
     ],
     "client": [
-        "GlowingMixin"
+        "GlowingMixin",
+        "RecoilMixin"
     ],
     "server": [
     ],

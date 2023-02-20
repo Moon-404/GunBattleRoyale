@@ -13,7 +13,7 @@
     "maxAmmo": 4,
     "recoilAngle": 10.0,
     "spread": 10.0,
-    "recoilAdsReduction": 0.5,
+    "recoilAdsReduction": 0.0,
     "recoilDurationOffset": 0.5,
     "recoilKick": 1.0
   },
