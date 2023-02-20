@@ -53,7 +53,7 @@ public class RecoilMixin
         float yaw = mc.player.getYRot();
         float xrecoil = this.cameraRecoil * (float)Math.cos(offsetAngle);
         float yrecoil = this.cameraRecoil * (float)Math.sin(offsetAngle);
-        if(startProgress < 0.2F)
+        if (startProgress < 0.2F)
         {
             mc.player.setXRot(pitch - ((endProgress - startProgress) / 0.2F) * xrecoil);
             mc.player.setYRot(yaw - ((endProgress - startProgress) / 0.2F) * yrecoil);
@@ -66,7 +66,7 @@ public class RecoilMixin
 
         this.progressCameraRecoil += recoilAmount;
 
-        if(this.progressCameraRecoil >= this.cameraRecoil)
+        if (this.progressCameraRecoil >= this.cameraRecoil)
         {
             this.cameraRecoil = 0;
             this.progressCameraRecoil = 0;

@@ -23,13 +23,13 @@ public class SpreadMixin
 {
     private RandomSource random = RandomSource.create();
 
-    @Shadow(remap=false)
+    @Shadow(remap = false)
     private Vec3 getVectorFromRotation(float pitch, float yaw)
     {
         throw new NullPointerException("This code should not be running!");
     }
 
-    @Overwrite(remap=false)
+    @Overwrite(remap = false)
     private Vec3 getDirection(LivingEntity shooter, ItemStack weapon, GunItem item, Gun modifiedGun)
     {
         // 基础扩散
@@ -55,8 +55,13 @@ public class SpreadMixin
                     {
                         gunSpread *= 0.1F;
                     }
+                    // 潜行时散布减半
+                    if (shooter.isShiftKeyDown())
+                    {
+                        gunSpread *= 0.5F;
+                    }
                     // 根据移动速度改变扩散
-                    gunSpread *= (0.6F + EventHandler.speedMap.get(shooter));
+                    gunSpread *= (0.6F + EventHandler.data.get(shooter).speed);
                 }
             }
             return this.getVectorFromRotation(
