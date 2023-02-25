@@ -13,7 +13,7 @@
     "reloadAmount": 6,
     "recoilAngle": 3.0,
     "spread": 5.0,
-    "recoilAdsReduction": 0.0,
+    "recoilAdsReduction": 0.5,
     "recoilKick": 0.25
   },
   "modules": {

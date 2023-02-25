@@ -4,7 +4,7 @@ license="GPLv3"
 
 [[mods]]
 modId="gbr"
-version="1.3.3.29-fix"
+version="1.3.3.30"
 displayName="Gun Battle Royale"
 logoFile="gbr.png"
 authors="Moon404"

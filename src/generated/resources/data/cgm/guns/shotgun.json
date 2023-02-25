@@ -6,7 +6,7 @@
     "reloadAmount": 1,
     "recoilAngle": 4.0,
     "spread": 8.0,
-    "recoilAdsReduction": 0.0,
+    "recoilAdsReduction": 0.5,
     "recoilKick": 0.5,
     "projectileAmount": 10,
     "alwaysSpread": true

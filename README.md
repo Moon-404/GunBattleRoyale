@@ -65,6 +65,20 @@ summon armor_stand ~ ~ ~ {Invisible:true, Glowing:true, NoGravity:true, Tags:["s
 kill @e[type=armor_stand, sort=nearest, limit=1]
 ```
 
+### 检查物资点
+
+经过长时间的游玩，满足以下条件的物资点设计会更加合理：
+
+1. 物资箱的6个邻接方块中应当有5个空气方块（靠墙的物资箱更难以被发现）
+2. 物资箱不应当阻挡道路（如果为了满足条件1不得不阻挡道路，请拓宽道路）
+3. 一个物资箱应当只有一份物资（一个箱子中的多份物资会导致多个玩家落同一个点时物资分配更容易不均匀）
+
+您可以使用这个指令查看当前不合适的物资点数量，不合适的物资点也会高亮：
+
+```mcfunction
+function gbr:check_supply
+```
+
 ### 地图初始化
 
 在完成所有的场景设置后，确认本 MOD 的数据包在最后加载，具体指令如下：
