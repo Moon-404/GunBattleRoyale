@@ -31,12 +31,10 @@ public class RankParticles
         {
             if (entity instanceof Player)
             {
-                Objective objective = scoreboard.getObjective("global");
-                int game_start = scoreboard.getOrCreatePlayerScore("game_start", objective).getScore();
                 Item item = ((Player)entity).getItemBySlot(EquipmentSlot.CHEST).getItem();
-                if (game_start == 0 || item.getClass() == ElytraItem.class)
+                if (item.getClass() == ElytraItem.class || entity.getY() > 160)
                 {
-                    objective = scoreboard.getObjective("rank");
+                    Objective objective = scoreboard.getObjective("rank");
                     int score = scoreboard.getOrCreatePlayerScore(entity.getScoreboardName(), objective).getScore();
                     Vector3f color;
                     if (score >= 150) color = new Vector3f(1.00F, 0.25F, 0.21F);
