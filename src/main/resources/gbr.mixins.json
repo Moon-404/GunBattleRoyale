@@ -6,13 +6,12 @@
     "refmap": "gbr.refmap.json",
     "plugin": "com.moon404.gbr.mixin.MixinPlugin",
     "mixins": [
-        "SpreadMixin"
+        "SpreadMixin",
+        "DataMixin"
     ],
     "client": [
         "GlowingMixin",
         "RecoilMixin"
-    ],
-    "server": [
     ],
     "injectors": {
         "defaultRequire": 1
