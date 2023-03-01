@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-import com.moon404.gbr.EventHandler;
+import com.moon404.gbr.PlayerTickHandler;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.common.SpreadTracker;
 import com.mrcrayfish.guns.entity.ProjectileEntity;
@@ -61,7 +61,7 @@ public class SpreadMixin
                         gunSpread *= 0.5F;
                     }
                     // 根据移动速度改变扩散
-                    gunSpread *= (0.6F + EventHandler.data.get(shooter).speed);
+                    gunSpread *= (0.6F + PlayerTickHandler.data.get(shooter).speed);
                 }
             }
             return this.getVectorFromRotation(

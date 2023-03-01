@@ -9,7 +9,7 @@ import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 
-public class EventHandler
+public class PlayerTickHandler
 {
     public static Map<Player, PlayerSpeed> data = new HashMap<Player, PlayerSpeed>();
     @SubscribeEvent
