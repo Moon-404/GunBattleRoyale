@@ -2,7 +2,7 @@ package com.moon404.gbr;
 
 import com.mrcrayfish.guns.event.GunFireEvent;
 
-import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -12,8 +12,9 @@ public class GunFireHandler
     public static void onGunFire(GunFireEvent.Post event)
     {
         if (event.isClient()) return;
+        if (event.getStack().getItem() != GunBattleRoyaleItems.CHARGE_RIFLE.get()) return;
         Player player = event.getEntity();
-        // ArmorStand armorStand = new ArmorStand(player.getLevel(), player.getX(), player.getY(), player.getZ());
-        // player.getLevel().addFreshEntity(armorStand);
+        CompoundTag compoundTag = player.getPersistentData();
+        compoundTag.putInt("charging", 20);
     }
 }
