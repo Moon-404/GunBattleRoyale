@@ -1,0 +1,7 @@
+{
+    "item.charge_rifle.fire":
+    {
+        "subtitle": "subtitle.cgm.fire",
+        "sounds": [{ "name": "gbr:item/charge_rifle/fire" }]
+    }
+}

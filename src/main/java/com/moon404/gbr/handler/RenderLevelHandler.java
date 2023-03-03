@@ -35,10 +35,21 @@ public class RenderLevelHandler
             poseStack.translate(from.x, from.y, from.z);
             poseStack.mulPose(Vector3f.YP.rotationDegrees(-laser.yRot));
             poseStack.mulPose(Vector3f.XP.rotationDegrees(laser.xRot));
-            poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.2 / laser.length)));
-            poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.6 / laser.length)));
-            poseStack.translate(-0.2, -0.6, 0);
-            poseStack.scale(0.5F, 0.5F, laser.length);
+
+            if (laser.aiming == 1)
+            {
+                poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
+                poseStack.translate(0, -0.3, 0);
+            }
+            else
+            {
+                poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.2 / laser.length)));
+                poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
+                poseStack.translate(-0.2, -0.3, 0);
+            }
+            
+            float size = laser.size * 0.05F;
+            poseStack.scale(size, size, laser.length);
             Minecraft.getInstance().getItemRenderer().renderStatic(new ItemStack(GunBattleRoyaleItems.CHARGE_BULLET.get()), ItemTransforms.TransformType.NONE, 0xFFFFFF, OverlayTexture.NO_OVERLAY, poseStack, mc.renderBuffers().bufferSource(), 0);
             poseStack.popPose();
 
@@ -54,8 +65,17 @@ public class RenderLevelHandler
             LaserInfo laser = lasers.get(i);
             if (curTick > laser.startTick + 1)
             {
-                lasers.remove(i);
-                i--;
+                if (laser.size > LaserInfo.DURATION_TICK)
+                {
+                    laser.size -= 1;
+                    laser.startTick += 1;
+                    lasers.set(i, laser);
+                }
+                else
+                {
+                    lasers.remove(i);
+                    i--;
+                }
             }
         }
     }

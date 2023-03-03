@@ -12,6 +12,7 @@ import com.moon404.gbr.handler.ClientTickHandler;
 import com.moon404.gbr.handler.RenderLevelHandler;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.init.GunBattleRoyaleSounds;
 import com.moon404.gbr.struct.RenderLaserMessage;
 import com.mrcrayfish.guns.common.ProjectileManager;
 
@@ -28,6 +29,7 @@ public class GunBattleRoyale
     public GunBattleRoyale()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        GunBattleRoyaleSounds.REGISTER.register(modEventBus);
         GunBattleRoyaleEntities.REGISTER.register(modEventBus);
         GunBattleRoyaleItems.REGISTER.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(PlayerTickHandler.class);

@@ -1,28 +1,37 @@
 {
-    "general": {
-      "alwaysSpread": true,
-      "gripType": "cgm:two_handed",
-      "rate": 20,
-      "maxAmmo": 4,
-      "recoilAngle": 0.0,
-      "spread": 0.0,
-      "recoilAdsReduction": 0.5,
-      "recoilDurationOffset": 0.5,
-      "recoilKick": 1.0
+  "general": {
+    "alwaysSpread": true,
+    "gripType": "cgm:two_handed",
+    "rate": 20,
+    "maxAmmo": 4,
+    "recoilAngle": 0.0,
+    "spread": 0.0,
+    "recoilAdsReduction": 0.5,
+    "recoilKick": 0.0
+  },
+  "modules": {
+    "attachments": {
+      "scope": {
+        "yOffset": 13.0,
+        "zOffset": -8.0
+      }
     },
-    "modules": {
-    },
-    "projectile": {
-      "damage": 3.0,
-      "item": "gbr:charge_bullet",
-      "life": 0,
-      "size": 0.2,
-      "speed": 100.0,
-      "damageReduceOverLife": true
-    },
-    "sounds": {
-      "cock": "cgm:item.heavy_rifle.cock",
-      "fire": "cgm:item.heavy_rifle.fire",
-      "reload": "cgm:item.pistol.reload"
+    "zoom": {
+      "fovModifier": 0.8,
+      "yOffset": 13.3
     }
+  },
+  "projectile": {
+    "damage": 3.0,
+    "item": "gbr:charge_bullet",
+    "life": 0,
+    "size": 0.2,
+    "speed": 100.0,
+    "damageReduceOverLife": true
+  },
+  "sounds": {
+    "cock": "cgm:item.heavy_rifle.cock",
+    "fire": "gbr:item.charge_rifle.fire",
+    "reload": "cgm:item.pistol.reload"
+  }
 }

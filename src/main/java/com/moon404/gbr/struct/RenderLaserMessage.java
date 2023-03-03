@@ -25,6 +25,8 @@ public class RenderLaserMessage
             buf.writeFloat(content.length);
             buf.writeFloat(content.xRot);
             buf.writeFloat(content.yRot);
+            buf.writeInt(content.aiming);
+            buf.writeInt(content.size);
         },
         (buf) ->
         {
@@ -33,6 +35,8 @@ public class RenderLaserMessage
             content.length = buf.readFloat();
             content.xRot = buf.readFloat();
             content.yRot = buf.readFloat();
+            content.aiming = buf.readInt();
+            content.size = buf.readInt();
             return content;
         },
         (content, ctx) ->
@@ -44,6 +48,8 @@ public class RenderLaserMessage
                 laser.length = content.length;
                 laser.xRot = content.xRot;
                 laser.yRot = content.yRot;
+                laser.aiming = content.aiming;
+                laser.size = content.size;
                 RenderLevelHandler.lasers.add(laser);
             });
             ctx.get().setPacketHandled(true);
