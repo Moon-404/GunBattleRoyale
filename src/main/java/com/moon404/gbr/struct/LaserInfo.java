@@ -13,6 +13,7 @@ public class LaserInfo
     public float yRot;
     public int aiming;
     public int size;
+    public int isShooter;
 
     public LaserInfo()
     {

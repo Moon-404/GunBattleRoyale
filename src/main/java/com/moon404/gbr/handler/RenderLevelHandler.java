@@ -6,7 +6,10 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.LaserInfo;
+
+import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.ItemStack;
@@ -36,19 +39,37 @@ public class RenderLevelHandler
             poseStack.mulPose(Vector3f.YP.rotationDegrees(-laser.yRot));
             poseStack.mulPose(Vector3f.XP.rotationDegrees(laser.xRot));
 
-            if (laser.aiming == 1)
+            if (laser.isShooter == 1 && mc.options.getCameraType() == CameraType.FIRST_PERSON)
             {
-                poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
-                poseStack.translate(0, -0.3, 0);
+                if (laser.aiming == 1)
+                {
+                    poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
+                    poseStack.translate(0, -0.3, 0);
+                }
+                else
+                {
+                    poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.15 / laser.length)));
+                    poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.1 / laser.length)));
+                    poseStack.translate(-0.15, -0.1, 0);
+                }
             }
             else
             {
-                poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.2 / laser.length)));
-                poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
-                poseStack.translate(-0.2, -0.3, 0);
+                if (laser.aiming == 1)
+                {
+                    poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.1 / laser.length)));
+                    poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.3 / laser.length)));
+                    poseStack.translate(-0.1, -0.3, 0);
+                }
+                else
+                {
+                    poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.15 / laser.length)));
+                    poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.5 / laser.length)));
+                    poseStack.translate(-0.15, -0.5, 0);
+                }
             }
             
-            float size = laser.size * 0.05F;
+            float size = laser.size * 0.03F;
             poseStack.scale(size, size, laser.length);
             Minecraft.getInstance().getItemRenderer().renderStatic(new ItemStack(GunBattleRoyaleItems.CHARGE_BULLET.get()), ItemTransforms.TransformType.NONE, 0xFFFFFF, OverlayTexture.NO_OVERLAY, poseStack, mc.renderBuffers().bufferSource(), 0);
             poseStack.popPose();

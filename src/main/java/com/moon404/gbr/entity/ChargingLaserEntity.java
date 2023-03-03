@@ -1,5 +1,7 @@
 package com.moon404.gbr.entity;
 
+import java.util.List;
+
 import com.moon404.gbr.struct.LaserInfo;
 import com.moon404.gbr.struct.RenderLaserMessage;
 import com.mrcrayfish.guns.common.Gun;
@@ -8,6 +10,7 @@ import com.mrcrayfish.guns.init.ModSyncedDataKeys;
 import com.mrcrayfish.guns.item.GunItem;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -37,12 +40,20 @@ public class ChargingLaserEntity extends ProjectileEntity
         int charging = compoundTag.getInt("charging");
         laser.size = LaserInfo.DURATION_TICK - charging + 1;
         if (charging == 0) laser.size *= 2;
+        
     }
 
     @Override
     public void tick()
     {
         super.tick();
-        if (laser != null) RenderLaserMessage.INSTANCE.send(PacketDistributor.ALL.noArg(), laser);
+        if (laser == null) return;
+        List<ServerPlayer> players = this.getLevel().getServer().getPlayerList().getPlayers();
+        for (ServerPlayer player : players)
+        {
+            if (player.equals(this.shooter)) laser.isShooter = 1;
+            else laser.isShooter = 0;
+            RenderLaserMessage.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {return player;}), laser);
+        }
     }
 }
