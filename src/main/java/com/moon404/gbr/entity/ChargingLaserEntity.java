@@ -25,7 +25,7 @@ public class ChargingLaserEntity extends ProjectileEntity
     {
         super(entityType, world, shooter, weapon, item, modifiedGun);
         laser = new LaserInfo();
-        laser.from = this.position();
+        laser.from = shooter.getEyePosition();
         laser.length = (float)modifiedGun.getProjectile().getSpeed();
         laser.xRot = shooter.getXRot();
         laser.yRot = shooter.getYRot();
@@ -35,6 +35,6 @@ public class ChargingLaserEntity extends ProjectileEntity
     public void tick()
     {
         super.tick();
-        RenderLaserMessage.INSTANCE.send(PacketDistributor.ALL.noArg(), laser);
+        if (laser != null) RenderLaserMessage.INSTANCE.send(PacketDistributor.ALL.noArg(), laser);
     }
 }

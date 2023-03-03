@@ -6,7 +6,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.LaserInfo;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -36,9 +35,10 @@ public class RenderLevelHandler
             poseStack.translate(from.x, from.y, from.z);
             poseStack.mulPose(Vector3f.YP.rotationDegrees(-laser.yRot));
             poseStack.mulPose(Vector3f.XP.rotationDegrees(laser.xRot));
-            poseStack.mulPose(Vector3f.XP.rotation(-(float)Math.atan(1 / laser.length)));
-            poseStack.translate(0, -1, 1);
-            poseStack.scale(1, 1, laser.length - 1);
+            poseStack.mulPose(Vector3f.YP.rotation((float)Math.atan(0.2 / laser.length)));
+            poseStack.mulPose(Vector3f.XP.rotation((float)Math.atan(-0.6 / laser.length)));
+            poseStack.translate(-0.2, -0.6, 0);
+            poseStack.scale(0.5F, 0.5F, laser.length);
             Minecraft.getInstance().getItemRenderer().renderStatic(new ItemStack(GunBattleRoyaleItems.CHARGE_BULLET.get()), ItemTransforms.TransformType.NONE, 0xFFFFFF, OverlayTexture.NO_OVERLAY, poseStack, mc.renderBuffers().bufferSource(), 0);
             poseStack.popPose();
 

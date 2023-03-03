@@ -17,6 +17,7 @@ public class ProjectileHitHandler
             ChargingLaserEntity laser = (ChargingLaserEntity)event.getProjectile();
             HitResult result = event.getRayTrace();
             Vec3 hit = result.getLocation();
+            if (laser.laser == null) return;
             laser.laser.length = (float)laser.laser.from.distanceTo(hit);
         }
     }    
