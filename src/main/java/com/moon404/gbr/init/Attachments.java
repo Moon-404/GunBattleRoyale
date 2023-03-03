@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.init;
 
 import com.mrcrayfish.guns.item.attachment.impl.Scope;
 

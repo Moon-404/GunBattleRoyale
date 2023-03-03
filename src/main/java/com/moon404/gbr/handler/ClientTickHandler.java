@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.handler;
 
 import com.mojang.math.Vector3f;
 
@@ -16,7 +16,7 @@ import net.minecraftforge.event.TickEvent.ClientTickEvent;
 import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class RankParticles
+public class ClientTickHandler
 {
     @SubscribeEvent
     public static void onClientTick(ClientTickEvent event)

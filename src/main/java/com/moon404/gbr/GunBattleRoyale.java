@@ -4,6 +4,15 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import com.moon404.gbr.entity.ChargingLaserEntity;
+import com.moon404.gbr.handler.ChargeTickHandler;
+import com.moon404.gbr.handler.GunFireHandler;
+import com.moon404.gbr.handler.PlayerTickHandler;
+import com.moon404.gbr.handler.ProjectileHitHandler;
+import com.moon404.gbr.handler.ClientTickHandler;
+import com.moon404.gbr.handler.RenderLevelHandler;
+import com.moon404.gbr.init.GunBattleRoyaleEntities;
+import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.struct.RenderLaserMessage;
 import com.mrcrayfish.guns.common.ProjectileManager;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -22,10 +31,11 @@ public class GunBattleRoyale
         GunBattleRoyaleEntities.REGISTER.register(modEventBus);
         GunBattleRoyaleItems.REGISTER.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(PlayerTickHandler.class);
-        MinecraftForge.EVENT_BUS.register(RankParticles.class);
+        MinecraftForge.EVENT_BUS.register(ClientTickHandler.class);
         MinecraftForge.EVENT_BUS.register(GunFireHandler.class);
         MinecraftForge.EVENT_BUS.register(ChargeTickHandler.class);
         MinecraftForge.EVENT_BUS.register(RenderLevelHandler.class);
+        MinecraftForge.EVENT_BUS.register(ProjectileHitHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onCommonSetup);
     }

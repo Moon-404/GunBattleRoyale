@@ -1,5 +1,6 @@
-package com.moon404.gbr;
+package com.moon404.gbr.handler;
 
+import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.mrcrayfish.guns.event.GunFireEvent;
 
 import net.minecraft.nbt.CompoundTag;

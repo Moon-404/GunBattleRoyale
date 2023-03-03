@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.init;
 
 import com.moon404.gbr.entity.ChargingLaserEntity;
 import net.minecraft.world.entity.EntityType;

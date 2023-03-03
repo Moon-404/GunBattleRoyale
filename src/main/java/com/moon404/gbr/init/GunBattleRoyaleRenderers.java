@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.init;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;

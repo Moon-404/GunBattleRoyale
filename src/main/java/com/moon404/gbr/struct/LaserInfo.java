@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.struct;
 
 import net.minecraft.world.phys.Vec3;
 

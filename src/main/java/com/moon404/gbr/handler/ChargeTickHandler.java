@@ -1,5 +1,6 @@
-package com.moon404.gbr;
+package com.moon404.gbr.handler;
 
+import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.common.ProjectileManager;

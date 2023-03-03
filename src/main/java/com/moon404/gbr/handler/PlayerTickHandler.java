@@ -1,7 +1,9 @@
-package com.moon404.gbr;
+package com.moon404.gbr.handler;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.moon404.gbr.struct.PlayerSpeed;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.TickEvent.Phase;

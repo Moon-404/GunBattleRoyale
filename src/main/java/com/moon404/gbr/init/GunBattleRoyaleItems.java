@@ -1,4 +1,4 @@
-package com.moon404.gbr;
+package com.moon404.gbr.init;
 
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
