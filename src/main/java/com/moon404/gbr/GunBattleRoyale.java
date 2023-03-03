@@ -25,6 +25,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(RankParticles.class);
         MinecraftForge.EVENT_BUS.register(GunFireHandler.class);
         MinecraftForge.EVENT_BUS.register(ChargeTickHandler.class);
+        MinecraftForge.EVENT_BUS.register(RenderLevelHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onCommonSetup);
     }
@@ -34,6 +35,7 @@ public class GunBattleRoyale
         event.enqueueWork(() ->
         {
             ProjectileManager.getInstance().registerFactory(GunBattleRoyaleItems.CHARGE_BULLET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ChargingLaserEntity(GunBattleRoyaleEntities.CHARGING_LASER.get(), worldIn, entity, weapon, item, modifiedGun));
+            RenderLaserMessage.register();
         });
     }
 }

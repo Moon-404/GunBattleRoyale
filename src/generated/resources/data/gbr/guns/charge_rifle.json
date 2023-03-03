@@ -42,9 +42,9 @@
     "projectile": {
       "damage": 30.0,
       "item": "gbr:charge_bullet",
-      "life": 25,
+      "life": 0,
       "size": 0.2,
-      "speed": 4.0,
+      "speed": 10.0,
       "damageReduceOverLife": true,
       "visible": true
     },

@@ -15,6 +15,6 @@ public class GunFireHandler
         if (event.getStack().getItem() != GunBattleRoyaleItems.CHARGE_RIFLE.get()) return;
         Player player = event.getEntity();
         CompoundTag compoundTag = player.getPersistentData();
-        compoundTag.putInt("charging", 20);
+        compoundTag.putInt("charging", 10);
     }
 }
