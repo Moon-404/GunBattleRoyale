@@ -39,8 +39,13 @@ public class ChargingLaserEntity extends ProjectileEntity
         CompoundTag compoundTag = shooter.getPersistentData();
         int charging = compoundTag.getInt("charging");
         laser.size = LaserInfo.DURATION_TICK - charging + 1;
-        if (charging == 0) laser.size *= 2;
-        
+        if (charging == 0)
+        {
+            this.setAdditionalDamage(laser.size / 2.0F);
+            laser.size += laser.size / 2.0F;
+        }
+        System.out.println(this.getDamage());
+        System.out.println(laser.size);
     }
 
     @Override

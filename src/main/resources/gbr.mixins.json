@@ -11,7 +11,8 @@
     ],
     "client": [
         "GlowingMixin",
-        "RecoilMixin"
+        "RecoilMixin",
+        "RenderMixin"
     ],
     "injectors": {
         "defaultRequire": 1

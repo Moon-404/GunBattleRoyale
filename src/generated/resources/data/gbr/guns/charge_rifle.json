@@ -22,12 +22,12 @@
     }
   },
   "projectile": {
-    "damage": 3.0,
+    "damage": 1.0,
     "item": "gbr:charge_bullet",
     "life": 0,
     "size": 0.2,
     "speed": 100.0,
-    "damageReduceOverLife": true
+    "damageReduceOverLife": false
   },
   "sounds": {
     "cock": "cgm:item.heavy_rifle.cock",

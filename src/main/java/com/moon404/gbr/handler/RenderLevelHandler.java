@@ -9,7 +9,6 @@ import com.moon404.gbr.struct.LaserInfo;
 
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.world.item.ItemStack;
@@ -88,7 +87,7 @@ public class RenderLevelHandler
             {
                 if (laser.size > LaserInfo.DURATION_TICK)
                 {
-                    laser.size -= 1;
+                    laser.size -= 0.5F;
                     laser.startTick += 1;
                     lasers.set(i, laser);
                 }

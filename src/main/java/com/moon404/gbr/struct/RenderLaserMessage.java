@@ -26,7 +26,7 @@ public class RenderLaserMessage
             buf.writeFloat(content.xRot);
             buf.writeFloat(content.yRot);
             buf.writeInt(content.aiming);
-            buf.writeInt(content.size);
+            buf.writeFloat(content.size);
             buf.writeInt(content.isShooter);
         },
         (buf) ->
@@ -37,7 +37,7 @@ public class RenderLaserMessage
             content.xRot = buf.readFloat();
             content.yRot = buf.readFloat();
             content.aiming = buf.readInt();
-            content.size = buf.readInt();
+            content.size = buf.readFloat();
             content.isShooter = buf.readInt();
             return content;
         },
