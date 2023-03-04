@@ -31,16 +31,12 @@
             "rolls": 1,
             "entries": [
                 {
-                    "type": "loot_table",
-                    "name": "gbr:airdrop_heavy_rifle"
-                },
-                {
                     "type": "item",
-                    "name": "cgm:mini_gun",
+                    "name": "gbr:charge_rifle",
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:150}"
+                            "tag": "{AmmoCount:12, Attachments:{Scope:{id:\"cgm:long_scope\", Count:1b}}}"
                         }
                     ]
                 }

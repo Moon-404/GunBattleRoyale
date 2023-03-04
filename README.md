@@ -11,6 +11,7 @@
 - Minecraft 1.19.2 Forge 43.1.1
 - [枪械MOD](https://github.com/MrCrayfish/MrCrayfishGunMod)
   - [枪械MOD前置](https://github.com/MrCrayfish/Framework)
+- [遗体MOD](https://github.com/henkelmax/corpse)
 
 ### 可选项
 

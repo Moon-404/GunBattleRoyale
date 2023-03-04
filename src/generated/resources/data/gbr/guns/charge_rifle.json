@@ -2,8 +2,8 @@
   "general": {
     "alwaysSpread": true,
     "gripType": "cgm:two_handed",
-    "rate": 20,
-    "maxAmmo": 4,
+    "rate": 24,
+    "maxAmmo": 12,
     "recoilAngle": 0.0,
     "spread": 0.0,
     "recoilAdsReduction": 0.5,

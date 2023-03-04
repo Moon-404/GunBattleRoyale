@@ -69,6 +69,7 @@ dependencies {
 
     implementation fg.deobf('curse.maven:framework-549225:4287474')
     implementation fg.deobf("curse.maven:mrcrayfishs-gun-mod-289479:4344225")
+    implementation fg.deobf("curse.maven:corpse-316582:3920717")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
