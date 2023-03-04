@@ -44,8 +44,6 @@ public class ChargingLaserEntity extends ProjectileEntity
             this.setAdditionalDamage(laser.size / 2.0F);
             laser.size += laser.size / 2.0F;
         }
-        System.out.println(this.getDamage());
-        System.out.println(laser.size);
     }
 
     @Override
