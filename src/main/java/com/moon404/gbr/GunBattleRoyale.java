@@ -9,10 +9,12 @@ import com.moon404.gbr.handler.GunFireHandler;
 import com.moon404.gbr.handler.PlayerTickHandler;
 import com.moon404.gbr.handler.ProjectileHitHandler;
 import com.moon404.gbr.handler.ClientTickHandler;
+import com.moon404.gbr.handler.DamageHandler;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.init.GunBattleRoyaleSounds;
 import com.moon404.gbr.struct.RenderLaserMessage;
+import com.moon404.gbr.struct.ShowDamageMessage;
 import com.mrcrayfish.guns.common.ProjectileManager;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -36,6 +38,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(GunFireHandler.class);
         MinecraftForge.EVENT_BUS.register(ChargeTickHandler.class);
         MinecraftForge.EVENT_BUS.register(ProjectileHitHandler.class);
+        MinecraftForge.EVENT_BUS.register(DamageHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onCommonSetup);
     }
@@ -46,6 +49,7 @@ public class GunBattleRoyale
         {
             ProjectileManager.getInstance().registerFactory(GunBattleRoyaleItems.CHARGE_BULLET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ChargingLaserEntity(GunBattleRoyaleEntities.CHARGING_LASER.get(), worldIn, entity, weapon, item, modifiedGun));
             RenderLaserMessage.register();
+            ShowDamageMessage.register();
         });
     }
 }

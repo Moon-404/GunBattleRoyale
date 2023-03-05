@@ -19,10 +19,11 @@ import net.minecraftforge.client.event.RenderLevelStageEvent.Stage;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = "gbr", value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = "gbr", value = Dist.CLIENT)
 public class RenderLevelHandler
 {
     public static List<LaserInfo> lasers = new ArrayList<>();
+    public static float curTick;
 
     @SubscribeEvent
     public static void onRenderLevel(RenderLevelStageEvent event)
@@ -31,6 +32,8 @@ public class RenderLevelHandler
         PoseStack poseStack = event.getPoseStack();
         Vec3 pos = event.getCamera().getPosition();
         Minecraft mc = Minecraft.getInstance();
+        curTick = event.getRenderTick() + event.getPartialTick();
+
         for (int i = 0; i < lasers.size(); i++)
         {
             LaserInfo laser = lasers.get(i);
@@ -78,11 +81,11 @@ public class RenderLevelHandler
 
             if (laser.startTick == -1)
             {
-                laser.startTick = event.getRenderTick() + event.getPartialTick();
+                laser.startTick = curTick;
                 lasers.set(i, laser);
             }
         }
-        float curTick = event.getRenderTick() + event.getPartialTick();
+
         for (int i = 0; i < lasers.size(); i++)
         {
             LaserInfo laser = lasers.get(i);
