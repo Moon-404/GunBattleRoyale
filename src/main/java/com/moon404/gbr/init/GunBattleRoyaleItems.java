@@ -31,5 +31,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> GRIP = REGISTER.register("grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
     public static final RegistryObject<Item> ADVANCED_GRIP = REGISTER.register("advanced_grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.ADVANCED_GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
 
-    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.31b", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.31c", () -> new Item(new Item.Properties()));
 }
