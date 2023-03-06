@@ -31,7 +31,7 @@ public class DamageMixin extends EntityMixin
         float initialDamage = (this.projectile.getDamage() + this.additionalDamage);
         if (this.projectile.isDamageReduceOverLife())
         {
-            float modifier = (float)(this.projectile.getLife() - this.tickCount) / (float)(this.projectile.getLife() + 1);
+            float modifier = (float)(this.projectile.getLife() - this.tickCount + 1) / (float)(this.projectile.getLife() + 1);
             initialDamage *= modifier;
         }
         float damage = initialDamage / this.general.getProjectileAmount();

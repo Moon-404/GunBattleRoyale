@@ -40,7 +40,6 @@ public class ChargeTickHandler
         IProjectileFactory factory = ProjectileManager.getInstance().getFactory(projectileProps.getItem());
         ProjectileEntity projectileEntity = factory.create(world, player, heldItem, item, modifiedGun);
         projectileEntity.setWeapon(heldItem);
-        projectileEntity.setAdditionalDamage(Gun.getAdditionalDamage(heldItem));
         world.addFreshEntity(projectileEntity);
         projectileEntity.tick();
     }

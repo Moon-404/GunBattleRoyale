@@ -1,5 +1,8 @@
 package com.moon404.gbr.handler;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.moon404.gbr.struct.DamageInfo;
 
@@ -27,9 +30,10 @@ public class RenderGuiHandler
         {
             int xc = mc.getWindow().getGuiScaledWidth() / 2;
             int yc = mc.getWindow().getGuiScaledHeight() / 2;
-            String s = Float.toString(lastDamage.amount);
-            mc.font.draw(poseStack, s, xc - mc.font.width(s) / 2, yc, 0xFFFFFF);
-            System.out.println(lastDamage.amount);
+            NumberFormat formatter = new DecimalFormat("0.0");
+            String s = formatter.format(lastDamage.amount);
+            int width = mc.font.width(s);
+            mc.font.draw(poseStack, s, xc - width / 2, yc - mc.font.wordWrapHeight(s, width) * 2, 0xFFFFFF);
         }
         else
         {
