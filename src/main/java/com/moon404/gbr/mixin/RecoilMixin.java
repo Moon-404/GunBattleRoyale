@@ -2,6 +2,7 @@ package com.moon404.gbr.mixin;
 
 import java.util.Random;
 
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -9,12 +10,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.client.handler.RecoilHandler;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.common.Gun.General;
 import com.mrcrayfish.guns.event.GunFireEvent;
 import com.mrcrayfish.guns.item.GunItem;
+import com.mrcrayfish.guns.item.attachment.IAttachment;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.ItemStack;
@@ -33,14 +36,25 @@ public class RecoilMixin
     @Shadow
     private float progressCameraRecoil;
 
+
     @Inject(method = "onGunFire", at = @At("TAIL"), remap = false)
     private void onGunFireTail(GunFireEvent.Post event, CallbackInfo ci)
     {
-        this.offsetAngle = this.random.nextFloat(-0.5F, 0.5F); // 大约30度
         ItemStack heldItem = event.getStack();
         GunItem gunItem = (GunItem)heldItem.getItem();
         Gun modifiedGun = gunItem.getModifiedGun(heldItem);
         General general = modifiedGun.getGeneral();
+        ItemStack stack = Gun.getAttachment(IAttachment.Type.UNDER_BARREL, heldItem);
+        float maxOffset = 0.5F;
+        if (stack.getItem() == GunBattleRoyaleItems.GRIP.get())
+        {
+            maxOffset *= 0.8F;
+        }
+        else if (stack.getItem() == GunBattleRoyaleItems.ADVANCED_GRIP.get())
+        {
+            maxOffset *= 0.6F;
+        }
+        this.offsetAngle = this.random.nextFloat(-maxOffset, maxOffset); // 大约30度
         this.rate = general.getRate();
         if (!general.isAuto()) this.rate = 2;
     }
