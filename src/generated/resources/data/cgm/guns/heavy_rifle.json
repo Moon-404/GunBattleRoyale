@@ -43,7 +43,7 @@
     "damage": 30.0,
     "gravity": true,
     "item": "gbr:special_bullet",
-    "life": 10,
+    "life": 9,
     "size": 0.0625,
     "speed": 10.0,
     "damageReduceOverLife": true

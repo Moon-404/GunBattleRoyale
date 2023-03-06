@@ -13,7 +13,7 @@
     "damage": 1.25,
     "size": 0.2,
     "speed": 5.0,
-    "life": 10,
+    "life": 9,
     "damageReduceOverLife": true
   },
   "sounds": {

@@ -46,7 +46,7 @@
     "damage": 19.0,
     "gravity": true,
     "item": "cgm:advanced_bullet",
-    "life": 10,
+    "life": 9,
     "size": 0.0625,
     "speed": 10.0,
     "damageReduceOverLife": true

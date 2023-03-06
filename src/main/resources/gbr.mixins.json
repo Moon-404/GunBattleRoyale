@@ -7,7 +7,9 @@
     "plugin": "com.moon404.gbr.mixin.MixinPlugin",
     "mixins": [
         "SpreadMixin",
-        "DataMixin"
+        "DataMixin",
+        "EntityMixin",
+        "DamageMixin"
     ],
     "client": [
         "GlowingMixin",
