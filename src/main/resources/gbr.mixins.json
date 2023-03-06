@@ -15,7 +15,10 @@
         "GlowingMixin",
         "RecoilMixin",
         "RenderMixin",
-        "TooltipMixin"
+        "TooltipMixin",
+        "GuiComponentMixin",
+        "GuiMixin",
+        "ForgeGuiMixin"
     ],
     "injectors": {
         "defaultRequire": 1
