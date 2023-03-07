@@ -1,15 +1,11 @@
 package com.moon404.gbr.mixin;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.moon404.gbr.struct.ArmorInfo;
 
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
@@ -37,7 +33,7 @@ public class ForgeGuiMixin extends GuiMixin
     @Overwrite(remap = false)
     public void renderHealth(int width, int height, PoseStack pStack)
     {
-        bind(GuiComponent.GUI_ICONS_LOCATION);
+        bind(new ResourceLocation("gbr", "textures/gui/icons.png"));
         Minecraft mc = Minecraft.getInstance();
         mc.getProfiler().push("health");
         RenderSystem.enableBlend();
@@ -87,22 +83,25 @@ public class ForgeGuiMixin extends GuiMixin
             regen = this.tickCount % Mth.ceil(healthMax + 5.0F);
         }
 
+        int totalAbsorb = player.experienceLevel == 0 ? 2 :player.experienceLevel * 2 + 2;
         int row = 1;
-        int count = ArmorInfo.instance.level * 2 + 4;
-        for (int i = 0; i < count; i++)
+        int Voffset = 112;
+        int fullAbsorb = absorb / 2;
+        int halfAbsorb = absorb % 2 == 1 ? 1 : 0;
+        int level = player.experienceLevel;
+        for (int i = 0; i < fullAbsorb; i++)
         {
-            this.blit(pStack, left + i * 8, top - row * rowHeight, 16, 0, 9, 9);
+            this.blit(pStack, left + i * 8, top - row * rowHeight, 18 * level - 9, Voffset, 9, 9);
         }
-        this.renderHearts(pStack, player, left, top, rowHeight, regen, healthMax, health, healthLast, absorb, highlight);
-
-        if (ArmorInfo.instance.level >= 0)
+        if (halfAbsorb == 1)
         {
-            row = 2;
-            String s = "距离进化：";
-            NumberFormat formatter = new DecimalFormat("0.0");
-            s += formatter.format(ArmorInfo.instance.upgrade);
-            mc.font.draw(pStack, s, left, top - row * rowHeight, 0xFFFFFF);
+            this.blit(pStack, left + fullAbsorb * 8, top - row * rowHeight, 18 * level, Voffset, 9, 9);
         }
+        for (int i = fullAbsorb + halfAbsorb; i < totalAbsorb; i++)
+        {
+            this.blit(pStack, left + i * 8, top - row * rowHeight, 0, Voffset, 9, 9);
+        }
+        this.renderHearts(pStack, player, left, top, rowHeight, regen, healthMax, health, healthLast, 0, highlight);
 
         RenderSystem.disableBlend();
         mc.getProfiler().pop();

@@ -9,7 +9,8 @@
         "SpreadMixin",
         "DataMixin",
         "EntityMixin",
-        "DamageMixin"
+        "DamageMixin",
+        "PlayerMixin"
     ],
     "client": [
         "GlowingMixin",
