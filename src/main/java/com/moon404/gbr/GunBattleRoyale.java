@@ -6,6 +6,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import com.moon404.gbr.entity.ChargingLaserEntity;
 import com.moon404.gbr.handler.ChargeTickHandler;
 import com.moon404.gbr.handler.GunFireHandler;
+import com.moon404.gbr.handler.KnockbackHandler;
 import com.moon404.gbr.handler.PlayerTickHandler;
 import com.moon404.gbr.handler.ProjectileHitHandler;
 import com.moon404.gbr.handler.ClientTickHandler;
@@ -39,6 +40,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(ChargeTickHandler.class);
         MinecraftForge.EVENT_BUS.register(ProjectileHitHandler.class);
         MinecraftForge.EVENT_BUS.register(DamageHandler.class);
+        MinecraftForge.EVENT_BUS.register(KnockbackHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onCommonSetup);
     }
