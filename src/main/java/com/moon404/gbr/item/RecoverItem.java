@@ -22,7 +22,7 @@ public abstract class RecoverItem extends Item
 
     public UseAnim getUseAnimation(ItemStack stack)
     {
-        return UseAnim.BOW;
+        return UseAnim.EAT;
     }
 
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int pRemainingUseDuration)

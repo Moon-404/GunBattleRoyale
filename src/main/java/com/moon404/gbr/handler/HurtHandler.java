@@ -6,14 +6,14 @@ import com.moon404.gbr.struct.ShowDamageMessage;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.network.PacketDistributor;
 
-public class DamageHandler
+public class HurtHandler
 {
     @SubscribeEvent
-    public static void onLivingDamage(LivingDamageEvent event)
+    public static void onLivingDamage(LivingHurtEvent event)
     {
         DamageSource source = event.getSource();
         if (source.getEntity() instanceof ServerPlayer from)
