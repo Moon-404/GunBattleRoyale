@@ -21,6 +21,10 @@ public class DamageHandler
         {
             DamageInfo damage = new DamageInfo();
             damage.amount = event.getAmount();
+            if (PlayerTickHandler.armors.containsKey(from))
+            {
+                PlayerTickHandler.armors.get(from).addUpgrade(damage.amount);
+            }
             ShowDamageMessage.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {return (ServerPlayer)from;}), damage);
         }
     }

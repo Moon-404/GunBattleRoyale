@@ -1,11 +1,15 @@
 package com.moon404.gbr.mixin;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.moon404.gbr.struct.ArmorInfo;
 
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
@@ -84,11 +88,21 @@ public class ForgeGuiMixin extends GuiMixin
         }
 
         int row = 1;
-        for (int i = 0; i < 0; i++)
+        int count = ArmorInfo.instance.level * 2 + 4;
+        for (int i = 0; i < count; i++)
         {
             this.blit(pStack, left + i * 8, top - row * rowHeight, 16, 0, 9, 9);
         }
         this.renderHearts(pStack, player, left, top, rowHeight, regen, healthMax, health, healthLast, absorb, highlight);
+
+        if (ArmorInfo.instance.level >= 0)
+        {
+            row = 2;
+            String s = "距离进化：";
+            NumberFormat formatter = new DecimalFormat("0.0");
+            s += formatter.format(ArmorInfo.instance.upgrade);
+            mc.font.draw(pStack, s, left, top - row * rowHeight, 0xFFFFFF);
+        }
 
         RenderSystem.disableBlend();
         mc.getProfiler().pop();
