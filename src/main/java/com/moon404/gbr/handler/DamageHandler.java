@@ -16,14 +16,12 @@ public class DamageHandler
     public static void onLivingDamage(LivingDamageEvent event)
     {
         DamageSource source = event.getSource();
-        if (source.getEntity() instanceof ServerPlayer)
+        if (source.getEntity() instanceof ServerPlayer from)
         {
-            ServerPlayer from = (ServerPlayer)source.getEntity();
             DamageInfo damage = new DamageInfo();
             damage.amount = event.getAmount();
-            if (event.getEntity() instanceof Player)
+            if (event.getEntity() instanceof Player target)
             {
-                Player target = (Player)event.getEntity();
                 if (target.getAbsorptionAmount() > 0)
                 {
                     damage.getArmorColor(target.experienceLevel);

@@ -29,9 +29,9 @@ public class ClientTickHandler
         Iterable<Entity> entities = clientLevel.entitiesForRendering();
         for (Entity entity : entities)
         {
-            if (entity instanceof Player)
+            if (entity instanceof Player player)
             {
-                Item item = ((Player)entity).getItemBySlot(EquipmentSlot.CHEST).getItem();
+                Item item = player.getItemBySlot(EquipmentSlot.CHEST).getItem();
                 if (item.getClass() == ElytraItem.class || entity.getY() > 160)
                 {
                     Objective objective = scoreboard.getObjective("rank");

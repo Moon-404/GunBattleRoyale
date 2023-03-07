@@ -40,18 +40,18 @@ public class SpreadMixin
         }
         else
         {
-            if (shooter instanceof Player)
+            if (shooter instanceof Player player)
             {
                 // 如果枪不总是扩散，根据射击时间改变基准值
                 if (!modifiedGun.getGeneral().isAlwaysSpread())
                 {
-                    gunSpread *= SpreadTracker.get((Player)shooter).getSpread(item);
+                    gunSpread *= SpreadTracker.get(player).getSpread(item);
                 }
                 // 非霰弹枪散布调整
                 if (modifiedGun.getGeneral().getProjectileAmount() == 1)
                 {
                     // 瞄准时散布变为 10%
-                    if ((Boolean)ModSyncedDataKeys.AIMING.getValue((Player)shooter))
+                    if ((Boolean)ModSyncedDataKeys.AIMING.getValue(player))
                     {
                         gunSpread *= 0.1F;
                     }
@@ -61,7 +61,7 @@ public class SpreadMixin
                         gunSpread *= 0.5F;
                     }
                     // 根据移动速度改变扩散
-                    gunSpread *= (0.6F + PlayerTickHandler.data.get(shooter).speed);
+                    gunSpread *= (0.6F + PlayerTickHandler.data.get(player).speed);
                 }
             }
             return this.getVectorFromRotation(

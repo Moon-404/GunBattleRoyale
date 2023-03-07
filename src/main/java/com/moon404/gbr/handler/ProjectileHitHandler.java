@@ -12,9 +12,8 @@ public class ProjectileHitHandler
     @SubscribeEvent
     public static void onProjectileHit(GunProjectileHitEvent event)
     {
-        if (event.getProjectile() instanceof ChargingLaserEntity)
+        if (event.getProjectile() instanceof ChargingLaserEntity laser)
         {
-            ChargingLaserEntity laser = (ChargingLaserEntity)event.getProjectile();
             HitResult result = event.getRayTrace();
             Vec3 hit = result.getLocation();
             if (laser.laser == null) return;
