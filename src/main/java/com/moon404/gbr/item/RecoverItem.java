@@ -24,4 +24,26 @@ public abstract class RecoverItem extends Item
     {
         return UseAnim.BOW;
     }
+
+    public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int pRemainingUseDuration)
+    {
+        if (level.isClientSide) return;
+        stack.setDamageValue(pRemainingUseDuration);
+    }
+
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int pTimeCharged)
+    {
+        if (level.isClientSide) return;
+        stack.setDamageValue(0);
+    }
+
+    public int getMaxDamage(ItemStack stack)
+    {
+        return getUseDuration(stack);
+    }
+
+    public boolean isBarVisible(ItemStack stack)
+    {
+        return stack.getDamageValue() != 0;
+    }
 }

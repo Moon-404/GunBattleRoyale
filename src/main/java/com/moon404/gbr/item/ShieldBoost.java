@@ -32,6 +32,7 @@ public class ShieldBoost extends RecoverItem
                 player.setAbsorptionAmount(player.getAbsorptionAmount() + 4);
             }
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }

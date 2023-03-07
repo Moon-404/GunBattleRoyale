@@ -26,6 +26,7 @@ public class PhoenixKit extends RecoverItem
             player.setAbsorptionAmount(shield);
             player.heal(20);
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }

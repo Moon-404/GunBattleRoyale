@@ -24,6 +24,7 @@ public class Syringe extends RecoverItem
         {
             player.heal(4);
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }

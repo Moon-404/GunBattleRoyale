@@ -24,6 +24,7 @@ public class MedKit extends RecoverItem
         {
             player.heal(20);
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }

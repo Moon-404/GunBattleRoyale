@@ -29,6 +29,7 @@ public class ShieldCell extends RecoverItem
             }
             player.setAbsorptionAmount(shield);
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }

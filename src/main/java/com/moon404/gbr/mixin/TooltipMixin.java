@@ -65,13 +65,55 @@ public class TooltipMixin
             toolTip.add(Component.literal("- 小幅降低子弹下坠"));
             return;
         }
-        
         if (item == GunBattleRoyaleItems.ADVANCED_STABILIZER.get())
         {
             List<Component> toolTip = event.getToolTip();
             toolTip.add(Component.translatable("perk.cgm.title").withStyle(ChatFormatting.GRAY, ChatFormatting.BOLD));
             toolTip.add(Component.literal("- 大幅降低散布"));
             toolTip.add(Component.literal("- 大幅降低子弹下坠"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.SHIELD_CELL.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("恢复 4 点护盾"));
+            toolTip.add(Component.literal("使用时间：1.5秒"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.SHIELD_BATTERY.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("完全恢复护盾"));
+            toolTip.add(Component.literal("使用时间：2.5秒"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.SYRINGE.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("恢复 4 点生命"));
+            toolTip.add(Component.literal("使用时间：2.5秒"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.MED_KIT.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("完全恢复生命"));
+            toolTip.add(Component.literal("使用时间：4.0秒"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.PHOENIX_KIT.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("完全恢复护盾与生命"));
+            toolTip.add(Component.literal("使用时间：5.0秒"));
+            return;
+        }
+        if (item == GunBattleRoyaleItems.SHIELD_BOOST.get())
+        {
+            List<Component> toolTip = event.getToolTip();
+            toolTip.add(Component.literal("提供 30 护盾进化经验"));
+            toolTip.add(Component.literal("使用此物品造成的护盾进化会恢复等量护盾值"));
+            toolTip.add(Component.literal("使用时间：1.5秒"));
             return;
         }
     }

@@ -25,6 +25,7 @@ public class ShieldBattery extends RecoverItem
             float shield = player.experienceLevel * 4 + 4;
             player.setAbsorptionAmount(shield);
         }
+        stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;
     }
 }
