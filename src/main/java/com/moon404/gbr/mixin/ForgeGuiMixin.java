@@ -82,7 +82,7 @@ public class ForgeGuiMixin extends GuiMixin
             regen = this.tickCount % Mth.ceil(healthMax + 5.0F);
         }
 
-        int totalAbsorb = player.experienceLevel == 0 ? 2 :player.experienceLevel * 2 + 2;
+        int totalAbsorb = player.experienceLevel == 0 ? 0 :player.experienceLevel * 2 + 2;
         int row = 1;
         int Voffset = 112;
         int fullAbsorb = absorb / 2;
