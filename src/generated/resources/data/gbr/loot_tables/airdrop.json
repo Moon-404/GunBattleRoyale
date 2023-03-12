@@ -10,7 +10,7 @@
             ]
         },
         {
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
                 {
                     "type": "item",
@@ -28,6 +28,26 @@
                         {
                             "function": "set_nbt",
                             "tag": "{AmmoCount:12, Attachments:{Scope:{id:\"cgm:long_scope\", Count:1b}}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:heavy_rifle",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:12, Attachments:{Scope:{id:\"cgm:long_scope\", Count:1b}, Barrel:{id:\"gbr:advanced_stabilizer\", Count:1b, tag:{Enchantments:[{}]}}, Under_Barrel:{id:\"gbr:advanced_grip\", Count:1b, tag:{Enchantments:[{}]}}}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:mini_gun",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:150}"
                         }
                     ]
                 }

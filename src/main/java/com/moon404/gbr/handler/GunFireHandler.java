@@ -17,8 +17,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class GunFireHandler
 {
+    public static int lastFire = 0;
+
     @SubscribeEvent
-    public static void onPreGunFire(GunFireEvent.Pre event)
+    public static void onServerPreGunFire(GunFireEvent.Pre event)
     {
         if (event.isClient()) return;
         if (event.getStack().getItem() != GunBattleRoyaleItems.CHARGE_RIFLE.get()) return;
@@ -57,5 +59,14 @@ public class GunFireHandler
         {
             addGunCD(itemstack, cooldowns);
         }
+    }
+
+    @SubscribeEvent
+    public static void onClientPreGunFire(GunFireEvent.Pre event)
+    {
+        if (!event.isClient()) return;
+        int curTick = event.getEntity().tickCount;
+        if (curTick <= lastFire) event.setCanceled(true);
+        lastFire = curTick;
     }
 }
