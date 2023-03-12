@@ -9,9 +9,7 @@ execute as @e[tag=ring, sort=random, limit=1] run data modify entity @s Tags app
 execute at @e[tag=center] run function gbr:game/set_center
 worldborder set 601 0
 worldborder set 1 300
-item replace entity @a[gamemode=adventure] armor.chest with elytra{Enchantments:[{id:"binding_curse", lvl:1}, {id:"vanishing_curse", lvl:1}]} 1
-execute as @a[gamemode=adventure] run function gbr:game/fee
-tag @a[gamemode=adventure] add jumping
+execute as @a[gamemode=adventure] run function gbr:game/set_game_player
 
 # game_team_norank 为不可以获得排名分的队伍数量
 scoreboard players operation game_team_half global = total team_alive
@@ -26,7 +24,6 @@ function gbr:team/setid
 scoreboard players set game_tick global 0
 scoreboard players set game_start global 1
 scoreboard players set game_airdrop_count global 0
-scoreboard players add @a[gamemode=adventure] stat_total 1
 schedule function gbr:game/remove_afk 30s
 schedule function gbr:game/judge 1s
 scoreboard objectives setdisplay sidebar nothing

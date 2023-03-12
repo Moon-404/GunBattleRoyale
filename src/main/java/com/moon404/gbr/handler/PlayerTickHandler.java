@@ -14,6 +14,7 @@ import net.minecraftforge.fml.LogicalSide;
 public class PlayerTickHandler
 {
     public static Map<Player, PlayerSpeed> data = new HashMap<Player, PlayerSpeed>();
+
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent event)
     {

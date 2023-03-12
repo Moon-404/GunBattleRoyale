@@ -5,6 +5,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import com.moon404.gbr.item.MedKit;
+import com.moon404.gbr.item.PhoenixKit;
+import com.moon404.gbr.item.RecoverItem;
+import com.moon404.gbr.item.ShieldBattery;
+import com.moon404.gbr.item.ShieldBoost;
+import com.moon404.gbr.item.ShieldCell;
+import com.moon404.gbr.item.Syringe;
 import com.mrcrayfish.guns.item.*;
 import com.mrcrayfish.guns.item.attachment.impl.*;
 
@@ -31,5 +38,12 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> GRIP = REGISTER.register("grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
     public static final RegistryObject<Item> ADVANCED_GRIP = REGISTER.register("advanced_grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.ADVANCED_GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
 
-    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.31", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.32a", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SHIELD_CELL = REGISTER.register("shield_cell", () -> new ShieldCell(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> SHIELD_BATTERY = REGISTER.register("shield_battery", () -> new ShieldBattery(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> SYRINGE = REGISTER.register("syringe", () -> new Syringe(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> MED_KIT = REGISTER.register("med_kit", () -> new MedKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> PHOENIX_KIT = REGISTER.register("phoenix_kit", () -> new PhoenixKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> SHIELD_BOOST = REGISTER.register("shield_boost", () -> new ShieldBoost(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
 }

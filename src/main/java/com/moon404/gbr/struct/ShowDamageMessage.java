@@ -19,11 +19,13 @@ public class ShowDamageMessage
         (content, buf) ->
         {
             buf.writeFloat(content.amount);
+            buf.writeInt(content.color);
         },
         (buf) ->
         {
             DamageInfo content = new DamageInfo();
             content.amount = buf.readFloat();
+            content.color = buf.readInt();
             return content;
         },
         (content, ctx) ->
@@ -31,6 +33,7 @@ public class ShowDamageMessage
             ctx.get().enqueueWork(() ->
             {
                 RenderGuiHandler.lastDamage.amount += content.amount;
+                RenderGuiHandler.lastDamage.color = content.color;
                 RenderGuiHandler.lastDamage.startTick = -1;
             });
             ctx.get().setPacketHandled(true);

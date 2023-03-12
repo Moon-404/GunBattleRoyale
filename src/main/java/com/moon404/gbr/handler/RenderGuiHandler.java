@@ -33,7 +33,7 @@ public class RenderGuiHandler
             NumberFormat formatter = new DecimalFormat("0.0");
             String s = formatter.format(lastDamage.amount);
             int width = mc.font.width(s);
-            mc.font.draw(poseStack, s, xc - width / 2, yc - mc.font.wordWrapHeight(s, width) * 2, 0xFFFFFF);
+            mc.font.draw(poseStack, s, xc - width / 2, yc - mc.font.wordWrapHeight(s, width) * 2, lastDamage.color);
         }
         else
         {

@@ -1,11 +1,11 @@
 {
     "pools": [
         {
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:golden_apple",
+                    "name": "gbr:shield_cell",
                     "functions": [
                         {
                             "function": "set_count",
@@ -16,11 +16,37 @@
                             }
                         }
                     ],
-                    "weight": 3
+                    "weight": 10
                 },{
                     "type": "item",
-                    "name": "minecraft:enchanted_golden_apple",
+                    "name": "gbr:syringe",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 
+                            {
+                                "min": 2,
+                                "max": 2
+                            }
+                        }
+                    ],
+                    "weight": 5
+                },{
+                    "type": "item",
+                    "name": "gbr:shield_battery",
+                    "weight": 4
+                },{
+                    "type": "item",
+                    "name": "gbr:med_kit",
+                    "weight": 2
+                },{
+                    "type": "item",
+                    "name": "gbr:phoenix_kit",
                     "weight": 1
+                },{
+                    "type": "item",
+                    "name": "gbr:shield_boost",
+                    "weight": 5
                 }
             ]
         }
