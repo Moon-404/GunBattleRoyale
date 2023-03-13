@@ -34,7 +34,7 @@ public abstract class RecoverItem extends Item
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int pTimeCharged)
     {
         if (level.isClientSide) return;
-        stack.setDamageValue(0);
+        stack.removeTagKey("Damage");
     }
 
     public int getMaxDamage(ItemStack stack)
