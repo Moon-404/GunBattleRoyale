@@ -11,6 +11,7 @@ import com.moon404.gbr.handler.PlayerTickHandler;
 import com.moon404.gbr.handler.ProjectileHitHandler;
 import com.moon404.gbr.handler.ClientTickHandler;
 import com.moon404.gbr.handler.HurtHandler;
+import com.moon404.gbr.handler.ItemPickupHandler;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.init.GunBattleRoyaleSounds;
@@ -41,6 +42,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(ProjectileHitHandler.class);
         MinecraftForge.EVENT_BUS.register(HurtHandler.class);
         MinecraftForge.EVENT_BUS.register(KnockbackHandler.class);
+        MinecraftForge.EVENT_BUS.register(ItemPickupHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onCommonSetup);
     }
