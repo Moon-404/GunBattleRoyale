@@ -3,12 +3,15 @@ package com.moon404.gbr;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
+import java.util.Arrays;
+
 import com.moon404.gbr.entity.ChargingLaserEntity;
 import com.moon404.gbr.handler.ChargeTickHandler;
 import com.moon404.gbr.handler.GunFireHandler;
 import com.moon404.gbr.handler.KnockbackHandler;
 import com.moon404.gbr.handler.PlayerTickHandler;
 import com.moon404.gbr.handler.ProjectileHitHandler;
+import com.moon404.gbr.handler.RenderTickHandler;
 import com.moon404.gbr.handler.ClientTickHandler;
 import com.moon404.gbr.handler.CorpseDeathHandler;
 import com.moon404.gbr.handler.HurtHandler;
@@ -56,6 +59,15 @@ public class GunBattleRoyale
             ProjectileManager.getInstance().registerFactory(GunBattleRoyaleItems.CHARGE_BULLET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ChargingLaserEntity(GunBattleRoyaleEntities.CHARGING_LASER.get(), worldIn, entity, weapon, item, modifiedGun));
             RenderLaserMessage.register();
             ShowDamageMessage.register();
+
+            RenderTickHandler.recoverList = Arrays.asList(
+                GunBattleRoyaleItems.SHIELD_BOOST.get(),
+                GunBattleRoyaleItems.PHOENIX_KIT.get(),
+                GunBattleRoyaleItems.SHIELD_BATTERY.get(),
+                GunBattleRoyaleItems.SHIELD_CELL.get(),
+                GunBattleRoyaleItems.MED_KIT.get(),
+                GunBattleRoyaleItems.SYRINGE.get()
+            );
         });
     }
 }
