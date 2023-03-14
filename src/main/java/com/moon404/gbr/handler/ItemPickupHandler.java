@@ -12,11 +12,12 @@ import com.mrcrayfish.guns.item.attachment.IAttachment.Type;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -37,7 +38,8 @@ public class ItemPickupHandler
         Player player = event.getEntity();
         if (player.level.isClientSide) return;
         Inventory inventory = player.getInventory();
-        ItemStack itemStack = event.getItem().getItem();
+        ItemEntity itemEntity = event.getItem();
+        ItemStack itemStack = itemEntity.getItem();
         if (itemStack.getItem() instanceof AttachmentItem attachment)
         {
             for (int i = 0; i < 3; i++)
@@ -47,15 +49,36 @@ public class ItemPickupHandler
                 {
                     Gun gun = item.getGun();
                     Type type = getAttachmentType(attachment);
-                    if (gun.canAttachType(type) && !Gun.hasAttachmentEquipped(inventoryStack, gun, type))
+                    if (gun.canAttachType(type))
                     {
-                        CompoundTag tag = inventoryStack.getOrCreateTagElement("Attachments");
-                        tag.put(type.getTagKey(), itemStack.save(new CompoundTag()));
-                        inventoryStack.getOrCreateTag().put("Attachments", tag);
-                        player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
-                        event.getItem().kill();
-                        event.setCanceled(true);
-                        return;
+                        // 没有已经装备的配件
+                        if (!Gun.hasAttachmentEquipped(inventoryStack, gun, type))
+                        {
+                            CompoundTag tag = inventoryStack.getOrCreateTagElement("Attachments");
+                            tag.put(type.getTagKey(), itemStack.save(new CompoundTag()));
+                            inventoryStack.getOrCreateTag().put("Attachments", tag);
+                            player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
+                            itemEntity.kill();
+                            event.setCanceled(true);
+                            return;
+                        }
+                        // 配件更好
+                        else
+                        {
+                            ItemStack oldAttachStack = Gun.getAttachment(type, inventoryStack);
+                            Item oldAttachment = oldAttachStack.getItem();
+                            if (attachment.getRarity(itemStack) == Rarity.EPIC && oldAttachment.getRarity(oldAttachStack) == Rarity.COMMON)
+                            {
+                                CompoundTag tag = inventoryStack.getOrCreateTagElement("Attachments");
+                                tag.put(type.getTagKey(), itemStack.save(new CompoundTag()));
+                                inventoryStack.getOrCreateTag().put("Attachments", tag);
+                                player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
+                                itemEntity.kill();
+                                event.setCanceled(true);
+                                inventory.add(oldAttachStack);
+                                return;
+                            }
+                        }
                     }
                 }
             }
