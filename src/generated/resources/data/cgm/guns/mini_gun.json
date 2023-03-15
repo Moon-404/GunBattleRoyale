@@ -6,11 +6,11 @@
     "maxAmmo": 150,
     "reloadAmount": 0,
     "recoilAngle": 0.5,
-    "spread": 1.0
+    "spread": 0.5
   },
   "projectile": {
     "item": "",
-    "damage": 1.25,
+    "damage": 1,
     "size": 0.2,
     "speed": 5.0,
     "life": 9,

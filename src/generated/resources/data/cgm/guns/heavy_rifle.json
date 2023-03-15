@@ -40,7 +40,7 @@
     }
   },
   "projectile": {
-    "damage": 30.0,
+    "damage": 22.5,
     "gravity": true,
     "item": "gbr:special_bullet",
     "life": 9,

@@ -8,10 +8,10 @@
   "general": {
     "alwaysSpread": true,
     "gripType": "cgm:two_handed",
-    "rate": 19,
+    "rate": 20,
     "maxAmmo": 8,
     "reloadAmount": 2,
-    "recoilAngle": 6,
+    "recoilAngle": 6.66,
     "spread": 10.0,
     "recoilAdsReduction": 0.5,
     "recoilKick": 0.5
@@ -43,7 +43,7 @@
     }
   },
   "projectile": {
-    "damage": 19.0,
+    "damage": 15.0,
     "gravity": true,
     "item": "cgm:advanced_bullet",
     "life": 9,

@@ -56,7 +56,7 @@ public class GunModifiers
         @Override
         public int modifyFireRate(int rate)
         {
-            if (rate >= 10) rate -= 1;
+            if (rate >= 10) rate -= rate / 10;
             return rate;
         }
         @Override
@@ -75,7 +75,7 @@ public class GunModifiers
         @Override
         public int modifyFireRate(int rate)
         {
-            if (rate >= 10) rate -= 2;
+            if (rate >= 10) rate -= rate / 5;
             return rate;
         }
         @Override
