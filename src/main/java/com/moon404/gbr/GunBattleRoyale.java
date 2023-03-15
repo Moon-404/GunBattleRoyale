@@ -19,6 +19,7 @@ import com.moon404.gbr.init.GunBattleRoyaleConfigs;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.init.GunBattleRoyaleSounds;
+import com.moon404.gbr.struct.ChangeItemMessage;
 import com.moon404.gbr.struct.RenderLaserMessage;
 import com.moon404.gbr.struct.ShowDamageMessage;
 import com.moon404.gbr.struct.WheelItemList;
@@ -61,6 +62,7 @@ public class GunBattleRoyale
             ProjectileManager.getInstance().registerFactory(GunBattleRoyaleItems.CHARGE_BULLET.get(), (worldIn, entity, weapon, item, modifiedGun) -> new ChargingLaserEntity(GunBattleRoyaleEntities.CHARGING_LASER.get(), worldIn, entity, weapon, item, modifiedGun));
             RenderLaserMessage.register();
             ShowDamageMessage.register();
+            ChangeItemMessage.register();
             WheelItemList.init();
         });
     }

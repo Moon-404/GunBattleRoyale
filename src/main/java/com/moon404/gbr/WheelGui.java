@@ -1,14 +1,14 @@
 package com.moon404.gbr;
 
-import java.util.Collections;
 import java.util.List;
+
+import com.moon404.gbr.struct.ChangeItemMessage;
+import com.moon404.gbr.struct.ChangeItemMessage.ChangeItem;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 
 public class WheelGui extends Screen
 {
@@ -52,17 +52,9 @@ public class WheelGui extends Screen
     public boolean mouseClicked(double pMouseX, double pMouseY, int pButton)
     {
         int index = getMouseIndex(pMouseX, pMouseY, true);
-        Inventory inventory = this.minecraft.player.getInventory();
-        for (int i = 0; i < 36; i++)
-        {
-            ItemStack itemStack = inventory.getItem(i);
-            if (itemStack.getItem().equals(itemList.get(index)))
-            {
-                Collections.swap(inventory.items, i, inventory.selected);
-                deactivate();
-                return true;
-            }
-        }
+        ChangeItem message = new ChangeItem();
+        message.itemid = Item.getId(itemList.get(index));
+        ChangeItemMessage.INSTANCE.sendToServer(message);
         deactivate();
         return false;
     }
