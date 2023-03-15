@@ -47,7 +47,7 @@ public class RenderTickHandler
         }
         if (holding > -1 && lastHolding == holding) duration += 1;
         else duration = 0;
-        if (duration > 10) WheelGui.activate(list);
+        if (duration > 5) WheelGui.activate(list);
     }
 
     @SubscribeEvent

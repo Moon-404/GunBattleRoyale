@@ -25,7 +25,7 @@ public class ShieldBoost extends RecoverItem
         if (!level.isClientSide && entity instanceof Player player)
         {
             int oldlevel = player.experienceLevel;
-            player.giveExperiencePoints(3000);
+            player.giveExperiencePoints(2500);
             int newlevel = player.experienceLevel;
             if (newlevel > oldlevel)
             {

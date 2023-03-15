@@ -13,7 +13,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "gbr:ammo"
+                    "name": "gbr:attachments"
                 }
             ]
         },{
@@ -21,7 +21,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "gbr:attachments"
+                    "name": "gbr:ammo"
                 }
             ]
         },{

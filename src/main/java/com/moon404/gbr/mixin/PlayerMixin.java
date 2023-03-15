@@ -15,9 +15,9 @@ public class PlayerMixin
     @Overwrite
     public int getXpNeededForNextLevel()
     {
-        if (this.experienceLevel == 1) return 3000;
-        if (this.experienceLevel == 2) return 6000;
-        if (this.experienceLevel == 3) return 15000;
+        if (this.experienceLevel == 1) return 2500;
+        if (this.experienceLevel == 2) return 5000;
+        if (this.experienceLevel == 3) return 12500;
         return Integer.MAX_VALUE;
     }
 

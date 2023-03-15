@@ -11,8 +11,7 @@
         "EntityMixin",
         "DamageMixin",
         "PlayerMixin",
-        "InventoryMixin",
-        "ContainerMenuMixin"
+        "InventoryMixin"
     ],
     "client": [
         "GlowingMixin",
