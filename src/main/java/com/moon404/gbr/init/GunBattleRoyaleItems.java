@@ -12,6 +12,7 @@ import com.moon404.gbr.item.RecoverItem;
 import com.moon404.gbr.item.ShieldBattery;
 import com.moon404.gbr.item.ShieldBoost;
 import com.moon404.gbr.item.ShieldCell;
+import com.moon404.gbr.item.Stim;
 import com.moon404.gbr.item.Syringe;
 import com.mrcrayfish.guns.item.*;
 import com.mrcrayfish.guns.item.attachment.impl.*;
@@ -47,4 +48,6 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> MED_KIT = REGISTER.register("med_kit", () -> new MedKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> PHOENIX_KIT = REGISTER.register("phoenix_kit", () -> new PhoenixKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> SHIELD_BOOST = REGISTER.register("shield_boost", () -> new ShieldBoost(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+
+    public static final RegistryObject<Item> STIM = REGISTER.register("stim", () -> new Stim(new Item.Properties().tab(GROUP)));
 }

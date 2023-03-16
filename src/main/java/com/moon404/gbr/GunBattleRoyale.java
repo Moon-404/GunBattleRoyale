@@ -15,6 +15,7 @@ import com.moon404.gbr.handler.ClientTickHandler;
 import com.moon404.gbr.handler.CorpseDeathHandler;
 import com.moon404.gbr.handler.HurtHandler;
 import com.moon404.gbr.handler.ItemPickupHandler;
+import com.moon404.gbr.handler.ItemTossHandler;
 import com.moon404.gbr.init.GunBattleRoyaleConfigs;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
@@ -50,6 +51,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(KnockbackHandler.class);
         MinecraftForge.EVENT_BUS.register(ItemPickupHandler.class);
         MinecraftForge.EVENT_BUS.register(CorpseDeathHandler.class);
+        MinecraftForge.EVENT_BUS.register(ItemTossHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(Type.CLIENT, GunBattleRoyaleConfigs.SPEC, "GunBattleRoyaleConfig.toml");
         modEventBus.addListener(this::onCommonSetup);
