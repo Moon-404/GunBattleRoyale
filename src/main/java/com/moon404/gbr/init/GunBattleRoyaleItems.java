@@ -40,7 +40,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> GRIP = REGISTER.register("grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
     public static final RegistryObject<Item> ADVANCED_GRIP = REGISTER.register("advanced_grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.ADVANCED_GRIP), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).tab(GROUP)));
 
-    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.32d", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.32e", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SHIELD_CELL = REGISTER.register("shield_cell", () -> new ShieldCell(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> SHIELD_BATTERY = REGISTER.register("shield_battery", () -> new ShieldBattery(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
