@@ -10,6 +10,7 @@ public class ItemTossHandler
     @SubscribeEvent
     public static void onItemToss(ItemTossEvent event)
     {
+        if (event.getPlayer().level.isClientSide) return;
         if (event.getEntity().getItem().getItem() instanceof SkillItem item)
         {
             event.setCanceled(item.onToss(event.getPlayer()));

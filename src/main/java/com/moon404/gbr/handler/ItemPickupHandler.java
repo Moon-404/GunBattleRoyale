@@ -65,7 +65,10 @@ public class ItemPickupHandler
                         if (attachmentItem.getRarity(attachmentStack) == Rarity.EPIC && oldAttachment.getRarity(oldAttachStack) == Rarity.COMMON)
                         {
                             addAttachment(inventoryStack, type, attachmentStack, player);
-                            inventory.add(oldAttachStack);
+                            if (!autoAttachment((AttachmentItem)oldAttachment, inventory, oldAttachStack, player))
+                            {
+                                inventory.add(oldAttachStack);
+                            }
                             return true;
                         }
                     }
