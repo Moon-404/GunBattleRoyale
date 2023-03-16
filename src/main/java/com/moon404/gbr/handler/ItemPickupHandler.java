@@ -32,6 +32,49 @@ public class ItemPickupHandler
         return null;
     }
 
+    public static void addAttachment(ItemStack gunStack, Type type, ItemStack attachmentStack, Player player)
+    {
+        CompoundTag tag = gunStack.getOrCreateTagElement("Attachments");
+        tag.put(type.getTagKey(), attachmentStack.save(new CompoundTag()));
+        gunStack.getOrCreateTag().put("Attachments", tag);
+        player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
+    }
+
+    public static boolean autoAttachment(AttachmentItem attachmentItem, Inventory inventory, ItemStack attachmentStack, Player player)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            ItemStack inventoryStack = inventory.getItem(i);
+            if (inventoryStack.getItem() instanceof GunItem item)
+            {
+                Gun gun = item.getGun();
+                Type type = getAttachmentType(attachmentItem);
+                if (gun.canAttachType(type))
+                {
+                    // 没有已经装备的配件
+                    if (!Gun.hasAttachmentEquipped(inventoryStack, gun, type))
+                    {
+                        addAttachment(inventoryStack, type, attachmentStack, player);
+                        return true;
+                    }
+                    // 配件更好
+                    else
+                    {
+                        ItemStack oldAttachStack = Gun.getAttachment(type, inventoryStack);
+                        Item oldAttachment = oldAttachStack.getItem();
+                        if (attachmentItem.getRarity(attachmentStack) == Rarity.EPIC && oldAttachment.getRarity(oldAttachStack) == Rarity.COMMON)
+                        {
+                            addAttachment(inventoryStack, type, attachmentStack, player);
+                            inventory.add(oldAttachStack);
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     @SubscribeEvent
     public static void onItemPickup(EntityItemPickupEvent event)
     {
@@ -42,45 +85,10 @@ public class ItemPickupHandler
         ItemStack itemStack = itemEntity.getItem();
         if (itemStack.getItem() instanceof AttachmentItem attachment)
         {
-            for (int i = 0; i < 3; i++)
+            if (autoAttachment(attachment, inventory, itemStack, player))
             {
-                ItemStack inventoryStack = inventory.getItem(i);
-                if (inventoryStack.getItem() instanceof GunItem item)
-                {
-                    Gun gun = item.getGun();
-                    Type type = getAttachmentType(attachment);
-                    if (gun.canAttachType(type))
-                    {
-                        // 没有已经装备的配件
-                        if (!Gun.hasAttachmentEquipped(inventoryStack, gun, type))
-                        {
-                            CompoundTag tag = inventoryStack.getOrCreateTagElement("Attachments");
-                            tag.put(type.getTagKey(), itemStack.save(new CompoundTag()));
-                            inventoryStack.getOrCreateTag().put("Attachments", tag);
-                            player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
-                            itemEntity.kill();
-                            event.setCanceled(true);
-                            return;
-                        }
-                        // 配件更好
-                        else
-                        {
-                            ItemStack oldAttachStack = Gun.getAttachment(type, inventoryStack);
-                            Item oldAttachment = oldAttachStack.getItem();
-                            if (attachment.getRarity(itemStack) == Rarity.EPIC && oldAttachment.getRarity(oldAttachStack) == Rarity.COMMON)
-                            {
-                                CompoundTag tag = inventoryStack.getOrCreateTagElement("Attachments");
-                                tag.put(type.getTagKey(), itemStack.save(new CompoundTag()));
-                                inventoryStack.getOrCreateTag().put("Attachments", tag);
-                                player.level.playSound(null, player.getX(), player.getY() + 1.0, player.getZ(), ModSounds.UI_WEAPON_ATTACH.get(), SoundSource.PLAYERS, 0.5F, 1.0F);
-                                itemEntity.kill();
-                                event.setCanceled(true);
-                                inventory.add(oldAttachStack);
-                                return;
-                            }
-                        }
-                    }
-                }
+                itemEntity.kill();
+                event.setCanceled(true);
             }
         }
     }
