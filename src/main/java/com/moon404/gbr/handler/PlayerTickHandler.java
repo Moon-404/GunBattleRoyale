@@ -3,9 +3,13 @@ package com.moon404.gbr.handler;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.PlayerSpeed;
 
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AirItem;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.event.TickEvent.Phase;
 import net.minecraftforge.event.TickEvent.PlayerTickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -21,6 +25,7 @@ public class PlayerTickHandler
         if (event.phase != Phase.END) return;
         if (event.side != LogicalSide.SERVER) return;
         Player player = event.player;
+
         PlayerSpeed ps = new PlayerSpeed();
         double dx = 0.0F;
         double dy = 0.0F;
@@ -40,5 +45,15 @@ public class PlayerTickHandler
         ps.lastZ = z;
         ps.speed = Math.sqrt(dx * dx + dy * dy + dz * dz);
         data.put(player, ps);
+
+        if (player.hasEffect(MobEffects.BLINDNESS))
+        {
+            Item holding = player.getInventory().getSelected().getItem();
+            if (!(holding instanceof AirItem) && holding != GunBattleRoyaleItems.VOID.get())
+            {
+                player.removeEffect(MobEffects.INVISIBILITY);
+                player.removeEffect(MobEffects.BLINDNESS);
+            }
+        }
     }
 }

@@ -6,6 +6,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import com.moon404.gbr.item.EnterVoid;
+import com.moon404.gbr.item.Glow;
+import com.moon404.gbr.item.Lift;
 import com.moon404.gbr.item.MedKit;
 import com.moon404.gbr.item.PhoenixKit;
 import com.moon404.gbr.item.RecoverItem;
@@ -50,4 +53,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> SHIELD_BOOST = REGISTER.register("shield_boost", () -> new ShieldBoost(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
 
     public static final RegistryObject<Item> STIM = REGISTER.register("stim", () -> new Stim(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> LIFT = REGISTER.register("lift", () -> new Lift(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> GLOW = REGISTER.register("glow", () -> new Glow(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> VOID = REGISTER.register("void", () -> new EnterVoid(new Item.Properties().tab(GROUP)));
 }
