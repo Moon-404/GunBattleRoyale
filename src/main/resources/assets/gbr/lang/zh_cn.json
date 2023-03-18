@@ -22,6 +22,7 @@
     "item.gbr.void": "遁入虚空",
     "item.gbr.glow": "上帝之眼",
     "item.gbr.health_bottle": "生命瓶",
+    "item.gbr.shield_bottle": "护盾瓶",
     "itemGroup.gbr": "Moon的枪战大逃杀",
     "perk.gbr.title": "额外:",
     "perk.gbr.entry.positive": "+ %s",
