@@ -5,77 +5,19 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:rabbit_foot",
-                    "functions": [
-                        {
-                            "function": "set_name",
-                            "name": "肾上腺素"
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                "按Q扔出生效",
-                                "受到6点伤害",
-                                "5秒内加速2和跳跃2"
-                            ]
-                        }
-                    ]
+                    "name": "gbr:stim"
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:ghast_tear",
-                    "functions": [
-                        {
-                            "function": "set_name",
-                            "name": "遁入虚空"
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                "按Q扔出生效",
-                                "5秒内隐身但失明",
-                                "若手持了非本技能的物品",
-                                "该技能效果提前结束"
-                            ]
-                        }
-                    ]
+                    "name": "gbr:glow"
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:glowstone_dust",
-                    "functions": [
-                        {
-                            "function": "set_name",
-                            "name": "扫描战场"
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                "按Q扔出生效",
-                                "50格以内玩家（包括自己）发光5秒",
-                                "51-100格的玩家发光2秒"
-                            ]
-                        }
-                    ]
+                    "name": "gbr:lift"
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:phantom_membrane",
-                    "functions": [
-                        {
-                            "function": "set_name",
-                            "name": "喷气平台"
-                        },
-                        {
-                            "function": "set_lore",
-                            "lore": [
-                                "按Q扔出生效",
-                                "在脚下召唤一个持续5秒的喷气口",
-                                "可以把其上的玩家提高最多10格",
-                                "会受到摔落伤害"
-                            ]
-                        }
-                    ]
+                    "name": "gbr:void"
                 }
             ]
         }
