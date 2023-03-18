@@ -6,17 +6,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import com.moon404.gbr.item.EnterVoid;
-import com.moon404.gbr.item.Glow;
-import com.moon404.gbr.item.Lift;
-import com.moon404.gbr.item.MedKit;
-import com.moon404.gbr.item.PhoenixKit;
-import com.moon404.gbr.item.RecoverItem;
-import com.moon404.gbr.item.ShieldBattery;
-import com.moon404.gbr.item.ShieldBoost;
-import com.moon404.gbr.item.ShieldCell;
-import com.moon404.gbr.item.Stim;
-import com.moon404.gbr.item.Syringe;
+import com.moon404.gbr.item.recover.MedKit;
+import com.moon404.gbr.item.recover.PhoenixKit;
+import com.moon404.gbr.item.recover.RecoverItem;
+import com.moon404.gbr.item.recover.ShieldBattery;
+import com.moon404.gbr.item.recover.ShieldBoost;
+import com.moon404.gbr.item.recover.ShieldCell;
+import com.moon404.gbr.item.recover.Syringe;
+import com.moon404.gbr.item.skill.EnterVoid;
+import com.moon404.gbr.item.skill.Glow;
+import com.moon404.gbr.item.skill.Lift;
+import com.moon404.gbr.item.skill.Stim;
 import com.mrcrayfish.guns.item.*;
 import com.mrcrayfish.guns.item.attachment.impl.*;
 

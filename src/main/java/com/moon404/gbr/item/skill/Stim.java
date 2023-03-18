@@ -1,4 +1,4 @@
-package com.moon404.gbr.item;
+package com.moon404.gbr.item.skill;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

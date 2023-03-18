@@ -1,4 +1,4 @@
-package com.moon404.gbr.item;
+package com.moon404.gbr.item.recover;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -6,16 +6,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ShieldBattery extends RecoverItem
+public class PhoenixKit extends RecoverItem
 {
-    public ShieldBattery(Item.Properties properties)
+    public PhoenixKit(Item.Properties properties)
     {
         super(properties);
     }
 
     public int getUseDuration(ItemStack stack)
     {
-        return 50;
+        return 100;
     }
 
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity)
@@ -24,6 +24,7 @@ public class ShieldBattery extends RecoverItem
         {
             float shield = player.experienceLevel * 4 + 4;
             player.setAbsorptionAmount(shield);
+            player.heal(20);
         }
         stack.setDamageValue(0);
         return this.isEdible() ? entity.eat(level, stack) : stack;

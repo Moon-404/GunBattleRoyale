@@ -1,6 +1,6 @@
 package com.moon404.gbr.handler;
 
-import com.moon404.gbr.item.SkillItem;
+import com.moon404.gbr.item.skill.SkillItem;
 
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

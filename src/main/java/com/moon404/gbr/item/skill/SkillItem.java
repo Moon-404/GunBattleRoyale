@@ -1,4 +1,4 @@
-package com.moon404.gbr.item;
+package com.moon404.gbr.item.skill;
 
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;

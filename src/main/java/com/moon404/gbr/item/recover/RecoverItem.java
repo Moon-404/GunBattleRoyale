@@ -1,4 +1,4 @@
-package com.moon404.gbr.item;
+package com.moon404.gbr.item.recover;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;

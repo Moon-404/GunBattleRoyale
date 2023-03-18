@@ -1,4 +1,4 @@
-package com.moon404.gbr.item;
+package com.moon404.gbr.item.skill;
 
 import com.moon404.gbr.entity.LiftEntity;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
