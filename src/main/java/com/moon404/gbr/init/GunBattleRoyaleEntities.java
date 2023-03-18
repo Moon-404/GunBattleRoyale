@@ -3,6 +3,7 @@ package com.moon404.gbr.init;
 import com.moon404.gbr.entity.ChargingLaserEntity;
 import com.moon404.gbr.entity.HealthBottleEntity;
 import com.moon404.gbr.entity.LiftEntity;
+import com.moon404.gbr.entity.PearlEntity;
 import com.moon404.gbr.entity.ShieldBottleEntity;
 
 import net.minecraft.world.entity.EntityType;
@@ -34,4 +35,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<ShieldBottleEntity>> SHIELD_BOTTLE =
         REGISTER.register("shield_bottle", () ->
             EntityType.Builder.of(ShieldBottleEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("shield_bottle"));
+    public static final RegistryObject<EntityType<PearlEntity>> PEARL =
+        REGISTER.register("pearl", () ->
+            EntityType.Builder.<PearlEntity>of(PearlEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("pearl"));
 }

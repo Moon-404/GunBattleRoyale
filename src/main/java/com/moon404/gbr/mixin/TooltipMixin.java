@@ -141,5 +141,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("生成一个持续 4 秒的护盾恢复区域"));
             toolTip.add(Component.literal("站在其中的玩家每秒恢复 2 点护盾"));
         }
+        if (item == GunBattleRoyaleItems.PEARL.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，落地生效"));
+            toolTip.add(Component.literal("瞬移到目的地点，有明显的粒子效果"));
+            toolTip.add(Component.literal("落地前玩家只能够缓慢移动"));
+        }
     }
 }
