@@ -45,9 +45,9 @@
   "projectile": {
     "damage": 3,
     "item": "cgm:basic_bullet",
-    "life": 9,
+    "life": 7,
     "size": 0.2,
-    "speed": 5.0,
+    "speed": 8.0,
     "damageReduceOverLife": true
   },
   "sounds": {

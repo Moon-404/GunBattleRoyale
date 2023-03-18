@@ -12,8 +12,8 @@
     "item": "",
     "damage": 1,
     "size": 0.2,
-    "speed": 5.0,
-    "life": 9,
+    "speed": 8.0,
+    "life": 7,
     "damageReduceOverLife": true
   },
   "sounds": {

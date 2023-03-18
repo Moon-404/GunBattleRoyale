@@ -5,4 +5,3 @@ experience set @s 1 levels
 experience set @s 0 points
 data modify entity @s AbsorptionAmount set value 8
 scoreboard players add @s stat_total 1
-attribute @s generic.attack_speed base set 2.0

@@ -8,10 +8,6 @@ scoreboard objectives add death deathCount
 scoreboard objectives add ob dummy
 # 玩家高度
 scoreboard objectives add height dummy
-# 玩家伤害吸收
-scoreboard objectives add absorption dummy
-# 玩家最大生命值
-scoreboard objectives add maxhealth dummy
 # 玩家积分
 scoreboard objectives add rank dummy
 scoreboard objectives setdisplay list rank
