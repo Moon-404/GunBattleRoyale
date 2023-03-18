@@ -153,5 +153,10 @@ public class TooltipMixin
             toolTip.add(Component.literal("记录自己的当前位置"));
             toolTip.add(Component.literal("5 秒内如果护盾被击碎则会传送回去"));
         }
+        if (item == GunBattleRoyaleItems.FAST.get())
+        {
+            toolTip.add(Component.literal("放在副手，被动生效"));
+            toolTip.add(Component.literal("受到伤害时获得 2 秒速度III"));
+        }
     }
 }

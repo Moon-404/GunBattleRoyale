@@ -14,6 +14,7 @@ import com.moon404.gbr.item.recover.ShieldBoost;
 import com.moon404.gbr.item.recover.ShieldCell;
 import com.moon404.gbr.item.recover.Syringe;
 import com.moon404.gbr.item.skill.EnterVoid;
+import com.moon404.gbr.item.skill.Fast;
 import com.moon404.gbr.item.skill.Glow;
 import com.moon404.gbr.item.skill.HealthBottle;
 import com.moon404.gbr.item.skill.Lift;
@@ -64,4 +65,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> SHIELD_BOTTLE = REGISTER.register("shield_bottle", () -> new ShieldBottle(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> PEARL = REGISTER.register("pearl", () -> new Pearl(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> TOTEM = REGISTER.register("totem", () -> new Totem(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> FAST = REGISTER.register("fast", () -> new Fast(new Item.Properties().tab(GROUP)));
 }
