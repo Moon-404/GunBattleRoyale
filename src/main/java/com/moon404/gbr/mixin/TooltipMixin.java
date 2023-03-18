@@ -158,5 +158,10 @@ public class TooltipMixin
             toolTip.add(Component.literal("放在副手，被动生效"));
             toolTip.add(Component.literal("受到伤害时获得 2 秒速度III"));
         }
+        if (item == GunBattleRoyaleItems.IRE.get())
+        {
+            toolTip.add(Component.literal("放在副手，被动生效"));
+            toolTip.add(Component.literal("造成伤害时令目标发光 3 秒"));
+        }
     }
 }

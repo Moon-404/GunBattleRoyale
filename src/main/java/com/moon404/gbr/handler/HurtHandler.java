@@ -33,6 +33,16 @@ public class HurtHandler
             }
             from.giveExperiencePoints((int)(damage.amount * 100));
             ShowDamageMessage.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {return from;}), damage);
+
+            ItemStack itemStack = from.getOffhandItem();
+            if (itemStack.getItem() == GunBattleRoyaleItems.IRE.get())
+            {
+                if (!event.getEntity().hasEffect(MobEffects.GLOWING))
+                {
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 60));
+                    itemStack.setCount(itemStack.getCount() - 1);
+                }
+            }
         }
 
         if (event.getEntity() instanceof Player player)
