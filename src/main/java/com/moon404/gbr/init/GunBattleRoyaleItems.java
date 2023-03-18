@@ -20,6 +20,7 @@ import com.moon404.gbr.item.skill.Lift;
 import com.moon404.gbr.item.skill.Pearl;
 import com.moon404.gbr.item.skill.ShieldBottle;
 import com.moon404.gbr.item.skill.Stim;
+import com.moon404.gbr.item.skill.Totem;
 import com.mrcrayfish.guns.item.*;
 import com.mrcrayfish.guns.item.attachment.impl.*;
 
@@ -62,4 +63,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> HEALTH_BOTTLE = REGISTER.register("health_bottle", () -> new HealthBottle(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> SHIELD_BOTTLE = REGISTER.register("shield_bottle", () -> new ShieldBottle(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> PEARL = REGISTER.register("pearl", () -> new Pearl(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> TOTEM = REGISTER.register("totem", () -> new Totem(new Item.Properties().tab(GROUP)));
 }

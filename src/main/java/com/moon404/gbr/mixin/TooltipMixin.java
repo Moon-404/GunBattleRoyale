@@ -147,5 +147,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("瞬移到目的地点，有明显的粒子效果"));
             toolTip.add(Component.literal("落地前玩家只能够缓慢移动"));
         }
+        if (item == GunBattleRoyaleItems.TOTEM.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，立即生效"));
+            toolTip.add(Component.literal("记录自己的当前位置"));
+            toolTip.add(Component.literal("5 秒内如果护盾被击碎则会传送回去"));
+        }
     }
 }

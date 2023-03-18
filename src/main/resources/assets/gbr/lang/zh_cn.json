@@ -24,6 +24,7 @@
     "item.gbr.health_bottle": "生命瓶",
     "item.gbr.shield_bottle": "护盾瓶",
     "item.gbr.pearl": "珍珠瞬移器",
+    "item.gbr.totem": "死亡图腾",
     "itemGroup.gbr": "Moon的枪战大逃杀",
     "perk.gbr.title": "额外:",
     "perk.gbr.entry.positive": "+ %s",

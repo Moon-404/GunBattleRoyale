@@ -5,6 +5,7 @@ import com.moon404.gbr.entity.HealthBottleEntity;
 import com.moon404.gbr.entity.LiftEntity;
 import com.moon404.gbr.entity.PearlEntity;
 import com.moon404.gbr.entity.ShieldBottleEntity;
+import com.moon404.gbr.entity.TotemEntity;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -38,4 +39,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<PearlEntity>> PEARL =
         REGISTER.register("pearl", () ->
             EntityType.Builder.<PearlEntity>of(PearlEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("pearl"));
+    public static final RegistryObject<EntityType<TotemEntity>> TOTEM =
+        REGISTER.register("totem", () ->
+            EntityType.Builder.of(TotemEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("totem"));
 }
