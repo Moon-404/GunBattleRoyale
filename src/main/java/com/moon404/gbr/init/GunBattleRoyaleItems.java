@@ -20,6 +20,7 @@ import com.moon404.gbr.item.skill.HealthBottle;
 import com.moon404.gbr.item.skill.Ire;
 import com.moon404.gbr.item.skill.Lift;
 import com.moon404.gbr.item.skill.Pearl;
+import com.moon404.gbr.item.skill.Purify;
 import com.moon404.gbr.item.skill.Scan;
 import com.moon404.gbr.item.skill.ShieldBottle;
 import com.moon404.gbr.item.skill.Stim;
@@ -70,4 +71,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> FAST = REGISTER.register("fast", () -> new Fast(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> IRE = REGISTER.register("ire", () -> new Ire(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> SCAN = REGISTER.register("scan", () -> new Scan(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> PURIFY = REGISTER.register("purify", () -> new Purify(new Item.Properties().tab(GROUP)));
 }
