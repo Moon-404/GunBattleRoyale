@@ -175,5 +175,10 @@ public class TooltipMixin
             toolTip.add(Component.literal("移除所有友方玩家的非正面效果"));
             toolTip.add(Component.literal("可以在被沉默时使用"));
         }
+        if (item == GunBattleRoyaleItems.CHARGE.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，立即生效"));
+            toolTip.add(Component.literal("所有友方玩家获得25进化点数"));
+        }
     }
 }
