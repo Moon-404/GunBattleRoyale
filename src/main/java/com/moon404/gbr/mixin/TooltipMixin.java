@@ -163,5 +163,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("放在副手，被动生效"));
             toolTip.add(Component.literal("造成伤害时令目标发光 3 秒"));
         }
+        if (item == GunBattleRoyaleItems.SCAN.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，立即生效"));
+            toolTip.add(Component.literal("得到距离最近敌人的距离和坐标"));
+            toolTip.add(Component.literal("自己不会被暴露，敌人也不会知道"));
+        }
     }
 }
