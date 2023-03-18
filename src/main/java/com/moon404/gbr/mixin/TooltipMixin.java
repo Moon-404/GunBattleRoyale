@@ -129,5 +129,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("生成一个持续 5 秒的重力电梯"));
             toolTip.add(Component.literal("可抬升最高 10 格，有摔落伤害"));
         }
+        if (item == GunBattleRoyaleItems.HEALTH_BOTTLE.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，落地生效"));
+            toolTip.add(Component.literal("生成一个持续 4 秒的生命恢复区域"));
+            toolTip.add(Component.literal("站在其中的玩家每秒恢复 2 点生命"));
+        }
     }
 }

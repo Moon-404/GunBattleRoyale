@@ -15,6 +15,7 @@ import com.moon404.gbr.item.recover.ShieldCell;
 import com.moon404.gbr.item.recover.Syringe;
 import com.moon404.gbr.item.skill.EnterVoid;
 import com.moon404.gbr.item.skill.Glow;
+import com.moon404.gbr.item.skill.HealthBottle;
 import com.moon404.gbr.item.skill.Lift;
 import com.moon404.gbr.item.skill.Stim;
 import com.mrcrayfish.guns.item.*;
@@ -56,4 +57,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> LIFT = REGISTER.register("lift", () -> new Lift(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> GLOW = REGISTER.register("glow", () -> new Glow(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> VOID = REGISTER.register("void", () -> new EnterVoid(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> HEALTH_BOTTLE = REGISTER.register("health_bottle", () -> new HealthBottle(new Item.Properties().tab(GROUP)));
 }

@@ -1,6 +1,7 @@
 package com.moon404.gbr.init;
 
 import com.moon404.gbr.entity.ChargingLaserEntity;
+import com.moon404.gbr.entity.HealthBottleEntity;
 import com.moon404.gbr.entity.LiftEntity;
 
 import net.minecraft.world.entity.EntityType;
@@ -26,4 +27,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<LiftEntity>> LIFT =
         REGISTER.register("lift", () ->
             EntityType.Builder.of(LiftEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("lift"));
+    public static final RegistryObject<EntityType<HealthBottleEntity>> HEALTH_BOTTLE =
+        REGISTER.register("health_bottle", () ->
+            EntityType.Builder.of(HealthBottleEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("health_bottle"));
 }
