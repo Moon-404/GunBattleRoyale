@@ -36,7 +36,7 @@ public class ExhibitEntity extends Marker
         }
         for (Player player : this.level.players())
         {
-            if (this.position().distanceTo(player.position()) <= 16)
+            if (this.distanceTo(player) <= 16)
             {
                 Component component = Component.literal("已进入侦测范围，缓慢移动以避免发光");
                 player.displayClientMessage(component, true);

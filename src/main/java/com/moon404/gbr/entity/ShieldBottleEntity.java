@@ -33,7 +33,7 @@ public class ShieldBottleEntity extends Marker
             {
                 for (Player player : level.players())
                 {
-                    if (this.position().distanceTo(player.position()) <= 4)
+                    if (this.distanceTo(player) <= 4)
                     {
                         float amount = player.getAbsorptionAmount();
                         amount += 1;

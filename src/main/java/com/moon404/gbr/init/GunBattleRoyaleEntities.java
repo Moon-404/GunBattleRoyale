@@ -6,6 +6,7 @@ import com.moon404.gbr.entity.HealthBottleEntity;
 import com.moon404.gbr.entity.LiftEntity;
 import com.moon404.gbr.entity.PearlEntity;
 import com.moon404.gbr.entity.ShieldBottleEntity;
+import com.moon404.gbr.entity.SnareEntity;
 import com.moon404.gbr.entity.TotemEntity;
 
 import net.minecraft.world.entity.EntityType;
@@ -46,4 +47,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<ExhibitEntity>> EXHHIBIT =
         REGISTER.register("exhibit", () ->
             EntityType.Builder.of(ExhibitEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("exhibit"));
+    public static final RegistryObject<EntityType<SnareEntity>> SNARE =
+        REGISTER.register("snare", () ->
+            EntityType.Builder.<SnareEntity>of(SnareEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("snare"));
 }

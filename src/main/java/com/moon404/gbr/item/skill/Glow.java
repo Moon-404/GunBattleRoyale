@@ -18,7 +18,7 @@ public class Glow extends SkillItem
         Level level = player.level;
         for (Player target : level.players())
         {
-            double distance = player.position().distanceTo(target.position());
+            double distance = player.distanceTo(target);
             if (distance < 100)
             {
                 target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100 - (int)distance));

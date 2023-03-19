@@ -19,7 +19,7 @@ public class Scan extends SkillItem
         {
             if (target.getTeam() != player.getTeam())
             {
-                double dis = target.position().distanceTo(player.position());
+                double dis = target.distanceTo(player);
                 if (dis < mindis)
                 {
                     mindis = dis;

@@ -33,7 +33,7 @@ public class HealthBottleEntity extends Marker
             {
                 for (Player player : level.players())
                 {
-                    if (this.position().distanceTo(player.position()) <= 4)
+                    if (this.distanceTo(player) <= 4)
                     {
                         float amount = player.getHealth();
                         amount += 1;
