@@ -192,5 +192,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("对落地点周围的敌人"));
             toolTip.add(Component.literal("造成 5 秒缓慢III效果"));
         }
+        if (item == GunBattleRoyaleItems.SILENCE.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，落地生效"));
+            toolTip.add(Component.literal("对落地点周围的敌人"));
+            toolTip.add(Component.literal("造成 10 秒沉默效果"));
+        }
     }
 }

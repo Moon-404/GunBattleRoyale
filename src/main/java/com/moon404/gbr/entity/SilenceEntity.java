@@ -1,9 +1,9 @@
 package com.moon404.gbr.entity;
 
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -11,9 +11,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 
-public class SnareEntity extends ThrowableItemProjectile
+public class SilenceEntity extends ThrowableItemProjectile
 {
-    public SnareEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel)
+    public SilenceEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
     }
@@ -21,7 +21,7 @@ public class SnareEntity extends ThrowableItemProjectile
     @Override
     protected Item getDefaultItem()
     {
-        return GunBattleRoyaleItems.SNARE.get();
+        return GunBattleRoyaleItems.SILENCE.get();
     }
 
     protected void onHit(HitResult pResult)
@@ -31,7 +31,7 @@ public class SnareEntity extends ThrowableItemProjectile
         {
             if (this.distanceTo(player) <= 4)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+                player.addEffect(new MobEffectInstance(GunBattleRoyaleEffects.SILENCE.get(), 200));
             }
         }
         this.kill();

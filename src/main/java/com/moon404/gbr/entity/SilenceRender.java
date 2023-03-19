@@ -10,21 +10,21 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
-public class SnareRender extends EntityRenderer<SnareEntity>
+public class SilenceRender extends EntityRenderer<SilenceEntity>
 {
-    public SnareRender(Context pContext)
+    public SilenceRender(Context pContext)
     {
         super(pContext);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(SnareEntity pEntity)
+    public ResourceLocation getTextureLocation(SilenceEntity pEntity)
     {
         return null;
     }
 
     @Override
-    public void render(SnareEntity pEntity, float pEntityYaw, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight)
+    public void render(SilenceEntity pEntity, float pEntityYaw, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight)
     {
         Minecraft.getInstance().getItemRenderer().renderStatic(pEntity.getItem(), ItemTransforms.TransformType.NONE, pPackedLight, OverlayTexture.NO_OVERLAY, pPoseStack, pBuffer, 0);
     }

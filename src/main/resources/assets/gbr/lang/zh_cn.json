@@ -32,6 +32,8 @@
     "item.gbr.charge": "护盾强化",
     "item.gbr.exhibit": "一览无余",
     "item.gbr.snare": "电弧陷阱",
+    "item.gbr.silence": "静默",
+    "effect.gbr.silence": "沉默",
     "itemGroup.gbr": "Moon的枪战大逃杀",
     "perk.gbr.title": "额外:",
     "perk.gbr.entry.positive": "+ %s",
