@@ -20,6 +20,7 @@ public class Exhibit extends SkillItem
     {
         if (entity.getThrowingEntity() instanceof Player player)
         {
+            if (ClassType.getClass(player) != this.classType) return false;
             if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         }
         ExhibitEntity exhibit = new ExhibitEntity(GunBattleRoyaleEntities.EXHHIBIT.get(), entity.level);

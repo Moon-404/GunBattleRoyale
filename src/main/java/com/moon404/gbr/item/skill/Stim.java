@@ -17,6 +17,7 @@ public class Stim extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         float hp = player.getHealth();
         hp -= 6;

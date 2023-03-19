@@ -17,6 +17,7 @@ public class EnterVoid extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 100));
         player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 100));

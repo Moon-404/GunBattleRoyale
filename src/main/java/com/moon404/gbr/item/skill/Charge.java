@@ -15,6 +15,7 @@ public class Charge extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         for (Player target : player.level.players())
         {

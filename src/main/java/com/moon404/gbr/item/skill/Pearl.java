@@ -18,6 +18,7 @@ public class Pearl extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 114514, 4));
         PearlEntity pearl = new PearlEntity(player.level, player);

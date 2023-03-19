@@ -16,6 +16,7 @@ public class Scan extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         double mindis = Float.MAX_VALUE;
         Player nearest = null;

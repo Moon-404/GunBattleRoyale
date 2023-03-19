@@ -20,6 +20,7 @@ public class Lift extends SkillItem
     {
         if (entity.getThrowingEntity() instanceof Player player)
         {
+            if (ClassType.getClass(player) != this.classType) return false;
             if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         }
         LiftEntity lift = new LiftEntity(GunBattleRoyaleEntities.LIFT.get(), entity.level);

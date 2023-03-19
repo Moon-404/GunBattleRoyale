@@ -16,6 +16,7 @@ public class Purify extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         for (Player target : player.level.players())
         {
             if (target.getTeam() == player.getTeam())

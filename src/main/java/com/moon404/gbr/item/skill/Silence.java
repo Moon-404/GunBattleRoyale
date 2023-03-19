@@ -17,6 +17,7 @@ public class Silence extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         SilenceEntity silence = new SilenceEntity(GunBattleRoyaleEntities.SILENCE.get(), player.level);
         silence.setPos(player.getEyePosition());
