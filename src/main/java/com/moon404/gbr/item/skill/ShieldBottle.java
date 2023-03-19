@@ -3,6 +3,7 @@ package com.moon404.gbr.item.skill;
 import com.moon404.gbr.entity.ShieldBottleEntity;
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
+import com.moon404.gbr.struct.ClassType;
 
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
@@ -11,7 +12,7 @@ public class ShieldBottle extends SkillItem
 {
     public ShieldBottle(Properties properties)
     {
-        super(properties);
+        super(properties, ClassType.SUPPORT);
     }
 
     @Override

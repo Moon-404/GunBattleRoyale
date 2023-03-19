@@ -1,6 +1,7 @@
 package com.moon404.gbr.item.skill;
 
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
+import com.moon404.gbr.struct.ClassType;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,7 +11,7 @@ public class Stim extends SkillItem
 {
     public Stim(Properties properties)
     {
-        super(properties);
+        super(properties, ClassType.ROGUE);
     }
 
     @Override

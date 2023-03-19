@@ -1,5 +1,7 @@
 package com.moon404.gbr.item.skill;
 
+import com.moon404.gbr.struct.ClassType;
+
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -7,9 +9,12 @@ import net.minecraft.world.item.ItemStack;
 
 public class SkillItem extends Item
 {
-    public SkillItem(Properties properties)
+    public ClassType classType;
+
+    public SkillItem(Properties properties, ClassType type)
     {
         super(properties);
+        this.classType = type;
     }
     
     // 技能物品被扔下时触发

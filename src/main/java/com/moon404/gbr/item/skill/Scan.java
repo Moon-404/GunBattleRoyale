@@ -1,6 +1,7 @@
 package com.moon404.gbr.item.skill;
 
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
+import com.moon404.gbr.struct.ClassType;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
@@ -9,7 +10,7 @@ public class Scan extends SkillItem
 {
     public Scan(Properties properties)
     {
-        super(properties);
+        super(properties, ClassType.SCOUT);
     }
 
     @Override
