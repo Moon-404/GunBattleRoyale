@@ -15,6 +15,7 @@ import com.moon404.gbr.item.recover.ShieldCell;
 import com.moon404.gbr.item.recover.Syringe;
 import com.moon404.gbr.item.skill.Charge;
 import com.moon404.gbr.item.skill.EnterVoid;
+import com.moon404.gbr.item.skill.Exhibit;
 import com.moon404.gbr.item.skill.Fast;
 import com.moon404.gbr.item.skill.Glow;
 import com.moon404.gbr.item.skill.HealthBottle;
@@ -74,4 +75,5 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> SCAN = REGISTER.register("scan", () -> new Scan(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> PURIFY = REGISTER.register("purify", () -> new Purify(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> CHARGE = REGISTER.register("charge", () -> new Charge(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> EXHIBIT = REGISTER.register("exhibit", () -> new Exhibit(new Item.Properties().tab(GROUP)));
 }

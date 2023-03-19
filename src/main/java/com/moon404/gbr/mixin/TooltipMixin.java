@@ -180,5 +180,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("所有友方玩家获得25进化点数"));
         }
+        if (item == GunBattleRoyaleItems.EXHIBIT.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，落地生效"));
+            toolTip.add(Component.literal("创建一个侦测器，持续 10 秒"));
+            toolTip.add(Component.literal("其中快速移动的玩家会发光"));
+        }
     }
 }

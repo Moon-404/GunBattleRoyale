@@ -1,6 +1,7 @@
 package com.moon404.gbr.init;
 
 import com.moon404.gbr.entity.ChargingLaserEntity;
+import com.moon404.gbr.entity.ExhibitEntity;
 import com.moon404.gbr.entity.HealthBottleEntity;
 import com.moon404.gbr.entity.LiftEntity;
 import com.moon404.gbr.entity.PearlEntity;
@@ -42,4 +43,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<TotemEntity>> TOTEM =
         REGISTER.register("totem", () ->
             EntityType.Builder.of(TotemEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("totem"));
+    public static final RegistryObject<EntityType<ExhibitEntity>> EXHHIBIT =
+        REGISTER.register("exhibit", () ->
+            EntityType.Builder.of(ExhibitEntity::new, MobCategory.MISC).sized(0.0F, 0.0F).clientTrackingRange(0).build("exhibit"));
 }
