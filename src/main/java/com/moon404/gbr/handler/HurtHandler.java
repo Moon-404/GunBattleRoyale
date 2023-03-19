@@ -1,5 +1,6 @@
 package com.moon404.gbr.handler;
 
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.DamageInfo;
 import com.moon404.gbr.struct.ShowDamageMessage;
@@ -35,20 +36,17 @@ public class HurtHandler
             ShowDamageMessage.INSTANCE.send(PacketDistributor.PLAYER.with(() -> {return from;}), damage);
 
             ItemStack itemStack = from.getOffhandItem();
-            if (itemStack.getItem() == GunBattleRoyaleItems.IRE.get())
+            if (itemStack.getItem() == GunBattleRoyaleItems.IRE.get() && !event.getEntity().hasEffect(MobEffects.GLOWING) && !from.hasEffect(GunBattleRoyaleEffects.SILENCE.get()))
             {
-                if (!event.getEntity().hasEffect(MobEffects.GLOWING))
-                {
-                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 60));
-                    itemStack.setCount(itemStack.getCount() - 1);
-                }
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 60));
+                itemStack.setCount(itemStack.getCount() - 1);
             }
         }
 
         if (event.getEntity() instanceof Player player)
         {
             ItemStack itemStack = player.getOffhandItem();
-            if (!player.hasEffect(MobEffects.MOVEMENT_SPEED) && itemStack.getItem() == GunBattleRoyaleItems.FAST.get())
+            if (!player.hasEffect(MobEffects.MOVEMENT_SPEED) && itemStack.getItem() == GunBattleRoyaleItems.FAST.get() && !player.hasEffect(GunBattleRoyaleEffects.SILENCE.get()))
             {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 2));
                 itemStack.setCount(itemStack.getCount() - 1);

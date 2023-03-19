@@ -1,5 +1,7 @@
 package com.moon404.gbr.item.skill;
 
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
+
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -14,6 +16,7 @@ public class Stim extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         float hp = player.getHealth();
         hp -= 6;
         if (hp < 1) hp = 1;

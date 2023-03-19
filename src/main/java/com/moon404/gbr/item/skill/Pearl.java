@@ -1,6 +1,7 @@
 package com.moon404.gbr.item.skill;
 
 import com.moon404.gbr.entity.PearlEntity;
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -16,6 +17,7 @@ public class Pearl extends SkillItem
     @Override
     public boolean onToss(Player player)
     {
+        if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 114514, 4));
         PearlEntity pearl = new PearlEntity(player.level, player);
         pearl.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, 1, 0);
