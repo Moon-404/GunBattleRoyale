@@ -47,6 +47,18 @@ view-distance=12
 
 跳伞平台最好不要使用玻璃，因为会被打碎。起始平台无所谓，因为本 MOD 中枪的射程没那么远。MOD 中提供了名为 gbr:start 的起始平台，可以作为参考。如果您需要调整y轴，可能需要将函数中的部分数值进行修改。
 
+### 职业与队伍
+
+本模组使用指令选择职业和队伍，在玩家登录时会有消息提醒，您也可以使用以下方式在起始大厅引导玩家。
+
+创建一个告示牌，告示牌上有一些引导玩家的内容，同时玩家可以通过右键告示牌便捷执行指令，如：
+
+```mcfunction
+data modify block ~ ~ ~ Text3 set value '{"text": "some text", "clickEvent": {"action": "run_command", "value": "/choose observe"}}'
+```
+
+这个指令会将玩家所在位置的告示牌的第三行字修改为 `some text`，并且在玩家右键时执行 `/choose observe` 指令。
+
 ### 设置盔甲架
 
 ```mcfunction
