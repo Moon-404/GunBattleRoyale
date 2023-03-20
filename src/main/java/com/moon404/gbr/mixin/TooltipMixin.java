@@ -101,7 +101,7 @@ public class TooltipMixin
         }
         if (item == GunBattleRoyaleItems.SHIELD_BOOST.get())
         {
-            toolTip.add(Component.literal("提供 30 护盾进化经验"));
+            toolTip.add(Component.literal("提供 25 护盾进化经验"));
             toolTip.add(Component.literal("使用此物品造成的护盾进化会恢复等量护盾值"));
             toolTip.add(Component.literal("使用时间：1.5秒"));
             return;
@@ -171,17 +171,18 @@ public class TooltipMixin
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("记录自己的当前位置"));
             toolTip.add(Component.literal("5 秒内如果护盾被击碎则会传送回去"));
+            toolTip.add(Component.literal("没有护盾时不会生效"));
             return;
         }
         if (item == GunBattleRoyaleItems.FAST.get())
         {
-            toolTip.add(Component.literal("放在副手，被动生效"));
+            toolTip.add(Component.literal("放在副手，被动生效并消耗"));
             toolTip.add(Component.literal("受到伤害时获得 2 秒速度III"));
             return;
         }
         if (item == GunBattleRoyaleItems.IRE.get())
         {
-            toolTip.add(Component.literal("放在副手，被动生效"));
+            toolTip.add(Component.literal("放在副手，被动生效并消耗"));
             toolTip.add(Component.literal("造成伤害时令目标发光 3 秒"));
             return;
         }
@@ -215,14 +216,14 @@ public class TooltipMixin
         if (item == GunBattleRoyaleItems.SNARE.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
-            toolTip.add(Component.literal("对落地点周围的敌人"));
+            toolTip.add(Component.literal("对落地点周围的玩家"));
             toolTip.add(Component.literal("造成 5 秒缓慢III效果"));
             return;
         }
         if (item == GunBattleRoyaleItems.SILENCE.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
-            toolTip.add(Component.literal("对落地点周围的敌人"));
+            toolTip.add(Component.literal("对落地点周围的玩家"));
             toolTip.add(Component.literal("造成 10 秒沉默效果"));
             return;
         }

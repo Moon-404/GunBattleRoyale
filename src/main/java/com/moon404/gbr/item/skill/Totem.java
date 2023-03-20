@@ -19,6 +19,7 @@ public class Totem extends SkillItem
     {
         if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
+        if (player.getAbsorptionAmount() == 0) return false;
         TotemEntity totem = new TotemEntity(GunBattleRoyaleEntities.TOTEM.get(), player.level);
         totem.setPos(player.position());
         totem.player = player;

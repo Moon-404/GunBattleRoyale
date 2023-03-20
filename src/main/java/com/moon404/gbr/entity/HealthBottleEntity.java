@@ -26,7 +26,7 @@ public class HealthBottleEntity extends Marker
         }
         if (this.level instanceof ServerLevel level)
         {
-            Vector3f color = new Vector3f(1.00F, 0, 0);
+            Vector3f color = new Vector3f(1.00F, 0.33F, 0.33F);
             DustParticleOptions options = new DustParticleOptions(color, 2.0F);
             level.sendParticles(options, this.getX(), this.getY() + 0.2, this.getZ(), 1, 1, 0, 1, 0.5);
             if (this.tickCount % 10 == 0)
