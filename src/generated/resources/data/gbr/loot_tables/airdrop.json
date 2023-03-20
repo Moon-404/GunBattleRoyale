@@ -4,8 +4,8 @@
             "rolls": 2,
             "entries": [
                 {
-                    "type": "loot_table",
-                    "name": "gbr:skills"
+                    "type": "item",
+                    "name": "gbr:skill_bag"
                 }
             ]
         },

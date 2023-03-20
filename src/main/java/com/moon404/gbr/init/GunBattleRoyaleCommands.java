@@ -1,5 +1,6 @@
 package com.moon404.gbr.init;
 
+import com.moon404.gbr.ChooseCommand;
 import com.moon404.gbr.ClassCommand;
 
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -14,5 +15,6 @@ public class GunBattleRoyaleCommands
     public static void registerCommands(RegisterCommandsEvent event)
     {
         ClassCommand.register(event.getDispatcher());
+        ChooseCommand.register(event.getDispatcher());
     }
 }

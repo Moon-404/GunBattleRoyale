@@ -32,3 +32,5 @@ schedule function gbr:game/reset_supply 5s
 schedule function gbr:game/reset_game 15s
 schedule function gbr:game/set_supply 20s
 scoreboard objectives setdisplay sidebar rank
+effect give @a glowing 1000000
+effect give @a invisibility 1000000

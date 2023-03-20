@@ -1,6 +1,3 @@
-scoreboard players reset * death
-execute as @a[gamemode=adventure] unless score @s ob matches 1 run scoreboard players set @s death 0
-
 scoreboard players set game_startable global 0
 function gbr:team/count_alive
 execute if score total team_alive matches 0..1 run scoreboard players set game_startable global 1
