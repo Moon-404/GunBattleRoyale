@@ -22,7 +22,7 @@ public class Scan extends SkillItem
         Player nearest = null;
         for (Player target : player.level.players())
         {
-            if (target.getTeam() != player.getTeam())
+            if (!target.isSpectator() && target.getTeam() != player.getTeam())
             {
                 double dis = target.distanceTo(player);
                 if (dis < mindis)

@@ -29,7 +29,7 @@ public class SnareEntity extends ThrowableItemProjectile
         super.onHit(pResult);
         for (Player player : this.level.players())
         {
-            if (this.distanceTo(player) <= 4)
+            if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
             }

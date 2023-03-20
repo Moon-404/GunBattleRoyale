@@ -24,7 +24,7 @@ public class Glow extends SkillItem
         for (Player target : level.players())
         {
             double distance = player.distanceTo(target);
-            if (distance < 100)
+            if (!target.isSpectator() && distance < 100)
             {
                 target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100 - (int)distance));
             }

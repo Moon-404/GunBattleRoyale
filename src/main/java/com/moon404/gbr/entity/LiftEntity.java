@@ -34,7 +34,7 @@ public class LiftEntity extends Marker
                 if (delta.x * delta.x + delta.z * delta.z <= 2)
                 {
                     int lv = 9 - (int)delta.y;
-                    if (lv >= 0)
+                    if (!player.isSpectator() && lv >= 0)
                     {
                         player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 2, lv));
                     }

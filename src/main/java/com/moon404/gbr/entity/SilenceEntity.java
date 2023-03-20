@@ -29,7 +29,7 @@ public class SilenceEntity extends ThrowableItemProjectile
         super.onHit(pResult);
         for (Player player : this.level.players())
         {
-            if (this.distanceTo(player) <= 4)
+            if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
                 player.addEffect(new MobEffectInstance(GunBattleRoyaleEffects.SILENCE.get(), 200));
             }
