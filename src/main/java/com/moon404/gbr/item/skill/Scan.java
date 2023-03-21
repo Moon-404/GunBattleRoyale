@@ -39,7 +39,7 @@ public class Scan extends SkillItem
         }
         else
         {
-            String message = "最近的敌人在 " + (int)mindis + " 格外，坐标: " + (int)nearest.getX() + ", " + (int)nearest.getY();
+            String message = "最近的敌人在 " + (int)mindis + " 格外，坐标: " + (int)nearest.getX() + ", " + (int)nearest.getZ();
             Component component = Component.literal(message);
             player.displayClientMessage(component, true);
         }

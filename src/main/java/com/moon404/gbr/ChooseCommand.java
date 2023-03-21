@@ -37,6 +37,11 @@ public class ChooseCommand
                     player.sendSystemMessage(Component.literal("无法使用此指令进入测试队伍").withStyle(Style.EMPTY.withColor(0xFF0000)));
                     return Command.SINGLE_SUCCESS;
                 }
+                if (team.getPlayers().size() >= 3)
+                {
+                    player.sendSystemMessage(Component.literal("队伍人数已满，无法加入").withStyle(Style.EMPTY.withColor(0xFF0000)));
+                    return Command.SINGLE_SUCCESS;
+                }
                 scoreboard.addPlayerToTeam(player.getScoreboardName(), team);
                 player.sendSystemMessage(Component.literal("切换队伍成功，当前队伍：").append(team.getFormattedDisplayName()));
                 player.removeEffect(MobEffects.GLOWING);

@@ -2,9 +2,13 @@ package com.moon404.gbr.handler;
 
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.LaserInfo;
+import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.event.GunFireEvent;
+import com.mrcrayfish.guns.item.attachment.IAttachment.Type;
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class GunFireHandler
@@ -23,7 +27,18 @@ public class GunFireHandler
     public static void onClientPreGunFire(GunFireEvent.Pre event)
     {
         if (!event.isClient()) return;
-        if (event.getEntity().getAttackStrengthScale(0) < 1.0F)
+        float threshold = 1.0F;
+        ItemStack itemStack = event.getStack();
+        ItemStack underBarrel = Gun.getAttachment(Type.UNDER_BARREL, itemStack);
+        if (underBarrel.getItem() == GunBattleRoyaleItems.GRIP.get())
+        {
+            threshold *= 0.8F;
+        }
+        if (underBarrel.getItem() == GunBattleRoyaleItems.ADVANCED_GRIP.get())
+        {
+            threshold *= 0.6F;
+        }
+        if (event.getEntity().getAttackStrengthScale(0) < threshold)
         {
             event.setCanceled(true);
             return;

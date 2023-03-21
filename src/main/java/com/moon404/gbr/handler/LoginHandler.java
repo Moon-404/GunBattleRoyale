@@ -32,5 +32,9 @@ public class LoginHandler
             player.addEffect(new MobEffectInstance(MobEffects.GLOWING, Integer.MAX_VALUE));
             player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, Integer.MAX_VALUE));
         }
+        else
+        {
+            player.removeAllEffects();
+        }
     }
 }

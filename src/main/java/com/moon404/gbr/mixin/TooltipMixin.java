@@ -31,6 +31,7 @@ public class TooltipMixin
         {
             toolTip.add(Component.translatable("perk.cgm.title").withStyle(ChatFormatting.GRAY, ChatFormatting.BOLD));
             toolTip.add(Component.literal("- 小幅提高开镜速度"));
+            toolTip.add(Component.literal("- 小幅提高切枪速度"));
             toolTip.add(Component.literal("- 小幅降低后座偏移角度"));
             return;
         }
@@ -38,6 +39,7 @@ public class TooltipMixin
         {
             toolTip.add(Component.translatable("perk.cgm.title").withStyle(ChatFormatting.GRAY, ChatFormatting.BOLD));
             toolTip.add(Component.literal("- 大幅提高开镜速度"));
+            toolTip.add(Component.literal("- 大幅提高切枪速度"));
             toolTip.add(Component.literal("- 大幅降低后座偏移角度"));
             return;
         }

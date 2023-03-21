@@ -1,7 +1,10 @@
 package com.moon404.gbr.entity;
 
+import com.mojang.math.Vector3f;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -35,5 +38,20 @@ public class SnareEntity extends ThrowableItemProjectile
             }
         }
         this.kill();
+    }
+
+    public void tick()
+    {
+        if (this.level instanceof ServerLevel level)
+        {
+            Vector3f color = new Vector3f(0F, 0, 0.67F);
+            DustParticleOptions options = new DustParticleOptions(color, 1.5F);
+            level.sendParticles(options, this.getX(), this.getY(), this.getZ(), 0, 0, 0, 0, 0);
+        }
+        super.tick();
+        if (this.tickCount >= 200)
+        {
+            this.kill();
+        }
     }
 }

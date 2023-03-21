@@ -21,7 +21,8 @@ public class Silence extends SkillItem
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         SilenceEntity silence = new SilenceEntity(GunBattleRoyaleEntities.SILENCE.get(), player.level);
         silence.setPos(player.getEyePosition());
-        silence.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, 1, 0);
+        silence.setNoGravity(true);
+        silence.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, 2, 0);
         player.level.addFreshEntity(silence);
         return true;
     }
