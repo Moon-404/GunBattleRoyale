@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
+        "gbr:game/force_start",
         "gbr:game/wait_finish",
         "gbr:game/reset_game",
         "gbr:game/set_supply"

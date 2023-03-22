@@ -1,5 +1,8 @@
 package com.moon404.gbr.item.recover;
 
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
+
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -22,6 +25,11 @@ public class Syringe extends RecoverItem
     {
         if (!level.isClientSide && entity instanceof Player player)
         {
+            if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get()))
+            {
+                player.displayClientMessage(Component.literal("被禁疗无法使用"), true);
+                return stack;
+            }
             player.heal(4);
         }
         stack.setDamageValue(0);

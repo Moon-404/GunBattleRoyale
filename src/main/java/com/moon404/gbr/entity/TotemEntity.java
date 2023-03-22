@@ -21,7 +21,7 @@ public class TotemEntity extends Marker
     @Override
     public void tick()
     {
-        if (this.tickCount >= 100)
+        if (this.tickCount >= 200)
         {
             this.kill();
             return;

@@ -34,7 +34,7 @@ public class SilenceEntity extends ThrowableItemProjectile
         {
             if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
-                player.addEffect(new MobEffectInstance(GunBattleRoyaleEffects.SILENCE.get(), 200));
+                player.addEffect(new MobEffectInstance(GunBattleRoyaleEffects.SILENCE.get(), 100));
             }
         }
         this.kill();

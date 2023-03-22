@@ -172,7 +172,7 @@ public class TooltipMixin
         {
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("记录自己的当前位置"));
-            toolTip.add(Component.literal("5 秒内如果护盾被击碎则会传送回去"));
+            toolTip.add(Component.literal("10 秒内如果护盾被击碎则会传送回去"));
             toolTip.add(Component.literal("没有护盾时不会生效"));
             return;
         }
@@ -226,7 +226,7 @@ public class TooltipMixin
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
             toolTip.add(Component.literal("对落地点周围的玩家"));
-            toolTip.add(Component.literal("造成 10 秒沉默效果"));
+            toolTip.add(Component.literal("造成 5 秒沉默与禁疗效果"));
             return;
         }
     }

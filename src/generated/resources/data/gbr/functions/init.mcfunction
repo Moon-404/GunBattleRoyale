@@ -2,6 +2,7 @@
 scoreboard objectives add global dummy
 scoreboard players set game_start global 0
 scoreboard players set game_waiting global 0
+scoreboard players set game_force_start global 0
 # 死亡数，冒险+1=战败，冒险+0=存活，旁观+-1=观战
 scoreboard objectives add death deathCount
 # 是否观战

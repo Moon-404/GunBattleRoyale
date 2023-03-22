@@ -21,7 +21,13 @@ public class Charge extends SkillItem
         {
             if (target.getTeam() == player.getTeam())
             {
+                int oldlevel = target.experienceLevel;
                 target.giveExperiencePoints(2500);
+                int newlevel = target.experienceLevel;
+                if (newlevel > oldlevel)
+                {
+                    target.setAbsorptionAmount(target.getAbsorptionAmount() + 4);
+                }
             }
         }
         return true;

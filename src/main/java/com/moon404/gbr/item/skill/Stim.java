@@ -20,7 +20,7 @@ public class Stim extends SkillItem
         if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         float hp = player.getHealth();
-        hp -= 6;
+        hp -= 4;
         if (hp < 1) hp = 1;
         player.setHealth(hp);
         player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
