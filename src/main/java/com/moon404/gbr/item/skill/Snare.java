@@ -20,6 +20,7 @@ public class Snare extends SkillItem
         if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         SnareEntity snare = new SnareEntity(GunBattleRoyaleEntities.SNARE.get(), player.level);
+        snare.user = player;
         snare.setPos(player.getEyePosition());
         snare.setNoGravity(true);
         snare.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, 2, 0);

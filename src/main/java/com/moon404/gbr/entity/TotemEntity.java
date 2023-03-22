@@ -3,6 +3,7 @@ package com.moon404.gbr.entity;
 import com.mojang.math.Vector3f;
 
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Marker;
@@ -28,6 +29,7 @@ public class TotemEntity extends Marker
         }
         if (this.tickCount % 10 == 0 && this.level instanceof ServerLevel level)
         {
+            player.displayClientMessage(Component.literal("回溯剩余时间：" + (200 - this.tickCount) / 20), true);
             Vector3f color = new Vector3f(0.33F, 0.33F, 0.33F);
             DustParticleOptions options = new DustParticleOptions(color, 1.5F);
             level.sendParticles(options, this.getX(), this.getY() + 0.2, this.getZ(), 0, 0, 0, 0, 0);

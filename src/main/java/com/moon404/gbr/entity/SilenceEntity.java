@@ -5,6 +5,7 @@ import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
@@ -16,6 +17,8 @@ import net.minecraft.world.phys.HitResult;
 
 public class SilenceEntity extends ThrowableItemProjectile
 {
+    public Player user;
+
     public SilenceEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
@@ -30,12 +33,18 @@ public class SilenceEntity extends ThrowableItemProjectile
     protected void onHit(HitResult pResult)
     {
         super.onHit(pResult);
+        int count = 0;
         for (Player player : this.level.players())
         {
             if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
                 player.addEffect(new MobEffectInstance(GunBattleRoyaleEffects.SILENCE.get(), 100));
+                count++;
             }
+        }
+        if (this.user != null)
+        {
+            this.user.displayClientMessage(Component.literal("静默命中数：" + count), true);
         }
         this.kill();
     }

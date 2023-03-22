@@ -38,8 +38,11 @@ public class ExhibitEntity extends Marker
         {
             if (!player.isSpectator() && this.distanceTo(player) <= 16)
             {
-                Component component = Component.literal("已进入侦测范围，缓慢移动以避免发光");
-                player.displayClientMessage(component, true);
+                if (this.tickCount % 10 == 0)
+                {
+                    Component component = Component.literal("已进入侦测范围，缓慢移动以避免发光，剩余时间：" + (200 - this.tickCount) / 20);
+                    player.displayClientMessage(component, true);
+                }
                 if (PlayerTickHandler.data.containsKey(player))
                 {
                     if (PlayerTickHandler.data.get(player).speed > 0.1)

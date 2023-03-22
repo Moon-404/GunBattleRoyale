@@ -32,7 +32,7 @@ public class ClientTickHandler
             if (entity instanceof Player player)
             {
                 Item item = player.getItemBySlot(EquipmentSlot.CHEST).getItem();
-                if (item.getClass() == ElytraItem.class || entity.getY() > 160)
+                if (item.getClass() == ElytraItem.class)
                 {
                     Objective objective = scoreboard.getObjective("rank");
                     int score = scoreboard.getOrCreatePlayerScore(entity.getScoreboardName(), objective).getScore();

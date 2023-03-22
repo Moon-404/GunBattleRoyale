@@ -4,6 +4,7 @@ import com.mojang.math.Vector3f;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -16,6 +17,8 @@ import net.minecraft.world.phys.HitResult;
 
 public class SnareEntity extends ThrowableItemProjectile
 {
+    public Player user;
+
     public SnareEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel)
     {
         super(pEntityType, pLevel);
@@ -30,12 +33,18 @@ public class SnareEntity extends ThrowableItemProjectile
     protected void onHit(HitResult pResult)
     {
         super.onHit(pResult);
+        int count = 0;
         for (Player player : this.level.players())
         {
             if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+                count++;
             }
+        }
+        if (this.user != null)
+        {
+            this.user.displayClientMessage(Component.literal("电弧陷阱命中数：" + count), true);
         }
         this.kill();
     }
