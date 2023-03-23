@@ -5,6 +5,7 @@ execute as @a[gamemode=adventure] unless score @s ob matches 1 run scoreboard pl
 effect clear @a[gamemode=adventure]
 
 execute as @e[tag=jump] run teleport @a[gamemode=adventure] @s
+execute at @e[tag=jump] run summon gbr:shield_bottle ~ ~ ~
 gamemode spectator @a[gamemode=adventure, scores={ob=1}]
 scoreboard players set @a[gamemode=spectator] death -1
 

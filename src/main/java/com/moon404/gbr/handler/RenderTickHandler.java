@@ -34,16 +34,10 @@ public class RenderTickHandler
         holding = -1;
         List<Item> list = null;
         int recoverIndex = GunBattleRoyaleConfigs.RECOVER_INDEX.get().intValue() - 1;
-        int skillIndex = GunBattleRoyaleConfigs.SKILL_INDEX.get().intValue() - 1;
         if (recoverIndex > -1 && mc.options.keyHotbarSlots[recoverIndex].isDown())
         {
             holding = recoverIndex;
             list = WheelItemList.recoverList;
-        }
-        if (skillIndex > -1 && mc.options.keyHotbarSlots[skillIndex].isDown())
-        {
-            holding = skillIndex;
-            list = WheelItemList.skillList;
         }
         if (holding > -1 && lastHolding == holding) duration += 1;
         else duration = 0;

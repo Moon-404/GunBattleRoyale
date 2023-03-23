@@ -29,7 +29,7 @@ title @a title "游戏结束"
 scoreboard players set game_waiting global 1
 schedule function gbr:game/wait_finish 30s
 scoreboard players set game_force_start global 0
-schedule function gbr:game/force_start 120s
+schedule function gbr:game/force_start 90s
 schedule function gbr:game/reset_supply 5s
 schedule function gbr:game/reset_game 15s
 schedule function gbr:game/set_supply 20s
