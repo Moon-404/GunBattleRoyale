@@ -44,15 +44,15 @@ public class Scan extends SkillItem
         }
         else
         {
-            String message = "最近的敌人在 " + (int)mindis + " 格外，坐标: " + (int)nearest.getX() + ", " + (int)nearest.getZ();
+            String message = "最近的敌人在 " + (int)mindis + " 格外";
             Component component = Component.literal(message);
             player.displayClientMessage(component, true);
             LaserInfo laser = new LaserInfo();
             laser.from = new Vec3(nearest.getX(), 0, nearest.getZ());
             laser.length = 100;
-            laser.xRot = 0;
-            laser.yRot = 90;
-            laser.size = 50;
+            laser.xRot = -90;
+            laser.yRot = 0;
+            laser.size = 60; // 5秒
             laser.aiming = 0;
             laser.isShooter = 0;
             RenderLaserMessage.INSTANCE.send(PacketDistributor.PLAYER.with(() ->

@@ -32,6 +32,7 @@ public class SnareEntity extends ThrowableItemProjectile
 
     protected void onHit(HitResult pResult)
     {
+        if (this.user == null) return;
         super.onHit(pResult);
         int count = 0;
         for (Player player : this.level.players())
@@ -42,10 +43,7 @@ public class SnareEntity extends ThrowableItemProjectile
                 count++;
             }
         }
-        if (this.user != null)
-        {
-            this.user.displayClientMessage(Component.literal("电弧陷阱命中数：" + count), true);
-        }
+        this.user.displayClientMessage(Component.literal("电弧陷阱命中数：" + count), true);
         this.kill();
     }
 
