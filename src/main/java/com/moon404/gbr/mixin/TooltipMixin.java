@@ -229,5 +229,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("造成 5 秒沉默与禁疗效果"));
             return;
         }
+        if (item == GunBattleRoyaleItems.TRACE.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，立即生效"));
+            toolTip.add(Component.literal("获得所有遗体的大致方位"));
+            return;
+        }
     }
 }

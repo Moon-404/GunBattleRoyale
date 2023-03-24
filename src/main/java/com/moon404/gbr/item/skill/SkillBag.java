@@ -34,7 +34,7 @@ public class SkillBag extends SkillItem
     public static List<Item> scoutItems = Arrays.asList(
         GunBattleRoyaleItems.SCAN.get(),
         GunBattleRoyaleItems.IRE.get(),
-        GunBattleRoyaleItems.EXHIBIT.get(),
+        GunBattleRoyaleItems.TRACE.get(),
         GunBattleRoyaleItems.GLOW.get()
     );
 
