@@ -2,15 +2,15 @@
   "general": {
     "auto": true,
     "gripType": "cgm:mini_gun",
-    "rate": 1,
-    "maxAmmo": 150,
+    "rate": 2,
+    "maxAmmo": 100,
     "reloadAmount": 0,
-    "recoilAngle": 0.5,
+    "recoilAngle": 1.0,
     "spread": 0.5
   },
   "projectile": {
     "item": "",
-    "damage": 1,
+    "damage": 2.0,
     "size": 0.2,
     "speed": 8.0,
     "life": 7,

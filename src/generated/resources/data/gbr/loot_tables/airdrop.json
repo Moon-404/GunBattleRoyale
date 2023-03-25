@@ -33,11 +33,11 @@
                 },
                 {
                     "type": "item",
-                    "name": "cgm:heavy_rifle",
+                    "name": "cgm:pistol",
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:12, Attachments:{Scope:{id:\"cgm:long_scope\", Count:1b}, Barrel:{id:\"gbr:advanced_stabilizer\", Count:1b, tag:{Enchantments:[{}]}}, Under_Barrel:{id:\"gbr:advanced_grip\", Count:1b, tag:{Enchantments:[{}]}}}, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.75, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
+                            "tag": "{AmmoCount:150, Attachments:{Scope:{id:\"cgm:short_scope\", Count:1b}, Barrel:{id:\"gbr:advanced_stabilizer\", Count:1b, tag:{Enchantments:[{}]}}, Stock:{id:\"gbr:advanced_stock\", Count:1b, tag:{Enchantments:[{}]}}}}"
                         }
                     ]
                 },
@@ -47,7 +47,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:150, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.5, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
+                            "tag": "{AmmoCount:100, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.5, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
                         }
                     ]
                 }

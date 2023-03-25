@@ -9,9 +9,9 @@
   "general": {
     "alwaysSpread": true,
     "gripType": "cgm:two_handed",
-    "rate": 30,
-    "maxAmmo": 12,
-    "recoilAngle": 10.0,
+    "rate": 24,
+    "maxAmmo": 4,
+    "recoilAngle": 8.0,
     "spread": 10.0,
     "recoilAdsReduction": 0.5,
     "recoilDurationOffset": 0.5,
@@ -31,6 +31,10 @@
       "underBarrel": {
         "yOffset": 3.0,
         "zOffset": -0.5
+      },
+      "stock": {
+        "yOffset": 4.0,
+        "zOffset": 13.0
       }
     },
     "zoom": {
@@ -40,13 +44,13 @@
     }
   },
   "projectile": {
-    "damage": 22.5,
+    "damage": 12.0,
     "gravity": true,
-    "item": "gbr:special_bullet",
+    "item": "cgm:advanced_bullet",
     "life": 9,
     "size": 0.0625,
     "speed": 10.0,
-    "damageReduceOverLife": true
+    "damageReduceOverLife": false
   },
   "sounds": {
     "cock": "cgm:item.heavy_rifle.cock",

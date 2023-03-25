@@ -6,22 +6,22 @@
                 {
                     "type": "item",
                     "name": "gbr:short_scope",
-                    "weight": 4
-                },
-                {
-                    "type": "item",
-                    "name": "gbr:medium_scope",
-                    "weight": 4
-                },
-                {
-                    "type": "item",
-                    "name": "gbr:stabilizer",
                     "weight": 6
                 },
                 {
                     "type": "item",
+                    "name": "gbr:medium_scope",
+                    "weight": 6
+                },
+                {
+                    "type": "item",
+                    "name": "gbr:stabilizer",
+                    "weight": 9
+                },
+                {
+                    "type": "item",
                     "name": "gbr:advanced_stabilizer",
-                    "weight": 2,
+                    "weight": 3,
                     "functions": [
                         {
                             "function": "set_nbt",
@@ -32,12 +32,12 @@
                 {
                     "type": "item",
                     "name": "gbr:stock",
-                    "weight": 6
+                    "weight": 9
                 },
                 {
                     "type": "item",
                     "name": "gbr:advanced_stock",
-                    "weight": 2,
+                    "weight": 3,
                     "functions": [
                         {
                             "function": "set_nbt",
@@ -48,12 +48,12 @@
                 {
                     "type": "item",
                     "name": "gbr:grip",
-                    "weight": 3
+                    "weight": 6
                 },
                 {
                     "type": "item",
                     "name": "gbr:advanced_grip",
-                    "weight": 1,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "set_nbt",

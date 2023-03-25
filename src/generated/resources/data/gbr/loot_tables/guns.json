@@ -28,7 +28,7 @@
                 {
                     "type": "item",
                     "name": "cgm:assault_rifle",
-                    "weight": 1,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "set_nbt",
@@ -43,7 +43,18 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{AmmoCount:4, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.75, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
+                            "tag": "{AmmoCount:6, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.75, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "cgm:heavy_rifle",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{AmmoCount:2, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.75, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
                         }
                     ]
                 }

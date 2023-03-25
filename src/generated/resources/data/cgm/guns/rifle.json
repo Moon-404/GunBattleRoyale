@@ -8,10 +8,10 @@
   "general": {
     "alwaysSpread": true,
     "gripType": "cgm:two_handed",
-    "rate": 20,
-    "maxAmmo": 8,
-    "reloadAmount": 2,
-    "recoilAngle": 6.66,
+    "rate": 18,
+    "maxAmmo": 12,
+    "reloadAmount": 3,
+    "recoilAngle": 6.0,
     "spread": 10.0,
     "recoilAdsReduction": 0.5,
     "recoilKick": 0.5
@@ -43,13 +43,13 @@
     }
   },
   "projectile": {
-    "damage": 15.0,
+    "damage": 9.0,
     "gravity": true,
     "item": "cgm:advanced_bullet",
     "life": 9,
     "size": 0.0625,
     "speed": 10.0,
-    "damageReduceOverLife": true
+    "damageReduceOverLife": false
   },
   "sounds": {
     "cock": "cgm:item.rifle.cock",
