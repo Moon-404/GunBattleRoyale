@@ -1,6 +1,7 @@
-package com.moon404.gbr.struct;
+package com.moon404.gbr.message;
 
 import com.moon404.gbr.handler.RenderLevelHandler;
+import com.moon404.gbr.struct.LaserInfo;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;

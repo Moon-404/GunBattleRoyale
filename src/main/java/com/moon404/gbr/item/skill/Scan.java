@@ -1,9 +1,9 @@
 package com.moon404.gbr.item.skill;
 
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
+import com.moon404.gbr.message.RenderLaserMessage;
 import com.moon404.gbr.struct.ClassType;
 import com.moon404.gbr.struct.LaserInfo;
-import com.moon404.gbr.struct.RenderLaserMessage;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;

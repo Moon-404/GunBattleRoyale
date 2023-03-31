@@ -2,8 +2,8 @@ package com.moon404.gbr;
 
 import java.util.List;
 
-import com.moon404.gbr.struct.ChangeItemMessage;
-import com.moon404.gbr.struct.ChangeItemMessage.ChangeItem;
+import com.moon404.gbr.message.ChangeItemMessage;
+import com.moon404.gbr.message.ChangeItemMessage.ChangeItem;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;

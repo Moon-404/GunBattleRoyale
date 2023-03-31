@@ -2,9 +2,9 @@ package com.moon404.gbr.handler;
 
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.message.ShowDamageMessage;
 import com.moon404.gbr.struct.ClassType;
 import com.moon404.gbr.struct.DamageInfo;
-import com.moon404.gbr.struct.ShowDamageMessage;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;

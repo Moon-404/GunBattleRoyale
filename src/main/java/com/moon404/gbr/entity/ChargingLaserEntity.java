@@ -2,8 +2,8 @@ package com.moon404.gbr.entity;
 
 import java.util.List;
 
+import com.moon404.gbr.message.RenderLaserMessage;
 import com.moon404.gbr.struct.LaserInfo;
-import com.moon404.gbr.struct.RenderLaserMessage;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.entity.ProjectileEntity;
 import com.mrcrayfish.guns.init.ModSyncedDataKeys;

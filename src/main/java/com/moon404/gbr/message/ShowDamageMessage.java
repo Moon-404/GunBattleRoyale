@@ -1,6 +1,7 @@
-package com.moon404.gbr.struct;
+package com.moon404.gbr.message;
 
 import com.moon404.gbr.handler.RenderGuiHandler;
+import com.moon404.gbr.struct.DamageInfo;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;

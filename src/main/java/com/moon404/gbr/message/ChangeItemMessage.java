@@ -1,4 +1,4 @@
-package com.moon404.gbr.struct;
+package com.moon404.gbr.message;
 
 import java.util.Collections;
 

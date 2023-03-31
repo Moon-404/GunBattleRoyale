@@ -1,10 +1,16 @@
 package com.moon404.gbr.animation;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import com.moon404.gbr.message.C2SSlide;
+import com.moon404.gbr.struct.SlideInfo;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent.Phase;
@@ -16,6 +22,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 @EventBusSubscriber(modid = "gbr", value = Dist.CLIENT, bus = Bus.FORGE)
 public class Slide
 {
+    public static Set<String> slidingPlayers = new HashSet<>();
     public static boolean sliding = false;
     public static boolean release = true;
     public static Vec3 slidevec;
@@ -63,40 +70,37 @@ public class Slide
         float xrot = player.getYRot();
         slidevec = new Vec3(speed * Math.sin(Math.toRadians(-xrot)), 0, speed * Math.cos(Math.toRadians(xrot))).scale(4);
         slowdelta = slidevec.scale(-0.025);
-        System.out.println("slide starts.");
+        C2SSlide.INSTANCE.sendToServer(new SlideInfo(player.getScoreboardName(), 1));
     }
 
     public static void end(LocalPlayer player)
     {
         sliding = false;
         player.setDeltaMovement(0, player.getDeltaMovement().y, 0);
-        System.out.println("slide ends.");
+        C2SSlide.INSTANCE.sendToServer(new SlideInfo(player.getScoreboardName(), -1));
     }
 
     public static void jump(LocalPlayer player)
     {
         player.setOnGround(false);
         player.setDeltaMovement(player.getDeltaMovement().x, 0.5F, player.getDeltaMovement().z);
-        System.out.println("jump starts");
     }
 
-    // return cancel
-    public static void animation(PlayerModel model)
+    public static void animationPre(PlayerModel model, Player player)
     {
-        ModelPart head = model.head;
-        ModelPart body = model.body;
-        ModelPart leftArm = model.leftArm;
-        ModelPart leftLeg = model.leftLeg;
-        ModelPart rightArm = model.rightArm;
-        ModelPart rightLeg = model.rightLeg;
-        head.setPos(0, 3, 6);
-        body.xRot = -0.5F;
-        body.setPos(0, 3, 6);
-        leftArm.xRot = 0;
-        leftArm.setPos(5, 3, 6);
-        rightArm.xRot = 0;
-        rightArm.setPos(-5, 3, 6);
-        leftLeg.xRot = -1.0F;
-        rightLeg.xRot = -1.0F;
+        if (!slidingPlayers.contains(player.getScoreboardName())) return;
+        if (!player.isOnGround()) return;
+        model.riding = true;
+    }
+
+    public static void animationPost(PlayerModel model, Player player)
+    {
+        if (!slidingPlayers.contains(player.getScoreboardName())) return;
+        if (!player.isOnGround()) return;
+        float rot = -0.8F;
+        model.leftLeg.xRot = rot;
+        model.rightLeg.xRot = rot;
+        model.leftPants.xRot = rot;
+        model.rightPants.xRot = rot;
     }
 }

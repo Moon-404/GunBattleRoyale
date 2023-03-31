@@ -23,9 +23,11 @@ import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.init.GunBattleRoyaleSounds;
-import com.moon404.gbr.struct.ChangeItemMessage;
-import com.moon404.gbr.struct.RenderLaserMessage;
-import com.moon404.gbr.struct.ShowDamageMessage;
+import com.moon404.gbr.message.C2SSlide;
+import com.moon404.gbr.message.ChangeItemMessage;
+import com.moon404.gbr.message.RenderLaserMessage;
+import com.moon404.gbr.message.S2CSlide;
+import com.moon404.gbr.message.ShowDamageMessage;
 import com.moon404.gbr.struct.WheelItemList;
 import com.mrcrayfish.guns.common.ProjectileManager;
 
@@ -71,6 +73,8 @@ public class GunBattleRoyale
             RenderLaserMessage.register();
             ShowDamageMessage.register();
             ChangeItemMessage.register();
+            C2SSlide.register();
+            S2CSlide.register();
             WheelItemList.init();
         });
     }
