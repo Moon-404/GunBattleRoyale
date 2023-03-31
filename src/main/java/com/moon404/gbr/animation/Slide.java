@@ -17,7 +17,6 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 public class Slide
 {
     public static boolean sliding = false;
-    public static boolean jumping = false;
     public static boolean release = true;
     public static Vec3 slidevec;
     public static Vec3 slowdelta;
@@ -31,23 +30,18 @@ public class Slide
             Minecraft minecraft = Minecraft.getInstance();
             Options options = minecraft.options;
             float speed = player.getSpeed();
-            if (jumping && player.isOnGround())
-            {
-                land();
-            }
             if (sliding)
             {
                 slidevec = slidevec.add(slowdelta);
-                float jumpspeed = 0;
                 if (!options.keyShift.isDown() || slidevec.multiply(1, 0, 1).length() < 0.1)
                 {
                     end(player);
                 }
-                if (!jumping && options.keyJump.isDown())
+                if (player.isOnGround() && options.keyJump.isDown())
                 {
-                    jumpspeed = jump(player);
+                    jump(player);
                 }
-                player.setDeltaMovement(slidevec.x, player.getDeltaMovement().y + jumpspeed, slidevec.z);
+                player.setDeltaMovement(slidevec.x, player.getDeltaMovement().y, slidevec.z);
                 player.input.forwardImpulse = 0;
                 player.input.leftImpulse = 0;
             }
@@ -79,18 +73,11 @@ public class Slide
         System.out.println("slide ends.");
     }
 
-    public static float jump(LocalPlayer player)
+    public static void jump(LocalPlayer player)
     {
-        jumping = true;
         player.setOnGround(false);
+        player.setDeltaMovement(player.getDeltaMovement().x, 0.5F, player.getDeltaMovement().z);
         System.out.println("jump starts");
-        return 0.6F;
-    }
-
-    public static void land()
-    {
-        jumping = false;
-        System.out.println("jump ends");
     }
 
     // return cancel
