@@ -11,7 +11,8 @@
         "EntityMixin",
         "DamageMixin",
         "PlayerMixin",
-        "InventoryMixin"
+        "InventoryMixin",
+        "PlayerModelMixin"
     ],
     "client": [
         "GlowingMixin",
