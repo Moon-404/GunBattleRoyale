@@ -27,6 +27,7 @@ public class Slide
     public static boolean release = true;
     public static Vec3 slidevec;
     public static Vec3 slowdelta;
+    public static double tickCount = 0;
 
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent event)
@@ -37,6 +38,11 @@ public class Slide
             Minecraft minecraft = Minecraft.getInstance();
             Options options = minecraft.options;
             float speed = player.getSpeed();
+            tickCount += 1;
+            if (tickCount > 60)
+            {
+                tickCount = 60;
+            }
             if (sliding)
             {
                 slidevec = slidevec.add(slowdelta);
@@ -68,7 +74,8 @@ public class Slide
         sliding = true;
         release = false;
         float xrot = player.getYRot();
-        slidevec = new Vec3(speed * Math.sin(Math.toRadians(-xrot)), 0, speed * Math.cos(Math.toRadians(xrot))).scale(4);
+        slidevec = new Vec3(speed * Math.sin(Math.toRadians(-xrot)), 0, speed * Math.cos(Math.toRadians(xrot))).scale(tickCount / 15);
+        tickCount = 0;
         slowdelta = slidevec.scale(-0.025);
         C2SSlide.INSTANCE.sendToServer(new SlideInfo(player.getScoreboardName(), 1));
     }
