@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -90,7 +91,12 @@ public class Slide
     public static void jump(LocalPlayer player)
     {
         player.setOnGround(false);
-        player.setDeltaMovement(player.getDeltaMovement().x, 0.5F, player.getDeltaMovement().z);
+        double dy = 0.5;
+        if (player.hasEffect(MobEffects.JUMP))
+        {
+            dy *= 1.2 + 0.2 * player.getEffect(MobEffects.JUMP).getAmplifier();
+        }
+        player.setDeltaMovement(player.getDeltaMovement().x, dy, player.getDeltaMovement().z);
     }
 
     public static void animationPre(PlayerModel model, Player player)

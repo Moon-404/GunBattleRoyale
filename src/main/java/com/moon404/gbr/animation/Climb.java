@@ -3,6 +3,7 @@ package com.moon404.gbr.animation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Options;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent.Phase;
@@ -25,7 +26,7 @@ public class Climb
         {
             Minecraft minecraft = Minecraft.getInstance();
             Options options = minecraft.options;
-            if (player.horizontalCollision)
+            if (player.horizontalCollision && !player.isOnGround())
             {
                 if (options.keyUp.isDown() && tickCount < 20)
                 {
@@ -35,11 +36,17 @@ public class Climb
                     if (!jumping && options.keyJump.isDown())
                     {
                         float rot = player.getYRot();
-                        double dx = Math.sin(Math.toRadians(-rot)) * 0.5;
-                        double dz = Math.cos(Math.toRadians(rot)) * 0.5;
+                        float speed = player.getSpeed() * 4;
+                        double dx = Math.sin(Math.toRadians(-rot)) * speed;
+                        double dz = Math.cos(Math.toRadians(rot)) * speed;
                         if (delta.x == 0) dx = -dx;
                         if (delta.z == 0) dz = -dz;
-                        player.setDeltaMovement(dx, 0.3, dz);
+                        double dy = 0.3;
+                        if (player.hasEffect(MobEffects.JUMP))
+                        {
+                            dy *= 1.2 + 0.2 * player.getEffect(MobEffects.JUMP).getAmplifier();
+                        }
+                        player.setDeltaMovement(dx, dy, dz);
                     }
                 }
             }
