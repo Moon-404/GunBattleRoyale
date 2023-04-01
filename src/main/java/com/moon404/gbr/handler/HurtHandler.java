@@ -22,6 +22,13 @@ public class HurtHandler
     public static void onLivingDamage(LivingHurtEvent event)
     {
         DamageSource source = event.getSource();
+        if (source.isFall() && event.getEntity() instanceof Player player)
+        {
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)(event.getAmount() * 10), 4));
+            event.setCanceled(true);
+            return;
+        }
+
         if (source.getEntity() instanceof ServerPlayer from)
         {
             DamageInfo damage = new DamageInfo();
