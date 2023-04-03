@@ -96,3 +96,6 @@ summon marker ~ ~ ~ {Tags:["team", "cyan"]}
 summon marker ~ ~ ~ {Tags:["team", "test"]}
 
 function gbr:team/setid
+
+gamerule reducedDebugInfo true
+gamerule keepInventory false

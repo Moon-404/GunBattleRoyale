@@ -74,8 +74,7 @@ public class Slide
     {
         sliding = true;
         release = false;
-        float xrot = player.getYRot();
-        slidevec = new Vec3(speed * Math.sin(Math.toRadians(-xrot)), 0, speed * Math.cos(Math.toRadians(xrot))).scale(tickCount / 15);
+        slidevec = player.getForward().multiply(1, 0, 1).normalize().scale(speed * tickCount / 15);
         tickCount = 0;
         slowdelta = slidevec.scale(-0.025);
         C2SSlide.INSTANCE.sendToServer(new SlideInfo(player.getScoreboardName(), 1));

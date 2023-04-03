@@ -24,7 +24,8 @@ public class HurtHandler
         DamageSource source = event.getSource();
         if (source.isFall() && event.getEntity() instanceof Player player)
         {
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)(event.getAmount() * 10), 4));
+            double duration = Math.sqrt(event.getAmount()) * 10;
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)duration, 4));
             event.setCanceled(true);
             return;
         }

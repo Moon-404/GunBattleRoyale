@@ -10,4 +10,10 @@ public class EntityMixin
 {
     @Shadow
     public int tickCount;
+
+    @Shadow
+    public boolean isShiftKeyDown()
+    {
+        return false;
+    }
 }

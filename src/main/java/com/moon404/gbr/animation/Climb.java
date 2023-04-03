@@ -30,23 +30,25 @@ public class Climb
             {
                 if (options.keyUp.isDown() && tickCount < 20)
                 {
-                    tickCount++;
                     Vec3 delta = player.getDeltaMovement();
-                    player.setDeltaMovement(delta.x, 0.1, delta.z);
-                    if (!jumping && options.keyJump.isDown())
+                    if (0.1 >= delta.y)
                     {
-                        float rot = player.getYRot();
-                        float speed = player.getSpeed() * 4;
-                        double dx = Math.sin(Math.toRadians(-rot)) * speed;
-                        double dz = Math.cos(Math.toRadians(rot)) * speed;
-                        if (delta.x == 0) dx = -dx;
-                        if (delta.z == 0) dz = -dz;
-                        double dy = 0.3;
-                        if (player.hasEffect(MobEffects.JUMP))
+                        tickCount++;
+                        player.setDeltaMovement(delta.x, 0.1, delta.z);
+                        if (!jumping && options.keyJump.isDown())
                         {
-                            dy *= 1.2 + 0.2 * player.getEffect(MobEffects.JUMP).getAmplifier();
+                            float speed = player.getSpeed() * 4;
+                            Vec3 jumpvec = player.getForward().multiply(1, 0, 1).normalize().scale(speed);
+                            if (delta.x == 0) jumpvec = jumpvec.multiply(-1, 1, 1);
+                            if (delta.z == 0) jumpvec = jumpvec.multiply(1, 1, -1);
+                            double dy = 0.3;
+                            if (player.hasEffect(MobEffects.JUMP))
+                            {
+                                dy *= 1.2 + 0.2 * player.getEffect(MobEffects.JUMP).getAmplifier();
+                            }
+                            jumpvec = jumpvec.add(0, dy, 0);
+                            player.setDeltaMovement(jumpvec);
                         }
-                        player.setDeltaMovement(dx, dy, dz);
                     }
                 }
             }

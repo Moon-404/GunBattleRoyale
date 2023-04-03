@@ -4,10 +4,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
+import com.moon404.gbr.animation.Slide;
+
 import net.minecraft.world.entity.player.Player;
 
 @Mixin(Player.class)
-public class PlayerMixin
+public class PlayerMixin extends EntityMixin
 {
     @Shadow
     public int experienceLevel;
@@ -25,5 +27,11 @@ public class PlayerMixin
     public int getExperienceReward()
     {
         return 0;
+    }
+
+    @Overwrite
+    public boolean isStayingOnGroundSurface()
+    {
+        return this.isShiftKeyDown() && !Slide.sliding;
     }
 }

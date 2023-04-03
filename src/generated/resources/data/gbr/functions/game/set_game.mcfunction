@@ -1,4 +1,5 @@
 scoreboard players reset * death
+scoreboard players reset * kills
 execute as @a[gamemode=adventure, team=!] run scoreboard players set @s ob 0
 execute as @a[gamemode=adventure, team=] run scoreboard players set @s ob 1
 execute as @a[gamemode=adventure] unless score @s ob matches 1 run scoreboard players set @s death 0
