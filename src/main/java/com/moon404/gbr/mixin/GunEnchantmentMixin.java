@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
 @Mixin(GunEnchantmentHelper.class)
 public class GunEnchantmentMixin
 {
-    @Inject(method = "getRate", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "getRate", at = @At("RETURN"), cancellable = true, remap = false)
     private static void nemesisRate(ItemStack weapon, Gun modifiedGun, CallbackInfoReturnable<Integer> cir)
     {
         if (weapon.getItem() instanceof Nemesis)
