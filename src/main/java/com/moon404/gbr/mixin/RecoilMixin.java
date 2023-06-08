@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.item.Nemesis;
 import com.mrcrayfish.guns.Config;
 import com.mrcrayfish.guns.client.handler.RecoilHandler;
 import com.mrcrayfish.guns.common.Gun;
@@ -56,7 +57,7 @@ public class RecoilMixin
         }
         this.offsetAngle = this.random.nextFloat(-maxOffset, maxOffset); // 大约30度
         this.rate = general.getRate();
-        if (!general.isAuto()) this.rate = 2;
+        if (!general.isAuto() || gunItem instanceof Nemesis) this.rate = 2;
     }
 
     @Overwrite(remap = false)

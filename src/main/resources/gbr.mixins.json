@@ -12,7 +12,8 @@
         "DamageMixin",
         "PlayerMixin",
         "InventoryMixin",
-        "PlayerModelMixin"
+        "PlayerModelMixin",
+        "GunEnchantmentMixin"
     ],
     "client": [
         "GlowingMixin",

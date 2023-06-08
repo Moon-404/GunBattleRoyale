@@ -3,5 +3,10 @@
     {
         "subtitle": "subtitle.cgm.fire",
         "sounds": [{ "name": "gbr:item/charge_rifle/fire" }]
+    },
+    "item.nemesis.fire":
+    {
+        "subtitle": "subtitle.cgm.fire",
+        "sounds": [{ "name": "gbr:item/nemesis/fire" }]
     }
 }

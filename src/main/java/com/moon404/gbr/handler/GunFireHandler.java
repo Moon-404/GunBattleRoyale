@@ -1,6 +1,7 @@
 package com.moon404.gbr.handler;
 
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.item.Nemesis;
 import com.moon404.gbr.struct.LaserInfo;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.event.GunFireEvent;
@@ -36,6 +37,28 @@ public class GunFireHandler
             Player player = event.getEntity();
             CompoundTag compoundTag = player.getPersistentData();
             compoundTag.putInt("charging", LaserInfo.DURATION_TICK);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onServerPostGunFire(GunFireEvent.Post event)
+    {
+        if (event.isClient()) return;
+        if (event.getStack().getItem() instanceof Nemesis)
+        {
+            CompoundTag compoundTag = event.getStack().getOrCreateTag();
+            int energy = compoundTag.getInt("energy");
+            int charge = compoundTag.getInt("charge");
+            int count = compoundTag.getInt("count") + 1;
+            if (count > 4) count = 1;
+            if (count == 4)
+            {
+                energy = Math.min(8, energy + 1);
+                charge = 100;
+            }
+            compoundTag.putInt("energy", energy);
+            compoundTag.putInt("charge", charge);
+            compoundTag.putInt("count", count);
         }
     }
 

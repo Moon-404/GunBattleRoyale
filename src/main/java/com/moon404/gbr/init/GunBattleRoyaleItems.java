@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import com.moon404.gbr.item.Nemesis;
 import com.moon404.gbr.item.recover.MedKit;
 import com.moon404.gbr.item.recover.PhoenixKit;
 import com.moon404.gbr.item.recover.RecoverItem;
@@ -40,6 +41,7 @@ public class GunBattleRoyaleItems
     public static final GunBattleRoyaleTab GROUP = new GunBattleRoyaleTab("gbr");
 
     public static final RegistryObject<Item> CHARGE_RIFLE = REGISTER.register("charge_rifle", () -> new GunItem(new Item.Properties().stacksTo(1).tab(GROUP)));
+    public static final RegistryObject<Item> NEMESIS = REGISTER.register("nemesis", () -> new Nemesis(new Item.Properties().stacksTo(1).tab(GROUP)));
 
     public static final RegistryObject<Item> SPECIAL_BULLET = REGISTER.register("special_bullet", () -> new AmmoItem(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> CHARGE_BULLET = REGISTER.register("charge_bullet", () -> new AmmoItem(new Item.Properties().tab(GROUP)));
