@@ -37,7 +37,6 @@ public class GunEnchantmentMixin
         {
             rate -= energy / 2;
         }
-        System.out.println(count + " " + rate);
         return rate;
     }
 }

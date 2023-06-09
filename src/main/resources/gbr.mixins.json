@@ -13,7 +13,8 @@
         "PlayerMixin",
         "InventoryMixin",
         "PlayerModelMixin",
-        "GunEnchantmentMixin"
+        "GunEnchantmentMixin",
+        "ShootingHandlerMixin"
     ],
     "client": [
         "GlowingMixin",
