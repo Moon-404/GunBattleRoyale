@@ -57,7 +57,7 @@ public class GunFireHandler
             if (count > 4) count = 1;
             if (count == 4)
             {
-                energy = Math.min(8, energy + 1);
+                energy = Math.min(8, energy + 2);
                 charge = 100;
             }
             compoundTag.putInt("energy", energy);
@@ -123,7 +123,6 @@ public class GunFireHandler
             {
                 nemesisShotCount = 0;
             }
-            System.out.println(nemesisLastShotTick + " " + nemesisShotCount + " " + tick + " " + interval);
             nemesisLastShotTick = tick;
             if (nemesisShotCount == 4)
             {

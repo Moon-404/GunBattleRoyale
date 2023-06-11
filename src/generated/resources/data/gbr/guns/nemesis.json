@@ -44,7 +44,7 @@
     }
   },
   "projectile": {
-    "damage": 3,
+    "damage": 3.5,
     "item": "cgm:basic_bullet",
     "life": 7,
     "size": 0.2,
