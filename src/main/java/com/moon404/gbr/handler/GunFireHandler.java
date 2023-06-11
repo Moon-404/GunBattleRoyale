@@ -6,10 +6,14 @@ import com.moon404.gbr.struct.LaserInfo;
 import com.mrcrayfish.guns.common.Gun;
 import com.mrcrayfish.guns.event.GunFireEvent;
 import com.mrcrayfish.guns.init.ModItems;
+import com.mrcrayfish.guns.item.GunItem;
 import com.mrcrayfish.guns.item.attachment.IAttachment.Type;
+import com.mrcrayfish.guns.util.GunModifierHelper;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemCooldowns;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -91,6 +95,41 @@ public class GunFireHandler
         {
             event.setCanceled(true);
             return;
+        }
+    }
+
+    private static int nemesisLastShotTick = 0;
+    private static int nemesisShotCount = 0;
+    @SubscribeEvent
+    public static void onClientPostGunFire(GunFireEvent.Post event)
+    {
+        if (!event.isClient()) return;
+        Player player = event.getEntity();
+        ItemStack itemStack = event.getStack();
+        Item item = itemStack.getItem();
+        if (item instanceof Nemesis)
+        {
+            int tick = player.tickCount;
+            Gun modifiedGun = ((GunItem)item).getModifiedGun(itemStack);
+            int rate = modifiedGun.getGeneral().getRate();
+            rate = GunModifierHelper.getModifiedRate(itemStack, rate);
+            int energy = itemStack.getOrCreateTag().getInt("energy");
+            int interval = rate - energy / 2;
+            if (tick == nemesisLastShotTick + 1)
+            {
+                nemesisShotCount += 1;
+            }
+            else if (tick > nemesisLastShotTick + interval - 1)
+            {
+                nemesisShotCount = 0;
+            }
+            System.out.println(nemesisLastShotTick + " " + nemesisShotCount + " " + tick + " " + interval);
+            nemesisLastShotTick = tick;
+            if (nemesisShotCount == 4)
+            {
+                ItemCooldowns cooldowns = player.getCooldowns();
+                cooldowns.addCooldown(item, interval);
+            }
         }
     }
 }
