@@ -23,7 +23,7 @@ public class SkillBag extends SkillItem
         GunBattleRoyaleItems.VOID.get(),
         GunBattleRoyaleItems.STIM.get(),
         GunBattleRoyaleItems.LIFT.get(),
-        GunBattleRoyaleItems.PEARL.get()
+        GunBattleRoyaleItems.BOOT.get()
     );
     public static List<Item> supportItems = Arrays.asList(
         GunBattleRoyaleItems.PURIFY.get(),
@@ -34,7 +34,7 @@ public class SkillBag extends SkillItem
     public static List<Item> scoutItems = Arrays.asList(
         GunBattleRoyaleItems.SCAN.get(),
         GunBattleRoyaleItems.IRE.get(),
-        GunBattleRoyaleItems.TRACE.get(),
+        GunBattleRoyaleItems.EXHIBIT.get(),
         GunBattleRoyaleItems.GLOW.get()
     );
 

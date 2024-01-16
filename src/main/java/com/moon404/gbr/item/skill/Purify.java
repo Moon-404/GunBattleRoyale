@@ -1,10 +1,13 @@
 package com.moon404.gbr.item.skill;
 
+import java.util.List;
+
+import com.moon404.gbr.init.GunBattleRoyaleEffects;
+import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.ClassType;
 
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 
 public class Purify extends SkillItem
 {
@@ -13,23 +16,17 @@ public class Purify extends SkillItem
         super(properties, ClassType.SUPPORT);
     }
 
-    @Override
-    public boolean onToss(Player player)
+    public static boolean purified(List<Player> players)
     {
-        if (ClassType.getClass(player) != this.classType) return false;
-        for (Player target : player.level.players())
+        for (Player player : players)
         {
-            if (target.getTeam() == player.getTeam())
+            ItemStack offhandStack = player.getOffhandItem();
+            if (offhandStack.getItem() == GunBattleRoyaleItems.PURIFY.get() && !player.hasEffect(GunBattleRoyaleEffects.SILENCE.get()) && ClassType.getClass(player) == ClassType.SUPPORT)
             {
-                for (MobEffectInstance effect : player.getActiveEffects())
-                {
-                    if (effect.getEffect().getCategory() != MobEffectCategory.BENEFICIAL)
-                    {
-                        target.removeEffect(effect.getEffect());
-                    }
-                }
+                offhandStack.setCount(offhandStack.getCount() - 1);
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

@@ -1,11 +1,16 @@
 package com.moon404.gbr.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mojang.math.Vector3f;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.item.skill.Purify;
 
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
@@ -34,16 +39,26 @@ public class SnareEntity extends ThrowableItemProjectile
     {
         if (this.user == null) return;
         super.onHit(pResult);
-        int count = 0;
+        List<Player> players = new ArrayList<>();
         for (Player player : this.level.players())
         {
             if (!player.isSpectator() && this.distanceTo(player) <= 4)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
-                count++;
+                players.add(player);
             }
         }
-        this.user.displayClientMessage(Component.literal("电弧陷阱命中数：" + count), true);
+        if (Purify.purified(players))
+        {
+            this.user.displayClientMessage(Component.literal("电弧陷阱效果被净化"), true);
+        }
+        else
+        {
+            for (Player player : players)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2));
+                player.hurt(DamageSource.playerAttack(this.user), 4);
+            }
+        }
         this.kill();
     }
 

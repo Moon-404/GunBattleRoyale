@@ -1,7 +1,11 @@
 package com.moon404.gbr.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mojang.math.Vector3f;
-import com.moon404.gbr.handler.PlayerTickHandler;
+import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.item.skill.Purify;
 
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.network.chat.Component;
@@ -9,48 +13,65 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Marker;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.HitResult;
 
-public class ExhibitEntity extends Marker
+public class ExhibitEntity extends ThrowableItemProjectile
 {
-    public ExhibitEntity(EntityType<?> p_147250_, Level p_147251_)
+    public Player user;
+
+    public ExhibitEntity(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel)
     {
-        super(p_147250_, p_147251_);
+        super(pEntityType, pLevel);
     }
     
     @Override
+    protected Item getDefaultItem()
+    {
+        return GunBattleRoyaleItems.EXHIBIT.get();
+    }
+
+    protected void onHit(HitResult pResult)
+    {
+        if (this.user == null) return;
+        super.onHit(pResult);
+        List<Player> players = new ArrayList<>();
+        for (Player player : this.level.players())
+        {
+            if (!player.isSpectator() && this.distanceTo(player) <= 4)
+            {
+                players.add(player);
+            }
+        }
+        if (Purify.purified(players))
+        {
+            this.user.displayClientMessage(Component.literal("一览无余效果被净化"), true);
+        }
+        else
+        {
+            for (Player player : players)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100));
+            }
+        }
+        this.kill();
+    }
+
     public void tick()
     {
+        if (this.level instanceof ServerLevel level)
+        {
+            Vector3f color = new Vector3f(0F, 0.67F, 0F);
+            DustParticleOptions options = new DustParticleOptions(color, 1.5F);
+            level.sendParticles(options, this.getX(), this.getY(), this.getZ(), 0, 0, 0, 0, 0);
+        }
+        super.tick();
         if (this.tickCount >= 200)
         {
             this.kill();
-            return;
-        }
-        if (this.tickCount % 10 == 0 && this.level instanceof ServerLevel level)
-        {
-            Vector3f color = new Vector3f(0.67F, 0.67F, 0.67F);
-            DustParticleOptions options = new DustParticleOptions(color, 1.5F);
-            level.sendParticles(options, this.getX(), this.getY() + 0.2, this.getZ(), 0, 0, 0, 0, 0);
-        }
-        for (Player player : this.level.players())
-        {
-            if (!player.isSpectator() && this.distanceTo(player) <= 16)
-            {
-                if (this.tickCount % 10 == 0)
-                {
-                    Component component = Component.literal("已进入侦测范围，缓慢移动以避免发光，剩余时间：" + (200 - this.tickCount) / 20);
-                    player.displayClientMessage(component, true);
-                }
-                if (PlayerTickHandler.data.containsKey(player))
-                {
-                    if (PlayerTickHandler.data.get(player).speed > 0.1)
-                    {
-                        player.addEffect(new MobEffectInstance(MobEffects.GLOWING, 2));
-                    }
-                }
-            }
         }
     }
 }

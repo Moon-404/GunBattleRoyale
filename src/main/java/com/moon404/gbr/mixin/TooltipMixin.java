@@ -131,20 +131,21 @@ public class TooltipMixin
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("获得 5 秒隐身与失明"));
             toolTip.add(Component.literal("切换物品会提前结束效果"));
+            toolTip.add(Component.literal("生效时如果背包有空位"));
+            toolTip.add(Component.literal("会自动将手持物品放入背包"));
             return;
         }
         if (item == GunBattleRoyaleItems.GLOW.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
-            toolTip.add(Component.literal("使附近的所有玩家发光（包括自己）"));
-            toolTip.add(Component.literal("距离越远发光时间越短"));
+            toolTip.add(Component.literal("使 32 格范围内的敌对玩家发光 3 秒"));
             return;
         }
         if (item == GunBattleRoyaleItems.LIFT.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
             toolTip.add(Component.literal("生成一个持续 5 秒的重力电梯"));
-            toolTip.add(Component.literal("可抬升最高 10 格，有摔落伤害"));
+            toolTip.add(Component.literal("可抬升最高 10 格"));
             return;
         }
         if (item == GunBattleRoyaleItems.HEALTH_BOTTLE.get())
@@ -172,20 +173,20 @@ public class TooltipMixin
         {
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("记录自己的当前位置"));
-            toolTip.add(Component.literal("10 秒内如果护盾被击碎则会传送回去"));
+            toolTip.add(Component.literal("10 秒内碎甲则会传送回去"));
             toolTip.add(Component.literal("没有护盾时不会生效"));
             return;
         }
         if (item == GunBattleRoyaleItems.FAST.get())
         {
             toolTip.add(Component.literal("放在副手，被动生效并消耗"));
-            toolTip.add(Component.literal("受到伤害时获得 2 秒速度III"));
+            toolTip.add(Component.literal("受到伤害时获得 3 秒速度III"));
             return;
         }
         if (item == GunBattleRoyaleItems.IRE.get())
         {
             toolTip.add(Component.literal("放在副手，被动生效并消耗"));
-            toolTip.add(Component.literal("造成伤害时令目标发光 3 秒"));
+            toolTip.add(Component.literal("造成伤害时令目标发光 5 秒"));
             return;
         }
         if (item == GunBattleRoyaleItems.SCAN.get())
@@ -197,9 +198,9 @@ public class TooltipMixin
         }
         if (item == GunBattleRoyaleItems.PURIFY.get())
         {
-            toolTip.add(Component.literal("按 Q 扔出，立即生效"));
-            toolTip.add(Component.literal("移除所有友方玩家的非正面效果"));
-            toolTip.add(Component.literal("可以在被沉默时使用"));
+            toolTip.add(Component.literal("放在副手，被动生效并消耗"));
+            toolTip.add(Component.literal("被技能效果命中时"));
+            toolTip.add(Component.literal("取消该技能的所有目标"));
             return;
         }
         if (item == GunBattleRoyaleItems.CHARGE.get())
@@ -211,22 +212,22 @@ public class TooltipMixin
         if (item == GunBattleRoyaleItems.EXHIBIT.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
-            toolTip.add(Component.literal("创建一个侦测器，持续 10 秒"));
-            toolTip.add(Component.literal("其中快速移动的玩家会发光"));
+            toolTip.add(Component.literal("对落地点半径为 4 范围的玩家"));
+            toolTip.add(Component.literal("给与 5 秒发光效果"));
             return;
         }
         if (item == GunBattleRoyaleItems.SNARE.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
-            toolTip.add(Component.literal("对落地点周围的玩家"));
-            toolTip.add(Component.literal("造成 5 秒缓慢III效果"));
+            toolTip.add(Component.literal("对落地点半径为 4 范围的玩家"));
+            toolTip.add(Component.literal("造成 4 点伤害、5 秒缓慢III效果"));
             return;
         }
         if (item == GunBattleRoyaleItems.SILENCE.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，落地生效"));
-            toolTip.add(Component.literal("对落地点周围的玩家"));
-            toolTip.add(Component.literal("造成 5 秒沉默与禁疗效果"));
+            toolTip.add(Component.literal("对落地点半径为 4 范围的玩家"));
+            toolTip.add(Component.literal("造成 4 点伤害、5 秒沉默与禁疗"));
             return;
         }
         if (item == GunBattleRoyaleItems.TRACE.get())
@@ -234,6 +235,11 @@ public class TooltipMixin
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));
             toolTip.add(Component.literal("获得所有遗体的大致方位"));
             return;
+        }
+        if (item == GunBattleRoyaleItems.BOOT.get())
+        {
+            toolTip.add(Component.literal("放在副手，被动生效并消耗"));
+            toolTip.add(Component.literal("摔落时不会被减速"));
         }
     }
 }

@@ -5,7 +5,6 @@ import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.struct.ClassType;
 
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 
 public class Exhibit extends SkillItem
@@ -16,17 +15,16 @@ public class Exhibit extends SkillItem
     }
 
     @Override
-    public boolean onLand(ItemEntity entity)
+    public boolean onToss(Player player)
     {
-        if (entity.getThrowingEntity() instanceof Player player)
-        {
-            if (ClassType.getClass(player) != this.classType) return false;
-            if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
-        }
-        ExhibitEntity exhibit = new ExhibitEntity(GunBattleRoyaleEntities.EXHHIBIT.get(), entity.level);
-        exhibit.setPos(entity.position());
-        entity.level.addFreshEntity(exhibit);
-        entity.kill();
-        return false;
+        if (ClassType.getClass(player) != this.classType) return false;
+        if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
+        ExhibitEntity exhibit = new ExhibitEntity(GunBattleRoyaleEntities.EXHHIBIT.get(), player.level);
+        exhibit.user = player;
+        exhibit.setPos(player.getEyePosition());
+        exhibit.setNoGravity(true);
+        exhibit.shootFromRotation(player, player.getXRot(), player.getYRot(), 0, 2, 0);
+        player.level.addFreshEntity(exhibit);
+        return true;
     }
 }

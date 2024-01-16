@@ -1,8 +1,12 @@
 package com.moon404.gbr.item.skill;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.struct.ClassType;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -21,12 +25,23 @@ public class Glow extends SkillItem
         if (ClassType.getClass(player) != this.classType) return false;
         if (player.hasEffect(GunBattleRoyaleEffects.SILENCE.get())) return false;
         Level level = player.level;
+        List<Player> players = new ArrayList<>();
         for (Player target : level.players())
         {
-            double distance = player.distanceTo(target);
-            if (!target.isSpectator() && distance < 100)
+            if (!target.isSpectator() && player.distanceTo(target) < 32 && player.getTeam() != target.getTeam())
             {
-                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100 - (int)(distance / 2)));
+                players.add(target);
+            }
+        }
+        if (Purify.purified(players))
+        {
+            player.displayClientMessage(Component.literal("上帝之眼效果被净化"), true);
+        }
+        else
+        {
+            for (Player target : players)
+            {
+                target.addEffect(new MobEffectInstance(MobEffects.GLOWING, 60));
             }
         }
         return true;

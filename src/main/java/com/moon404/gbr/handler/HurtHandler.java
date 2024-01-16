@@ -24,8 +24,16 @@ public class HurtHandler
         DamageSource source = event.getSource();
         if (source.isFall() && event.getEntity() instanceof Player player)
         {
-            double duration = Math.sqrt(event.getAmount()) * 10;
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)duration, 4));
+            ItemStack itemStack = player.getOffhandItem();
+            if (itemStack.getItem() == GunBattleRoyaleItems.BOOT.get() && !player.hasEffect(GunBattleRoyaleEffects.SILENCE.get()) && ClassType.getClass(player) == ClassType.ROGUE)
+            {
+                itemStack.setCount(itemStack.getCount() - 1);
+            }
+            else
+            {
+                double duration = Math.sqrt(event.getAmount()) * 10;
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (int)duration, 4));
+            }
             event.setCanceled(true);
             return;
         }
@@ -47,7 +55,7 @@ public class HurtHandler
             ItemStack itemStack = from.getOffhandItem();
             if (itemStack.getItem() == GunBattleRoyaleItems.IRE.get() && !event.getEntity().hasEffect(MobEffects.GLOWING) && !from.hasEffect(GunBattleRoyaleEffects.SILENCE.get()) && ClassType.getClass(from) == ClassType.SCOUT)
             {
-                event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 60));
+                event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 100));
                 itemStack.setCount(itemStack.getCount() - 1);
             }
         }
@@ -57,7 +65,7 @@ public class HurtHandler
             ItemStack itemStack = player.getOffhandItem();
             if (!player.hasEffect(MobEffects.MOVEMENT_SPEED) && itemStack.getItem() == GunBattleRoyaleItems.FAST.get() && !player.hasEffect(GunBattleRoyaleEffects.SILENCE.get()) && ClassType.getClass(player) == ClassType.ATTACK)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, 2));
                 itemStack.setCount(itemStack.getCount() - 1);
             }
         }
