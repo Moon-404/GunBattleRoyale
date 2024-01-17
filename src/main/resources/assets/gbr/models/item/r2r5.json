@@ -1,0 +1,14 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "gbr:items/r2r5"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"gbr:r2r5_blocking": 1
+			},
+			"model": "gbr:item/r2r5_blocking"
+		}
+	]
+}

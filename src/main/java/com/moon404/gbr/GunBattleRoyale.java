@@ -3,9 +3,11 @@ package com.moon404.gbr;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig.Type;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import com.moon404.gbr.entity.ChargingLaserEntity;
+import com.moon404.gbr.handler.AttackEntityHandler;
 import com.moon404.gbr.handler.ChargeTickHandler;
 import com.moon404.gbr.handler.GunFireHandler;
 import com.moon404.gbr.handler.GunReloadHandler;
@@ -28,9 +30,12 @@ import com.moon404.gbr.message.ChangeItemMessage;
 import com.moon404.gbr.message.RenderLaserMessage;
 import com.moon404.gbr.message.S2CSlide;
 import com.moon404.gbr.message.ShowDamageMessage;
+import com.moon404.gbr.message.UpdateItemStackMessage;
 import com.moon404.gbr.struct.WheelItemList;
 import com.mrcrayfish.guns.common.ProjectileManager;
 
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -60,9 +65,11 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(ItemTossHandler.class);
         MinecraftForge.EVENT_BUS.register(LoginHandler.class);
         MinecraftForge.EVENT_BUS.register(GunReloadHandler.class);
+        MinecraftForge.EVENT_BUS.register(AttackEntityHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(Type.CLIENT, GunBattleRoyaleConfigs.SPEC, "GunBattleRoyaleConfig.toml");
         modEventBus.addListener(this::onCommonSetup);
+        modEventBus.addListener(this::onClientSetup);
     }
 
     private void onCommonSetup(FMLCommonSetupEvent event)
@@ -73,9 +80,20 @@ public class GunBattleRoyale
             RenderLaserMessage.register();
             ShowDamageMessage.register();
             ChangeItemMessage.register();
+            UpdateItemStackMessage.register();
             C2SSlide.register();
             S2CSlide.register();
             WheelItemList.init();
+        });
+    }
+
+    private void onClientSetup(final FMLClientSetupEvent event)
+    {
+        event.enqueueWork(() ->
+        {
+            ItemProperties.register(GunBattleRoyaleItems.R2R5.get(), new ResourceLocation("gbr", "r2r5_blocking"), (stack, level, living, id) -> {
+                return living != null && living.isUsingItem() ? 1.0F : 0.0F;
+            });
         });
     }
 }

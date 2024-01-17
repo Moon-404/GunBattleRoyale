@@ -2,6 +2,7 @@ package com.moon404.gbr.handler;
 
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
+import com.moon404.gbr.item.R2R5Item;
 import com.moon404.gbr.message.ShowDamageMessage;
 import com.moon404.gbr.struct.ClassType;
 import com.moon404.gbr.struct.DamageInfo;
@@ -38,6 +39,21 @@ public class HurtHandler
             return;
         }
 
+        if (event.getEntity() instanceof Player player)
+        {
+            ItemStack itemStack = player.getMainHandItem();
+            if (itemStack.getItem() == GunBattleRoyaleItems.R2R5.get())
+            {
+                float amount = event.getAmount();
+                if (player.isUsingItem()) amount /= 2;
+                if (R2R5Item.bursting(itemStack)) amount /= 2;
+                int deltaEnergy = (int)((event.getAmount() - amount) / 0.05);
+                event.setAmount(amount);
+                int energy = R2R5Item.getEnergy(itemStack);
+                R2R5Item.setEnergy(itemStack, energy + deltaEnergy);
+            }
+        }
+
         if (source.getEntity() instanceof ServerPlayer from)
         {
             DamageInfo damage = new DamageInfo();
@@ -57,6 +73,14 @@ public class HurtHandler
             {
                 event.getEntity().addEffect(new MobEffectInstance(MobEffects.GLOWING, 100));
                 itemStack.setCount(itemStack.getCount() - 1);
+            }
+
+            itemStack = from.getMainHandItem();
+            if (itemStack.getItem() == GunBattleRoyaleItems.R2R5.get())
+            {
+                int energy = R2R5Item.getEnergy(itemStack);
+                int deltaEnergy = (int)(event.getAmount() / 0.05);
+                R2R5Item.setEnergy(itemStack, energy + deltaEnergy);
             }
         }
 

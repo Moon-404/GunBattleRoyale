@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import com.moon404.gbr.item.Nemesis;
+import com.moon404.gbr.item.R2R5Item;
 import com.moon404.gbr.item.recover.MedKit;
 import com.moon404.gbr.item.recover.PhoenixKit;
 import com.moon404.gbr.item.recover.RecoverItem;
@@ -61,6 +62,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> ADVANCED_GRIP = REGISTER.register("advanced_grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.ADVANCED_GRIP), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).tab(GROUP)));
 
     public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.36a", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> R2R5 = REGISTER.register("r2r5", () -> new R2R5Item(new Item.Properties().stacksTo(1).tab(GROUP)));
 
     public static final RegistryObject<Item> SHIELD_CELL = REGISTER.register("shield_cell", () -> new ShieldCell(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> SHIELD_BATTERY = REGISTER.register("shield_battery", () -> new ShieldBattery(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
