@@ -50,7 +50,7 @@
   "sounds": {
     "cock": "cgm:item.pistol.cock",
     "enchantedFire": "cgm:item.pistol.enchanted_fire",
-    "fire": "cgm:item.pistol.silenced_fire",
+    "fire": "gbr:item.pistol.fire",
     "reload": "cgm:item.pistol.reload",
     "silencedFire": "cgm:item.pistol.silenced_fire"
   }

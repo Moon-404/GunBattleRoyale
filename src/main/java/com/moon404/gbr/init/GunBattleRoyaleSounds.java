@@ -12,4 +12,5 @@ public class GunBattleRoyaleSounds
 
     public static final RegistryObject<SoundEvent> ITEM_HEAVY_RIFLE_FIRE = REGISTER.register("item.charge_rifle.fire", () -> new SoundEvent(new ResourceLocation("gbr", "item.charge_rifle.fire")));
     public static final RegistryObject<SoundEvent> ITEM_NEMESIS_FIRE = REGISTER.register("item.nemesis.fire", () -> new SoundEvent(new ResourceLocation("gbr", "item.nemesis.fire")));
+    public static final RegistryObject<SoundEvent> ITEM_PISTOL_FIRE = REGISTER.register("item.pistol.fire", () -> new SoundEvent(new ResourceLocation("gbr", "item.pistol.fire")));
 }
