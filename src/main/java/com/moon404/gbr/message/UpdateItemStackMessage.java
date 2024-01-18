@@ -47,15 +47,18 @@ public class UpdateItemStackMessage
                 {
                     ItemStack itemStack = player.getInventory().getItem(content.slot);
                     Vec3 direction = player.getLookAngle();
-                    direction = direction.multiply(1, 0, 1);
-                    direction = direction.normalize();
+                    if (player.isOnGround())
+                    {
+                        direction = direction.multiply(1, 0, 1);
+                        direction = direction.normalize();
+                    }
                     direction = direction.scale(2);
-                    Vec3 position = player.getPosition(1);
+                    Vec3 position = player.getPosition(0);
                     position = position.add(direction);
                     if (player.level.isEmptyBlock(new BlockPos(position)))
                     {
                         R2R5Item.setEnergy(itemStack, R2R5Item.getEnergy(itemStack) - R2R5Item.DASH_ENERGY);
-                        player.setPos(position);
+                        player.teleportTo(position.x(), position.y(), position.z());
                     }
                 }
             });

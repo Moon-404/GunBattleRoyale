@@ -25,6 +25,7 @@ import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.init.GunBattleRoyaleSounds;
+import com.moon404.gbr.item.R2R5Item;
 import com.moon404.gbr.message.C2SSlide;
 import com.moon404.gbr.message.ChangeItemMessage;
 import com.moon404.gbr.message.RenderLaserMessage;
@@ -93,6 +94,9 @@ public class GunBattleRoyale
         {
             ItemProperties.register(GunBattleRoyaleItems.R2R5.get(), new ResourceLocation("gbr", "r2r5_blocking"), (stack, level, living, id) -> {
                 return living != null && living.isUsingItem() ? 1.0F : 0.0F;
+            });
+            ItemProperties.register(GunBattleRoyaleItems.R2R5.get(), new ResourceLocation("gbr", "r2r5_bursting"), (stack, level, living, id) -> {
+                return R2R5Item.bursting(stack) || R2R5Item.getEnergy(stack) == R2R5Item.MAX_ENERGY ? 1.0F : 0.0F;
             });
         });
     }

@@ -6,9 +6,24 @@
 	"overrides": [
 		{
 			"predicate": {
-				"gbr:r2r5_blocking": 1
+				"gbr:r2r5_blocking": 1,
+				"gbr:r2r5_bursting": 0
 			},
 			"model": "gbr:item/r2r5_blocking"
+		},
+		{
+			"predicate": {
+				"gbr:r2r5_blocking": 0,
+				"gbr:r2r5_bursting": 1
+			},
+			"model": "gbr:item/r2r5_bursting"
+		},
+		{
+			"predicate": {
+				"gbr:r2r5_blocking": 1,
+				"gbr:r2r5_bursting": 1
+			},
+			"model": "gbr:item/r2r5_bursting_blocking"
 		}
 	]
 }
