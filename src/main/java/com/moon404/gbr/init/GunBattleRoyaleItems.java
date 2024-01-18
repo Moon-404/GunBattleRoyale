@@ -11,6 +11,7 @@ import com.moon404.gbr.item.R2R5Item;
 import com.moon404.gbr.item.recover.MedKit;
 import com.moon404.gbr.item.recover.PhoenixKit;
 import com.moon404.gbr.item.recover.RecoverItem;
+import com.moon404.gbr.item.recover.Reviver;
 import com.moon404.gbr.item.recover.ShieldBattery;
 import com.moon404.gbr.item.recover.ShieldBoost;
 import com.moon404.gbr.item.recover.ShieldCell;
@@ -61,7 +62,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> GRIP = REGISTER.register("grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.GRIP), new Item.Properties().stacksTo(1).tab(GROUP)));
     public static final RegistryObject<Item> ADVANCED_GRIP = REGISTER.register("advanced_grip", () -> new UnderBarrelItem(UnderBarrel.create(GunModifiers.ADVANCED_GRIP), new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).tab(GROUP)));
 
-    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.36b", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> VERSION = REGISTER.register("1.3.3.36c", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> R2R5 = REGISTER.register("r2r5", () -> new R2R5Item(new Item.Properties().stacksTo(1).tab(GROUP)));
 
     public static final RegistryObject<Item> SHIELD_CELL = REGISTER.register("shield_cell", () -> new ShieldCell(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
@@ -70,6 +71,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> MED_KIT = REGISTER.register("med_kit", () -> new MedKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> PHOENIX_KIT = REGISTER.register("phoenix_kit", () -> new PhoenixKit(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
     public static final RegistryObject<Item> SHIELD_BOOST = REGISTER.register("shield_boost", () -> new ShieldBoost(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
+    public static final RegistryObject<Item> REVIVER = REGISTER.register("reviver", () -> new Reviver(new Item.Properties().food(RecoverItem.RECOVER_ITEM).tab(GROUP)));
 
     public static final RegistryObject<Item> STIM = REGISTER.register("stim", () -> new Stim(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> LIFT = REGISTER.register("lift", () -> new Lift(new Item.Properties().tab(GROUP)));

@@ -78,6 +78,7 @@ scoreboard players set game_fee_interval global 50
 scoreboard objectives add teamid dummy
 scoreboard objectives add assist dummy
 scoreboard objectives add winner dummy
+scoreboard objectives add revive dummy
 scoreboard objectives add eliminated dummy
 
 kill @e[tag=team]
