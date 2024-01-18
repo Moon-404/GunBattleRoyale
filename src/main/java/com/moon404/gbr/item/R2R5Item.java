@@ -7,6 +7,7 @@ import com.moon404.gbr.struct.ItemStackInfo;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -131,6 +132,7 @@ public class R2R5Item extends Item
     @Override
     public void onUseTick(Level level, LivingEntity livingEntity, ItemStack itemStack, int remainingUseDuration)
     {
+        if (!level.isClientSide) return;
         if (livingEntity instanceof LocalPlayer player)
         {
             if (Minecraft.getInstance().options.keyAttack.isDown())
