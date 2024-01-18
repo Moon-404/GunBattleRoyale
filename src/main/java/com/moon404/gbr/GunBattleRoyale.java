@@ -14,6 +14,7 @@ import com.moon404.gbr.handler.KnockbackHandler;
 import com.moon404.gbr.handler.LoginHandler;
 import com.moon404.gbr.handler.PlayerTickHandler;
 import com.moon404.gbr.handler.ProjectileHitHandler;
+import com.moon404.gbr.handler.ShieldBlockHandler;
 import com.moon404.gbr.handler.ClientTickHandler;
 import com.moon404.gbr.handler.CorpseDeathHandler;
 import com.moon404.gbr.handler.HurtHandler;
@@ -63,6 +64,7 @@ public class GunBattleRoyale
         MinecraftForge.EVENT_BUS.register(LoginHandler.class);
         MinecraftForge.EVENT_BUS.register(GunReloadHandler.class);
         MinecraftForge.EVENT_BUS.register(AttackEntityHandler.class);
+        MinecraftForge.EVENT_BUS.register(ShieldBlockHandler.class);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(Type.CLIENT, GunBattleRoyaleConfigs.SPEC, "GunBattleRoyaleConfig.toml");
         modEventBus.addListener(this::onCommonSetup);
