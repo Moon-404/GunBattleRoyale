@@ -27,6 +27,7 @@ public class R2R5Item extends Item
     public static final int MAX_ENERGY = 400;
     public static final int DASH_ENERGY = 10;
     public static final int LAUNCH_ENERGY = 50;
+    public static final float CHARGE_RATIO = 0.05F;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     private final Multimap<Attribute, AttributeModifier> burstModifiers;
     private static final AttributeModifier BASE_DAMAGE = new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 5.0D, Operation.ADDITION);
@@ -165,7 +166,13 @@ public class R2R5Item extends Item
     @Override
     public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int slotId, boolean isSelected)
     {
-        if (!bursting(itemStack)) return;
-        setEnergy(itemStack, getEnergy(itemStack) - 1);
+        if (bursting(itemStack))
+        {
+            setEnergy(itemStack, getEnergy(itemStack) - 1);
+        }
+        else if (isSelected)
+        {
+            setEnergy(itemStack, getEnergy(itemStack) + 1);
+        }
     }
 }

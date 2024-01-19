@@ -39,6 +39,18 @@ public class HurtHandler
             return;
         }
 
+        if (event.getEntity() instanceof Player player)
+        {
+            ItemStack itemStack = player.getMainHandItem();
+            if (itemStack.getItem() == GunBattleRoyaleItems.R2R5.get())
+            {
+                if (R2R5Item.bursting(itemStack))
+                {
+                    event.setAmount(event.getAmount() / 2);
+                }
+            }
+        }
+
         if (source.getEntity() instanceof ServerPlayer from)
         {
             DamageInfo damage = new DamageInfo();
@@ -64,7 +76,7 @@ public class HurtHandler
             if (itemStack.getItem() == GunBattleRoyaleItems.R2R5.get())
             {
                 int energy = R2R5Item.getEnergy(itemStack);
-                int deltaEnergy = (int)(event.getAmount() / 0.05);
+                int deltaEnergy = (int)(event.getAmount() / R2R5Item.CHARGE_RATIO);
                 R2R5Item.setEnergy(itemStack, energy + deltaEnergy);
             }
         }

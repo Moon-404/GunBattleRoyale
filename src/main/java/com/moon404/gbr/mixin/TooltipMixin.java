@@ -254,13 +254,14 @@ public class TooltipMixin
             if (R2R5Item.bursting(event.getItemStack()))
             {
                 toolTip.add(Component.literal("受到的所有伤害减半，每秒失去20点充能"));
-                toolTip.add(Component.literal("左键：命中时若自己在地面，消耗100点充能，挑飞自己和目标"));
-                toolTip.add(Component.literal("右键：格挡，受到的所有伤害减半（即只受到25%的伤害）"));
-                toolTip.add(Component.literal("格挡时左键：消耗25点充能，向面朝方向突进2格"));
+                toolTip.add(Component.literal("左键：命中时若自己在地面，消耗50点充能，挑飞自己和目标"));
+                toolTip.add(Component.literal("右键：格挡，受到的所有正面伤害减半（即只受到25%的伤害）"));
+                toolTip.add(Component.literal("格挡时左键：消耗10点充能，向面朝方向突进1格"));
             }
             else
             {
-                toolTip.add(Component.literal("右键：格挡，受到的所有伤害减半"));
+                toolTip.add(Component.literal("拿在手中时，每秒获得20点充能"));
+                toolTip.add(Component.literal("右键：格挡，受到的所有正面伤害减半"));
                 toolTip.add(Component.literal("每造成或格挡1点伤害充能20点，上限400点"));
                 toolTip.add(Component.literal("格挡时左键：若充能已满，进入界限解除模式"));
             }
