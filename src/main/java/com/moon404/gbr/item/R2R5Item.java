@@ -25,11 +25,11 @@ import net.minecraft.world.level.Level;
 public class R2R5Item extends Item
 {
     public static final int MAX_ENERGY = 400;
-    public static final int DASH_ENERGY = 25;
-    public static final int LAUNCH_ENERGY = 100;
+    public static final int DASH_ENERGY = 10;
+    public static final int LAUNCH_ENERGY = 50;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     private final Multimap<Attribute, AttributeModifier> burstModifiers;
-    private static final AttributeModifier BASE_DAMAGE = new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 3.0D, Operation.ADDITION);
+    private static final AttributeModifier BASE_DAMAGE = new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 5.0D, Operation.ADDITION);
     private static final AttributeModifier BASE_ATTACK_SPEED = new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -2.4D, Operation.ADDITION);
     private static final AttributeModifier BURST_DAMAGE = new AttributeModifier("r2r5_burst_damage", 0.5D, Operation.MULTIPLY_TOTAL);
     private static final AttributeModifier BURST_MOVEMENT_SPEED = new AttributeModifier("r2r5_burst_speed", 0.2D, Operation.MULTIPLY_TOTAL);

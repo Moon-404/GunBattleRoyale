@@ -52,7 +52,6 @@ public class UpdateItemStackMessage
                         direction = direction.multiply(1, 0, 1);
                         direction = direction.normalize();
                     }
-                    direction = direction.scale(2);
                     Vec3 position = player.getPosition(0);
                     position = position.add(direction);
                     if (player.level.isEmptyBlock(new BlockPos(position)))
