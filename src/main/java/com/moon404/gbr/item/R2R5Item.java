@@ -21,12 +21,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 public class R2R5Item extends Item
 {
     public static final int MAX_ENERGY = 400;
-    public static final int DASH_ENERGY = 10;
+    public static final int DASH_ENERGY = 4;
     public static final int LAUNCH_ENERGY = 50;
+    public static final float DASH_DISTANCE = 0.4F;
     public static final float CHARGE_RATIO = 0.05F;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     private final Multimap<Attribute, AttributeModifier> burstModifiers;
@@ -149,6 +151,9 @@ public class R2R5Item extends Item
                     }
                     else if (bursting(itemStack))
                     {
+                        pressing = false;
+                        Vec3 direction = player.getLookAngle().multiply(1, 0, 1).normalize().scale(DASH_DISTANCE);
+                        player.setDeltaMovement(direction);
                         ItemStackInfo message = new ItemStackInfo();
                         message.slot = player.getInventory().findSlotMatchingItem(itemStack);
                         message.action = 2;

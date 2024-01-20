@@ -3,11 +3,9 @@ package com.moon404.gbr.message;
 import com.moon404.gbr.item.R2R5Item;
 import com.moon404.gbr.struct.ItemStackInfo;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
@@ -46,19 +44,7 @@ public class UpdateItemStackMessage
                 else if (content.action == 2)
                 {
                     ItemStack itemStack = player.getInventory().getItem(content.slot);
-                    Vec3 direction = player.getLookAngle();
-                    if (player.isOnGround())
-                    {
-                        direction = direction.multiply(1, 0, 1);
-                        direction = direction.normalize();
-                    }
-                    Vec3 position = player.getPosition(0);
-                    position = position.add(direction);
-                    if (player.level.isEmptyBlock(new BlockPos(position)))
-                    {
-                        R2R5Item.setEnergy(itemStack, R2R5Item.getEnergy(itemStack) - R2R5Item.DASH_ENERGY);
-                        player.teleportTo(position.x(), position.y(), position.z());
-                    }
+                    R2R5Item.setEnergy(itemStack, R2R5Item.getEnergy(itemStack) - R2R5Item.DASH_ENERGY);
                 }
             });
             ctx.get().setPacketHandled(true);
