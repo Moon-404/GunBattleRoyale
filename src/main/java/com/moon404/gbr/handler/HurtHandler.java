@@ -44,6 +44,7 @@ public class HurtHandler
             ItemStack itemStack = player.getMainHandItem();
             if (itemStack.getItem() == GunBattleRoyaleItems.R2R5.get())
             {
+                event.setAmount(event.getAmount() / 2);
                 if (R2R5Item.bursting(itemStack))
                 {
                     event.setAmount(event.getAmount() / 2);

@@ -33,17 +33,15 @@ public class R2R5Item extends Item
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
     private final Multimap<Attribute, AttributeModifier> burstModifiers;
     private static final AttributeModifier BASE_DAMAGE = new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", 5.0D, Operation.ADDITION);
-    private static final AttributeModifier BASE_ATTACK_SPEED = new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -3.0D, Operation.ADDITION);
     private static final AttributeModifier BURST_DAMAGE = new AttributeModifier("r2r5_burst_damage", 0.5D, Operation.MULTIPLY_TOTAL);
     private static final AttributeModifier BURST_MOVEMENT_SPEED = new AttributeModifier("r2r5_burst_speed", 0.2D, Operation.MULTIPLY_TOTAL);
-    private static boolean pressing = false;
+    private static int pressing = 0;
 
     public R2R5Item(Properties pProperties)
     {
         super(pProperties);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, BASE_DAMAGE);
-        builder.put(Attributes.ATTACK_SPEED, BASE_ATTACK_SPEED);
         this.defaultModifiers = builder.build();
         builder.put(Attributes.ATTACK_DAMAGE, BURST_DAMAGE);
         builder.put(Attributes.MOVEMENT_SPEED, BURST_MOVEMENT_SPEED);
@@ -139,31 +137,28 @@ public class R2R5Item extends Item
         {
             if (Minecraft.getInstance().options.keyAttack.isDown())
             {
-                if (!pressing)
+                if (getEnergy(itemStack) == MAX_ENERGY && pressing == 0)
                 {
-                    pressing = true;
-                    if (getEnergy(itemStack) == MAX_ENERGY)
-                    {
-                        ItemStackInfo message = new ItemStackInfo();
-                        message.slot = player.getInventory().findSlotMatchingItem(itemStack);
-                        message.action = 1;
-                        UpdateItemStackMessage.INSTANCE.sendToServer(message);
-                    }
-                    else if (bursting(itemStack))
-                    {
-                        pressing = false;
-                        Vec3 direction = player.getLookAngle().multiply(1, 0, 1).normalize().scale(DASH_DISTANCE);
-                        player.setDeltaMovement(direction);
-                        ItemStackInfo message = new ItemStackInfo();
-                        message.slot = player.getInventory().findSlotMatchingItem(itemStack);
-                        message.action = 2;
-                        UpdateItemStackMessage.INSTANCE.sendToServer(message);
-                    }
+                    pressing = -1;
+                    ItemStackInfo message = new ItemStackInfo();
+                    message.slot = player.getInventory().findSlotMatchingItem(itemStack);
+                    message.action = 1;
+                    UpdateItemStackMessage.INSTANCE.sendToServer(message);
+                }
+                else if (bursting(itemStack) && ((pressing == 0 && player.isOnGround()) || pressing > 0))
+                {
+                    pressing += 1;
+                    Vec3 direction = player.getLookAngle().multiply(1, 0, 1).normalize().scale(DASH_DISTANCE);
+                    player.setDeltaMovement(direction);
+                    ItemStackInfo message = new ItemStackInfo();
+                    message.slot = player.getInventory().findSlotMatchingItem(itemStack);
+                    message.action = 2;
+                    UpdateItemStackMessage.INSTANCE.sendToServer(message);
                 }
             }
             else
             {
-                pressing = false;
+                pressing = 0;
             }
         }
     }
