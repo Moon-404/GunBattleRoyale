@@ -7,6 +7,7 @@ import com.moon404.gbr.struct.ItemStackInfo;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -145,10 +146,10 @@ public class R2R5Item extends Item
                     message.action = 1;
                     UpdateItemStackMessage.INSTANCE.sendToServer(message);
                 }
-                else if (bursting(itemStack) && ((pressing == 0 && player.isOnGround()) || pressing > 0))
+                else if (bursting(itemStack) && pressing == 0)
                 {
-                    pressing += 1;
                     Vec3 direction = player.getLookAngle().multiply(1, 0, 1).normalize().scale(DASH_DISTANCE);
+                    direction = direction.add(player.getDeltaMovement().multiply(0, 1, 0));
                     player.setDeltaMovement(direction);
                     ItemStackInfo message = new ItemStackInfo();
                     message.slot = player.getInventory().findSlotMatchingItem(itemStack);
@@ -169,6 +170,12 @@ public class R2R5Item extends Item
         if (bursting(itemStack))
         {
             setEnergy(itemStack, getEnergy(itemStack) - 1);
+        }
+        else if (entity instanceof Player player && player.getOffhandItem() == itemStack)
+        {
+            player.drop(itemStack, true);
+            player.getInventory().removeItem(itemStack);
+            player.displayClientMessage(Component.literal("毁灭剑不可装备在副手"), true);
         }
         else if (isSelected)
         {
