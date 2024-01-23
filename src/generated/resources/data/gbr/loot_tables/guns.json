@@ -68,10 +68,6 @@
                             "tag": "{AmmoCount:4, AttributeModifiers:[{AttributeName:\"generic.attack_speed\", Operation:1, Amount:-0.75, Name:\"attack_speed\", Slot:\"mainhand\", UUID:[I;114,514,1919,810]}]}"
                         }
                     ]
-                },
-                {
-                    "type": "item",
-                    "name": "gbr:r2r5"
                 }
             ]
         }
