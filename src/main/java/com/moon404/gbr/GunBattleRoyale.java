@@ -20,6 +20,7 @@ import com.moon404.gbr.handler.CorpseDeathHandler;
 import com.moon404.gbr.handler.HurtHandler;
 import com.moon404.gbr.handler.ItemPickupHandler;
 import com.moon404.gbr.handler.ItemTossHandler;
+import com.moon404.gbr.init.GunBattleRoyaleBlocks;
 import com.moon404.gbr.init.GunBattleRoyaleConfigs;
 import com.moon404.gbr.init.GunBattleRoyaleEffects;
 import com.moon404.gbr.init.GunBattleRoyaleEntities;
@@ -51,6 +52,7 @@ public class GunBattleRoyale
         GunBattleRoyaleEntities.REGISTER.register(modEventBus);
         GunBattleRoyaleItems.REGISTER.register(modEventBus);
         GunBattleRoyaleEffects.REGISTER.register(modEventBus);
+        GunBattleRoyaleBlocks.REGISTER.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(PlayerTickHandler.class);
         MinecraftForge.EVENT_BUS.register(ClientTickHandler.class);
         MinecraftForge.EVENT_BUS.register(GunFireHandler.class);
