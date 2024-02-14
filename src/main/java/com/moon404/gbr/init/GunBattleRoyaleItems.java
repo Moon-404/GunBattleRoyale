@@ -31,6 +31,7 @@ import com.moon404.gbr.item.skill.Scan;
 import com.moon404.gbr.item.skill.ShieldBottle;
 import com.moon404.gbr.item.skill.Silence;
 import com.moon404.gbr.item.skill.SkillBag;
+import com.moon404.gbr.item.skill.Smoke;
 import com.moon404.gbr.item.skill.Snare;
 import com.moon404.gbr.item.skill.Stim;
 import com.moon404.gbr.item.skill.Totem;
@@ -91,6 +92,7 @@ public class GunBattleRoyaleItems
     public static final RegistryObject<Item> SILENCE = REGISTER.register("silence", () -> new Silence(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> TRACE = REGISTER.register("trace", () -> new Trace(new Item.Properties().tab(GROUP)));
     public static final RegistryObject<Item> BOOT = REGISTER.register("boot", () -> new Boot(new Item.Properties().tab(GROUP)));
+    public static final RegistryObject<Item> SMOKE = REGISTER.register("smoke", () -> new Smoke(new Item.Properties().tab(GROUP)));
     // skill_bag 必须最后一个注册
     public static final RegistryObject<Item> SKILL_BAG = REGISTER.register("skill_bag", () -> new SkillBag(new Item.Properties().tab(GROUP)));
 }

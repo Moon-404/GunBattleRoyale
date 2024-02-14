@@ -7,6 +7,7 @@ import com.moon404.gbr.entity.LiftEntity;
 import com.moon404.gbr.entity.PearlEntity;
 import com.moon404.gbr.entity.ShieldBottleEntity;
 import com.moon404.gbr.entity.SilenceEntity;
+import com.moon404.gbr.entity.SmokeEntity;
 import com.moon404.gbr.entity.SnareEntity;
 import com.moon404.gbr.entity.TotemEntity;
 
@@ -54,4 +55,7 @@ public class GunBattleRoyaleEntities
     public static final RegistryObject<EntityType<SilenceEntity>> SILENCE =
         REGISTER.register("silence", () ->
             EntityType.Builder.<SilenceEntity>of(SilenceEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("silence"));
+    public static final RegistryObject<EntityType<SmokeEntity>> SMOKE =
+        REGISTER.register("smoke", () ->
+            EntityType.Builder.<SmokeEntity>of(SmokeEntity::new, MobCategory.MISC).sized(0.25F, 0.25F).clientTrackingRange(4).updateInterval(10).build("smoke"));
 }

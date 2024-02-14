@@ -231,6 +231,13 @@ public class TooltipMixin
             toolTip.add(Component.literal("造成 4 点伤害、5 秒沉默与禁疗"));
             return;
         }
+        if (item == GunBattleRoyaleItems.SMOKE.get())
+        {
+            toolTip.add(Component.literal("按 Q 扔出，落地生效"));
+            toolTip.add(Component.literal("在落地点创建一片烟雾"));
+            toolTip.add(Component.literal("半径为 4，持续 10 秒"));
+            return;
+        }
         if (item == GunBattleRoyaleItems.TRACE.get())
         {
             toolTip.add(Component.literal("按 Q 扔出，立即生效"));

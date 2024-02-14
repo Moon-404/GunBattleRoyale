@@ -2,7 +2,6 @@ package com.moon404.gbr.item.skill;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 import com.moon404.gbr.init.GunBattleRoyaleItems;
 import com.moon404.gbr.struct.ClassType;
@@ -13,11 +12,12 @@ import net.minecraft.world.item.ItemStack;
 
 public class SkillBag extends SkillItem
 {
+    private static int counter = 0;
     public static List<Item> attackItems = Arrays.asList(
         GunBattleRoyaleItems.SILENCE.get(),
-        GunBattleRoyaleItems.TOTEM.get(),
         GunBattleRoyaleItems.SNARE.get(),
-        GunBattleRoyaleItems.FAST.get()
+        GunBattleRoyaleItems.FAST.get(),
+        GunBattleRoyaleItems.SMOKE.get()
     );
     public static List<Item> roguekItems = Arrays.asList(
         GunBattleRoyaleItems.VOID.get(),
@@ -50,7 +50,8 @@ public class SkillBag extends SkillItem
         if (ClassType.getClass(player) == ClassType.ATTACK) items = attackItems;
         else if (ClassType.getClass(player) == ClassType.SUPPORT) items = supportItems;
         else if (ClassType.getClass(player) == ClassType.SCOUT) items = scoutItems;
-        int rand = new Random().nextInt(items.size());
+        int rand = counter;
+        counter = (counter + 1) % 4;
         player.addItem(new ItemStack(items.get(rand)));
         return true;
     }
