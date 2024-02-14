@@ -55,6 +55,10 @@ public class SmokeEntity extends ThrowableItemProjectile
             DustParticleOptions options = new DustParticleOptions(color, 1.5F);
             level.sendParticles(options, this.getX(), this.getY(), this.getZ(), 0, 0, 0, 0, 0);
         }
+        if (this.activeTickCount > -1)
+        {
+            this.setDeltaMovement(0, 0, 0);
+        }
         super.tick();
         if (this.level instanceof ServerLevel level && this.tickCount - this.activeTickCount > 200)
         {
