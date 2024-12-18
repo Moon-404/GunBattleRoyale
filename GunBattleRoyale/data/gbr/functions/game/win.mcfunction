@@ -21,6 +21,7 @@ team empty cyan
 kill @e[tag=testplayer]
 team empty test
 
+gamemode adventure @a[gamemode=spectator]
 effect clear @a[gamemode=adventure]
 clear @a[gamemode=adventure]
 scoreboard players set game_start global 0
