@@ -1,1 +1,7 @@
-tellraw @a [{"selector": "@s"}, " 被其他玩家杀死了"]
+scoreboard players add @a[scores={kill=1}] rank 1
+scoreboard players add @a[scores={assist=1}] rank 1
+tellraw @a [{"selector": "@a[scores={kill=1}]"}, "击杀", {"selector": "@s"}, "获得2分，队友获得1分"]
+tellraw @s "您已阵亡，可以使用数字键1和2传送至玩家处观战"
+scoreboard players add @s stat_death 1
+gamemode spectator @s
+function gbr:game/judge

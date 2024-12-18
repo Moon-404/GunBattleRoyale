@@ -26,4 +26,4 @@ scoreboard players set @a[gamemode=adventure, team=black] teamid 9
 scoreboard players set @a[gamemode=adventure, team=magenta] teamid 10
 scoreboard players set @a[gamemode=adventure, team=purple] teamid 11
 scoreboard players set @a[gamemode=adventure, team=cyan] teamid 12
-scoreboard players set @e[team=testplayer] teamid 13
+scoreboard players set @e[team=test] teamid 13

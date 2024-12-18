@@ -1,1 +1,1 @@
-tellraw @a [{"selector": "@s"}, " 退出了游戏"]
+execute if score game_start global matches 1 run function gbr:game/judge

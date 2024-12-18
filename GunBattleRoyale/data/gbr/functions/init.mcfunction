@@ -2,19 +2,14 @@
 scoreboard objectives add global dummy
 scoreboard players set game_start global 0
 scoreboard players set game_waiting global 0
-scoreboard players set game_force_start global 0
 scoreboard players set game_max_team_player global 3
-# 死亡数，冒险+1=战败，冒险+0=存活，旁观+-1=观战
-scoreboard objectives add death deathCount
-# 是否观战
-scoreboard objectives add ob dummy
+# 用于判定击杀
+scoreboard objectives add kill dummy
 # 玩家高度
 scoreboard objectives add height dummy
 # 玩家积分
 scoreboard objectives add rank dummy
 scoreboard objectives setdisplay list rank
-# 玩家击杀数
-scoreboard objectives add kills playerKillCount
 # 生涯数据
 scoreboard objectives add stat_kill dummy
 scoreboard objectives add stat_death dummy
@@ -23,12 +18,18 @@ scoreboard objectives add stat_total dummy
 # 占位
 scoreboard objectives add nothing dummy
 # 毒圈属性
-worldborder damage amount 1
+worldborder damage amount 2
 worldborder damage buffer 0
-worldborder warning distance 1
-worldborder warning time 1
+worldborder warning distance 0
+worldborder warning time 0
+# 游戏规则
+gamerule doDaylightCycle false
 gamerule doImmediateRespawn true
+gamerule doWeatherCycle false
+gamerule keepInventory false
 gamerule naturalRegeneration false
+gamerule reducedDebugInfo true
+gamerule showDeathMessages false
 # 队伍
 team add green
 team add yellow
@@ -98,6 +99,3 @@ summon marker ~ ~ ~ {Tags:["team", "cyan"]}
 summon marker ~ ~ ~ {Tags:["team", "test"]}
 
 function gbr:team/setid
-
-gamerule reducedDebugInfo true
-gamerule keepInventory false

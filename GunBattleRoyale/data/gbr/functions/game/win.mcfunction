@@ -23,17 +23,16 @@ team empty test
 
 effect clear @a[gamemode=adventure]
 clear @a[gamemode=adventure]
-worldborder set 114514
-schedule clear gbr:game/afk
 scoreboard players set game_start global 0
 title @a title "游戏结束"
 scoreboard players set game_waiting global 1
 schedule function gbr:game/wait_finish 30s
-scoreboard players set game_force_start global 0
-schedule function gbr:game/force_start 90s
-schedule function gbr:game/reset_supply 5s
-schedule function gbr:game/reset_game 15s
-schedule function gbr:game/set_supply 20s
+
+execute as @e[tag=airdrop] at @s run function gbr:airdrop/reset
+execute as @e[tag=supply] at @s run data modify block ~ ~ ~ Items set value []
+execute at @e[tag=ring] run function gbr:game/reset_center
+
+kill @e[type=corpse:corpse]
+kill @e[type=item]
+
 scoreboard objectives setdisplay sidebar rank
-effect give @a glowing 1000000
-effect give @a invisibility 1000000

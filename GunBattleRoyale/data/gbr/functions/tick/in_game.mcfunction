@@ -1,5 +1,5 @@
 # 每tick都要进行的玩家判定
-execute as @a[gamemode=adventure] run function gbr:tick/player_in_game
+execute as @a[gamemode=adventure, tag=jumping, scores={height=0..100}] at @s run function gbr:game/jumping
 # 空投判定
 scoreboard players add game_tick global 1
 execute if score game_tick global matches 1950 run function gbr:airdrop/airdrop
