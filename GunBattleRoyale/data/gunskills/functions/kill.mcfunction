@@ -1,0 +1,1 @@
+tellraw @a [{"selector": "@s"}, " 击杀了其它玩家"]
