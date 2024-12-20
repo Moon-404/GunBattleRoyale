@@ -5,6 +5,9 @@ scoreboard players reset game_player_count global
 execute as @a[gamemode=adventure] run function gbr:game/set_game_player
 execute as @e[tag=jump] run teleport @a[gamemode=adventure] @s
 
+kill @e[type=corpse:corpse]
+kill @e[type=item]
+
 execute as @e[tag=supply] at @s run loot insert ~ ~ ~ loot gbr:chests
 execute as @e[tag=ring, sort=random, limit=1] at @s run function gbr:game/set_center
 
@@ -21,5 +24,4 @@ function gbr:team/setid
 scoreboard players set game_tick global 0
 scoreboard players set game_start global 1
 scoreboard players set game_airdrop_count global 0
-schedule function gbr:game/remove_afk 30s
 scoreboard objectives setdisplay sidebar nothing
