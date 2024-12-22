@@ -5,6 +5,7 @@ scoreboard players set game_waiting global 0
 scoreboard players set game_max_team_player global 3
 # 用于判定击杀
 scoreboard objectives add kill dummy
+scoreboard objectives add death dummy
 # 玩家高度
 scoreboard objectives add height dummy
 # 玩家积分
