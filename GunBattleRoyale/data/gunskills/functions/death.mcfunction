@@ -5,3 +5,5 @@ tellraw @s "您已阵亡，可以使用数字键1和2传送至玩家处观战"
 scoreboard players add @s stat_death 1
 gamemode spectator @s
 function gbr:game/judge
+scoreboard players reset * kill
+scoreboard players reset * assist
