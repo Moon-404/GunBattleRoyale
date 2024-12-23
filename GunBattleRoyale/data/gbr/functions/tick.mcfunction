@@ -1,4 +1,5 @@
 # 计分板赋值
+scoreboard players add game_tick global 1
 execute as @a store result score @s height run data get entity @s Pos[1]
 
 # 游戏内&游戏外

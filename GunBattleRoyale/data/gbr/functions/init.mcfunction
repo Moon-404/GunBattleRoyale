@@ -1,7 +1,6 @@
 # 全局变量，常量，以game_开头
 scoreboard objectives add global dummy
 scoreboard players set game_start global 0
-scoreboard players set game_waiting global 0
 scoreboard players set game_max_team_player global 3
 # 用于判定击杀
 scoreboard objectives add kill dummy

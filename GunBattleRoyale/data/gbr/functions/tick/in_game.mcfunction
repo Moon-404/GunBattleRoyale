@@ -4,7 +4,6 @@ gamemode spectator @a[scores={death=1}]
 execute if entity @a[scores={death=1}] run function gbr:game/judge
 scoreboard players reset * death
 # 空投判定
-scoreboard players add game_tick global 1
 execute if score game_tick global matches 800 run function gbr:airdrop/airdrop
 execute if score game_tick global matches 2600 run function gbr:airdrop/airdrop
 execute if score game_tick global matches 3800 run function gbr:airdrop/airdrop
