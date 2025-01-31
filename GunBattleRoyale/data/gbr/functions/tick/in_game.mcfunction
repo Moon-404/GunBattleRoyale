@@ -1,7 +1,7 @@
 # 每tick都要进行的玩家判定
 execute as @a[gamemode=adventure, tag=jumping, scores={height=0..100}] at @s run function gbr:game/jumping
-gamemode spectator @a[scores={death=1}]
-execute if entity @a[scores={death=1}] run function gbr:game/judge
+gamemode spectator @a[scores={death=1..2147483647}]
+execute if entity @a[scores={death=1..2147483647}] run function gbr:game/judge
 scoreboard players reset * death
 # 空投判定
 execute if score game_tick global matches 800 run function gbr:airdrop/airdrop
