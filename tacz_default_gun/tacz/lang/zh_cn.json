@@ -78,6 +78,15 @@
   "tacz.attachment.sniper_extended_mag_1.name":"狙击弹药扩容弹匣",
   "tacz.attachment.sniper_extended_mag_2.name":"§9狙击弹药扩容弹匣",
   "tacz.attachment.sniper_extended_mag_3.name": "§5狙击弹药扩容弹匣",
+  "tacz.attachment.extended_mag_1.tooltip": "",
+  "tacz.attachment.extended_mag_2.tooltip": "",
+  "tacz.attachment.extended_mag_3.tooltip": "",
+  "tacz.attachment.light_extended_mag_1.tooltip":"",
+  "tacz.attachment.light_extended_mag_2.tooltip":"",
+  "tacz.attachment.light_extended_mag_3.tooltip":"",
+  "tacz.attachment.sniper_extended_mag_1.tooltip":"",
+  "tacz.attachment.sniper_extended_mag_2.tooltip":"",
+  "tacz.attachment.sniper_extended_mag_3.tooltip": "",
 
 
   "tacz.attachment.grip_magpul_afg_2.name": "塔伦 AFG2 阻手",
@@ -99,5 +108,8 @@
   "tacz.attachment.oem_stock_tactical.name": "原厂战术枪托",
   "tacz.attachment.stock_carbon_bone_c5.name": "战术枪托",
   "tacz.attachment.stock_tactical_ar.name": "§9战术枪托",
-  "tacz.attachment.stock_militech_b5.name": "§5战术枪托"
+  "tacz.attachment.stock_militech_b5.name": "§5战术枪托",
+  "tacz.attachment.stock_carbon_bone_c5.tooltip": "",
+  "tacz.attachment.stock_tactical_ar.tooltip": "",
+  "tacz.attachment.stock_militech_b5.tooltip": ""
 }
