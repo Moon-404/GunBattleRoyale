@@ -1,5 +1,5 @@
 {
-  "slot": "tacz:attachment/slot/scope_scout_slot",
+  "slot": "tacz:attachment/slot/scope_standard_8x",
   // 配件的默认模型，不可为空
   "model": "tacz:attachment/scope_scout_geo",
   // 配件默认模型使用的材质，不可为空
