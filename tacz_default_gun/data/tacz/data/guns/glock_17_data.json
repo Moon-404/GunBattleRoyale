@@ -1,34 +1,33 @@
 {
-  "ammo": "tacz:9mm",
-  "rpm": 400,
+  "ammo": "tacz:45acp",
+  "ammo_amount": 20,
+  "can_crawl": false,
+  "can_slide": false,
+  "bolt": "closed_bolt",
+  "rpm": 450,
   "bullet": {
-    "life": 0.8,
+    "life": 0.3,
     "bullet_amount": 1,
-    "damage": 6,
+    "damage": 2,
     "tracer_count_interval": 0,
     "extra_damage": {
-      "armor_ignore": 0,
-      "head_shot_multiplier": 1.5,
+      "head_shot_multiplier": 1.15,
       "damage_adjust": [
-        {"distance": 18, "damage": 7},
-        {"distance": 45, "damage": 5},
-        {"distance": "infinite", "damage": 4}
+        {"distance": 18.0, "damage": 2.00},
+        {"distance": 21.6, "damage": 1.80},
+        {"distance": 25.2, "damage": 1.60},
+        {"distance": 28.8, "damage": 1.40},
+        {"distance": 32.4, "damage": 1.20},
+        {"distance": "infinite", "damage": 1.00}
       ]
     },
-    "speed": 150,
+    "speed": 120,
     "gravity": 0.15,
-    "knockback": 0,
-    "friction": 0.025,
+    "knockback": 0.05,
+    "friction": 0.015,
     "ignite": false,
     "pierce": 1
   },
-  "ammo_amount": 17,
-  "extended_mag_ammo_amount": [
-    20,
-    25,
-    30
-  ],
-  "bolt": "closed_bolt",
   "reload": {
     "type": "magazine",
     "feed": {
@@ -44,40 +43,32 @@
   "put_away_time": 0.35,
   "aim_time": 0.13,
   "sprint_time": 0.05,
-  "weight": 1,
+  "weight": 0,
   "movement_speed": {
     "base": 0.0,
-    "aim": 0,
-    "reload": 0.1
+    "aim": -0.1,
+    "reload": 0
   },
-  "crawl_recoil_multiplier": 0.75,
   "fire_mode": [
     "semi"
   ],
-  "allow_attachment_types": [
-    "scope",
-    "muzzle",
-    "extended_mag",
-    "laser"
-  ],
   "recoil": {
     "pitch": [
-      {"time": 0, "value": [1, 1]},
-      {"time": 0.08, "value": [0.9, 0.9]},
-      {"time": 0.26, "value": [0.1, 0.1]},
-      {"time": 0.3, "value": [0.05, 0.05]},
-      {"time": 0.35, "value": [0, 0]}
+      {"time": 0, "value": [1.0, 1.0]},
+      {"time": 0.27, "value": [0, 0]}
     ],
     "yaw": [
-      {"time": 0, "value": [-0.75, 0.5]},
-      {"time": 0.2, "value": [0, 0]}
+      {"time": 0, "value": [0.3, 0.3]},
+      {"time": 0.27, "value": [0, 0]}
     ]
   },
   "inaccuracy": {
-    "stand": 2,
+    "stand": 1.25,
     "move": 2.5,
-    "sneak": 1.5,
-    "lie": 0.75,
-    "aim": 0.2
-  }
+    "sneak": 0.5,
+    "lie": 0.25,
+    "aim": 0
+  },
+  "allow_attachment_types": [
+  ]
 }
