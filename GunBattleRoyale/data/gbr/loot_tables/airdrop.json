@@ -22,12 +22,34 @@
             "rolls": 1,
             "entries": [
                 {
-                    "type": "loot_table",
-                    "name": "gbr:airdrop_guns/m249"
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:m95\", GunFireMode: \"SEMI\", GunCurrentAmmoCount: 4, DummyAmmo: 8, AttachmentLock: 1b, AttachmentSCOPE: {id: \"tacz:attachment\", Count: 1b, tag: {AttachmentId: \"tacz:scope_standard_8x\"}}}"
+                        }
+                    ]
                 },
                 {
-                    "type": "loot_table",
-                    "name": "gbr:airdrop_guns/m95"
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:m249\", GunFireMode:\"AUTO\", GunCurrentAmmoCount: 60, DummyAmmo: 120, AttachmentLock: 1b, AttachmentSCOPE: {id: \"tacz:attachment\", Count: 1b, tag: {AttachmentId: \"tacz:scope_acog_ta31\"}}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:aa12\", GunFireMode:\"AUTO\", GunCurrentAmmoCount: 8, DummyAmmo: 16}"
+                        }
+                    ]
                 }
             ]
         },

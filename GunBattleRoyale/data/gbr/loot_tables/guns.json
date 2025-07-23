@@ -10,7 +10,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:hk_mp5a5\", GunFireMode:\"AUTO\", HasBulletInBarrel:1b, GunCurrentAmmoCount:21}"
+                            "tag": "{GunId: \"tacz:hk_mp5a5\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 21}"
                         }
                     ]
                 },
@@ -21,7 +21,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:ak47\", GunFireMode:\"AUTO\", HasBulletInBarrel:1b, GunCurrentAmmoCount:21}"
+                            "tag": "{GunId: \"tacz:ak47\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 21}"
                         }
                     ]
                 },
@@ -32,7 +32,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:ai_awp\", GunFireMode:\"SEMI\", GunCurrentAmmoCount:4}"
+                            "tag": "{GunId: \"tacz:ai_awp\", GunFireMode: \"SEMI\", GunCurrentAmmoCount: 4}"
                         }
                     ]
                 },
@@ -43,7 +43,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:vector45\", GunFireMode:\"AUTO\", HasBulletInBarrel:1b, GunCurrentAmmoCount:26}"
+                            "tag": "{GunId: \"tacz:vector45\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 28}"
                         }
                     ]
                 },
@@ -54,7 +54,7 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:m4a1\", GunFireMode:\"AUTO\", HasBulletInBarrel:1b, GunCurrentAmmoCount:25}"
+                            "tag": "{GunId: \"tacz:m4a1\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 28}"
                         }
                     ]
                 },
@@ -65,7 +65,40 @@
                     "functions": [
                         {
                             "function": "set_nbt",
-                            "tag": "{GunId:\"tacz:scar_h\", GunFireMode:\"SEMI\", HasBulletInBarrel:1b, GunCurrentAmmoCount:6}"
+                            "tag": "{GunId: \"tacz:scar_h\", GunFireMode: \"SEMI\", GunCurrentAmmoCount: 6}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:ump45\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 24}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:hk416d\", GunFireMode: \"AUTO\", GunCurrentAmmoCount: 24}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "tacz:modern_kinetic_gun",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{GunId: \"tacz:sks_tactical\", GunFireMode: \"SEMI\", GunCurrentAmmoCount: 9}"
                         }
                     ]
                 }
