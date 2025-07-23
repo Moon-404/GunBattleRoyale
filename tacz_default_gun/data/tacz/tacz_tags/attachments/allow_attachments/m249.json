@@ -1,9 +1,3 @@
 [
-  "#tacz:scope_scope",
-  "#tacz:scope_sight",
-  "#tacz:muzzle",
-  "#tacz:extended_mag",
-  "#tacz:grip",
-  "#tacz:ammo_mod_no_he",
-  "#tacz:ar_laser"
+  "#tacz:gbr_scope"
 ]

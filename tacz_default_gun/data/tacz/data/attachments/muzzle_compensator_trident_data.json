@@ -1,13 +1,10 @@
 {
-  "ads": {
-    "addend": 0.01
-  },
   "inaccuracy": {
-    "multiplier": 0.85
+    "multiplier": 0.9
   },
   "recoil": {
     "yaw": {
-      "multiplier": 0.6
+      "multiplier": 0.9
     }
   }
 }
