@@ -9,7 +9,7 @@
   "can_crawl": false,
   "can_slide": false,
   "bolt": "manual_action",
-  "rpm": 50,
+  "rpm": 200,
   "bullet": {
     "life": 0.5,
     "bullet_amount": 1,
@@ -27,9 +27,9 @@
       ]
     },
     "speed": 200,
-    "gravity": 0.15,
+    "gravity": 0.1,
     "knockback": 0.05,
-    "friction": 0.015,
+    "friction": 0.01,
     "ignite": false,
     "pierce": 1
   },

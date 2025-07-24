@@ -22,9 +22,9 @@
       ]
     },
     "speed": 160,
-    "gravity": 0.15,
+    "gravity": 0.1,
     "knockback": 0.05,
-    "friction": 0.015,
+    "friction": 0.01,
     "ignite": false,
     "pierce": 1
   },
