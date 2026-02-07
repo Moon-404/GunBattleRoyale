@@ -1,10 +1,8 @@
 # 初始化数据
 function gbr:init
-# 为了避免盔甲架阻挡子弹，把 supply 盔甲架替换为 marker
-execute at @e[type=armor_stand, tag=supply] run summon marker ~ ~ ~ {Tags:["supply"]}
-# 清除 supply 盔甲架
-kill @e[type=armor_stand, tag=supply]
-# 给所有补给点位放上箱子
-execute at @e[tag=supply] unless block ~ ~ ~ chest run setblock ~ ~ ~ chest
+# 放置平台
+summon armor_stand 100.5 122 100.5 {Invisible:true, Glowing:true, NoGravity:true, Tags:["jump"]}
+fill 97 121 97 103 121 103 minecraft:glass
+place template minecraft:start 90 161 95 none none 1 0
 # 让所有盔甲架不发光
 execute as @e[type=armor_stand] run data modify entity @s Glowing set value false

@@ -8,7 +8,8 @@ execute as @e[tag=jump] run teleport @a[gamemode=adventure] @s
 kill @e[type=corpse:corpse]
 kill @e[type=item]
 
-execute as @e[tag=supply] at @s run loot insert ~ ~ ~ loot gbr:chests
+summon marker ~ ~ ~ {Tags:["ring"]}
+spreadplayers 100 100 50 50 under 10 false @e[tag=ring]
 execute as @e[tag=ring, sort=random, limit=1] at @s run function gbr:game/set_center
 
 # game_team_norank 为不可以获得排名分的队伍数量
