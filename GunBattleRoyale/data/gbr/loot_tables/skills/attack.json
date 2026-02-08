@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gunskills:silence"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:snare"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:fast"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:smoke"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gunskills:scan"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:ire"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:exhibit"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:glow"
+                }
+            ]
+        }
+    ]
+}

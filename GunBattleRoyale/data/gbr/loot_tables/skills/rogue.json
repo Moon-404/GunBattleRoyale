@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gunskills:void"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:stim"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:lift"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:boot"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "gunskills:purify"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:health_bottle"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:shield_bottle"
+                },
+                {
+                    "type": "item",
+                    "name": "gunskills:charge"
+                }
+            ]
+        }
+    ]
+}
