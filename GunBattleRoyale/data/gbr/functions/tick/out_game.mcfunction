@@ -5,5 +5,5 @@ execute as @e[tag=start] run teleport @a[gamemode=adventure, scores={height=-214
 execute as @e[tag=start] run teleport @a[gamemode=adventure, scores={height=170..2147483647}] @s
 
 execute if score game_tick global matches 100 run function gbr:mapgen/terrain
-execute if score game_tick global matches 300 run function gbr:mapgen/structure
-execute if score game_tick global matches 400 run function gbr:mapgen/chest
+execute if score game_tick global matches 350 run function gbr:mapgen/structure
+execute if score game_tick global matches 500 run function gbr:mapgen/chest

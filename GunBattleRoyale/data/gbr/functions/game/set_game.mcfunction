@@ -9,7 +9,7 @@ kill @e[type=corpse:corpse]
 kill @e[type=item]
 
 summon marker ~ ~ ~ {Tags:["ring"]}
-spreadplayers 100 100 50 50 under 10 false @e[tag=ring]
+spreadplayers 160 160 80 80 under 10 false @e[tag=ring]
 execute as @e[tag=ring, sort=random, limit=1] at @s run function gbr:game/set_center
 
 # game_team_norank 为不可以获得排名分的队伍数量
